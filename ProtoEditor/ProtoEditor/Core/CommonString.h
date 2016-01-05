@@ -16,5 +16,7 @@
 #define kFixAutoLayoutForIp6Plus @"fixAutolayoutFor55"
 #define kFixAutoLayoutForIpad @"fixAutolayoutForIpad"
 
+// Common string
+#define kUIImagePickerOriginalImage @"UIImagePickerControllerOriginalImage"
 
 #endif /* CommonString_h */

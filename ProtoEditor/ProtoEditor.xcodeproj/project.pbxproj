@@ -17,6 +17,9 @@
 		D3110BD11C3B5CC9009DF6C4 /* ProtoEditorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BD01C3B5CC9009DF6C4 /* ProtoEditorUITests.m */; };
 		D3110BF11C3B5EF4009DF6C4 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BF01C3B5EF4009DF6C4 /* MainController.m */; };
 		D3110C091C3B6AA7009DF6C4 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C081C3B6AA7009DF6C4 /* Utilities.m */; };
+		D3110C121C3B7635009DF6C4 /* PhotoEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C111C3B7635009DF6C4 /* PhotoEditorController.m */; };
+		D3110C151C3B765F009DF6C4 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C141C3B765F009DF6C4 /* Photo.m */; };
+		D3110C181C3B874C009DF6C4 /* UIImage+AutoScaleResize.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C171C3B874C009DF6C4 /* UIImage+AutoScaleResize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,12 @@
 		D3110C0C1C3B6F11009DF6C4 /* UIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIDelegate.h; path = UIDelegate/UIDelegate.h; sourceTree = "<group>"; };
 		D3110C0D1C3B7059009DF6C4 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Macro.h; path = Core/Macro.h; sourceTree = "<group>"; };
 		D3110C0E1C3B71A0009DF6C4 /* FixAutoLayoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixAutoLayoutDelegate.h; sourceTree = "<group>"; };
+		D3110C101C3B7635009DF6C4 /* PhotoEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoEditorController.h; path = Controller/PhotoEditorController/PhotoEditorController.h; sourceTree = "<group>"; };
+		D3110C111C3B7635009DF6C4 /* PhotoEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoEditorController.m; path = Controller/PhotoEditorController/PhotoEditorController.m; sourceTree = "<group>"; };
+		D3110C131C3B765F009DF6C4 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = Modal/Photo.h; sourceTree = "<group>"; };
+		D3110C141C3B765F009DF6C4 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = Modal/Photo.m; sourceTree = "<group>"; };
+		D3110C161C3B874C009DF6C4 /* UIImage+AutoScaleResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AutoScaleResize.h"; path = "Core/UIImage+AutoScaleResize.h"; sourceTree = "<group>"; };
+		D3110C171C3B874C009DF6C4 /* UIImage+AutoScaleResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AutoScaleResize.m"; path = "Core/UIImage+AutoScaleResize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +209,7 @@
 		D3110BEE1C3B5ED4009DF6C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D3110C0F1C3B7611009DF6C4 /* PhotoEditor */,
 				D3110BF21C3B5EF8009DF6C4 /* MainController */,
 			);
 			name = Controller;
@@ -217,6 +227,8 @@
 		D3110BF31C3B5F41009DF6C4 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				D3110C131C3B765F009DF6C4 /* Photo.h */,
+				D3110C141C3B765F009DF6C4 /* Photo.m */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -239,6 +251,8 @@
 				D3110C081C3B6AA7009DF6C4 /* Utilities.m */,
 				D3110C0A1C3B6C2E009DF6C4 /* Enumeration.h */,
 				D3110C0D1C3B7059009DF6C4 /* Macro.h */,
+				D3110C161C3B874C009DF6C4 /* UIImage+AutoScaleResize.h */,
+				D3110C171C3B874C009DF6C4 /* UIImage+AutoScaleResize.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -258,6 +272,15 @@
 				D3110C0E1C3B71A0009DF6C4 /* FixAutoLayoutDelegate.h */,
 			);
 			name = UIDelegate;
+			sourceTree = "<group>";
+		};
+		D3110C0F1C3B7611009DF6C4 /* PhotoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				D3110C101C3B7635009DF6C4 /* PhotoEditorController.h */,
+				D3110C111C3B7635009DF6C4 /* PhotoEditorController.m */,
+			);
+			name = PhotoEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,11 +414,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3110C151C3B765F009DF6C4 /* Photo.m in Sources */,
 				D3110BF11C3B5EF4009DF6C4 /* MainController.m in Sources */,
 				D3110BAD1C3B5CC9009DF6C4 /* AppDelegate.m in Sources */,
+				D3110C181C3B874C009DF6C4 /* UIImage+AutoScaleResize.m in Sources */,
 				D3110BAA1C3B5CC9009DF6C4 /* main.m in Sources */,
 				D3110BB61C3B5CC9009DF6C4 /* ProtoEditor.xcdatamodeld in Sources */,
 				D3110C091C3B6AA7009DF6C4 /* Utilities.m in Sources */,
+				D3110C121C3B7635009DF6C4 /* PhotoEditorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,5 +9,6 @@
 #ifndef StoryBoardId_h
 #define StoryBoardId_h
 
+#define kPhotoEditorController @"PhotoEditorController"
 
 #endif /* StoryBoardId_h */

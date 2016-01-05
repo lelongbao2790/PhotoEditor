@@ -19,5 +19,10 @@
 #import "Utilities.h"
 #import "Macro.h"
 #import "FixAutoLayoutDelegate.h"
+#import "Photo.h"
+#import "UIImage+AutoScaleResize.h"
+
+// Storyboard
+#import "PhotoEditorController.h"
 
 #endif /* PrefixHeader_pch */
