@@ -103,9 +103,10 @@
 		D3110BA71C3B5CC9009DF6C4 /* ProtoEditor */ = {
 			isa = PBXGroup;
 			children = (
+				D3110BF41C3B5F49009DF6C4 /* View */,
+				D3110BF31C3B5F41009DF6C4 /* Modal */,
 				D3110BEE1C3B5ED4009DF6C4 /* Controller */,
 				D3110BE91C3B5E9F009DF6C4 /* AppDelegate */,
-				D3110BEA1C3B5EAE009DF6C4 /* StoryBoard */,
 				D3110BED1C3B5ECA009DF6C4 /* Resource */,
 				D3110BA81C3B5CC9009DF6C4 /* Supporting Files */,
 			);
@@ -197,6 +198,21 @@
 				D3110BF01C3B5EF4009DF6C4 /* MainController.m */,
 			);
 			name = MainController;
+			sourceTree = "<group>";
+		};
+		D3110BF31C3B5F41009DF6C4 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		D3110BF41C3B5F49009DF6C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3110BEA1C3B5EAE009DF6C4 /* StoryBoard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
