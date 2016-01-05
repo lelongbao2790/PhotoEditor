@@ -16,6 +16,7 @@
 		D3110BC61C3B5CC9009DF6C4 /* ProtoEditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BC51C3B5CC9009DF6C4 /* ProtoEditorTests.m */; };
 		D3110BD11C3B5CC9009DF6C4 /* ProtoEditorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BD01C3B5CC9009DF6C4 /* ProtoEditorUITests.m */; };
 		D3110BF11C3B5EF4009DF6C4 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BF01C3B5EF4009DF6C4 /* MainController.m */; };
+		D3110C091C3B6AA7009DF6C4 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C081C3B6AA7009DF6C4 /* Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,16 @@
 		D3110BD21C3B5CC9009DF6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3110BEF1C3B5EF4009DF6C4 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainController.h; path = Controller/MainController/MainController.h; sourceTree = "<group>"; };
 		D3110BF01C3B5EF4009DF6C4 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainController.m; path = Controller/MainController/MainController.m; sourceTree = "<group>"; };
+		D3110C021C3B63A9009DF6C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D3110C031C3B63D8009DF6C4 /* CommonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonString.h; path = Core/CommonString.h; sourceTree = "<group>"; };
+		D3110C041C3B6A64009DF6C4 /* CommonSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSize.h; path = Core/CommonSize.h; sourceTree = "<group>"; };
+		D3110C061C3B6A8F009DF6C4 /* StoryBoardId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryBoardId.h; path = Core/StoryBoardId.h; sourceTree = "<group>"; };
+		D3110C071C3B6AA7009DF6C4 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utilities.h; path = Core/Utilities.h; sourceTree = "<group>"; };
+		D3110C081C3B6AA7009DF6C4 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utilities.m; path = Core/Utilities.m; sourceTree = "<group>"; };
+		D3110C0A1C3B6C2E009DF6C4 /* Enumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enumeration.h; path = Core/Enumeration.h; sourceTree = "<group>"; };
+		D3110C0C1C3B6F11009DF6C4 /* UIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIDelegate.h; path = UIDelegate/UIDelegate.h; sourceTree = "<group>"; };
+		D3110C0D1C3B7059009DF6C4 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Macro.h; path = Core/Macro.h; sourceTree = "<group>"; };
+		D3110C0E1C3B71A0009DF6C4 /* FixAutoLayoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixAutoLayoutDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +114,8 @@
 		D3110BA71C3B5CC9009DF6C4 /* ProtoEditor */ = {
 			isa = PBXGroup;
 			children = (
+				D3110C0B1C3B6EF5009DF6C4 /* UIDelegate */,
+				D3110BF51C3B609B009DF6C4 /* Core */,
 				D3110BF41C3B5F49009DF6C4 /* View */,
 				D3110BF31C3B5F41009DF6C4 /* Modal */,
 				D3110BEE1C3B5ED4009DF6C4 /* Controller */,
@@ -177,6 +190,7 @@
 		D3110BED1C3B5ECA009DF6C4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D3110C011C3B6393009DF6C4 /* Prefix */,
 				D3110BEB1C3B5EB9009DF6C4 /* System */,
 				D3110BEC1C3B5EC4009DF6C4 /* CoreData */,
 			);
@@ -213,6 +227,37 @@
 				D3110BEA1C3B5EAE009DF6C4 /* StoryBoard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		D3110BF51C3B609B009DF6C4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D3110C031C3B63D8009DF6C4 /* CommonString.h */,
+				D3110C041C3B6A64009DF6C4 /* CommonSize.h */,
+				D3110C061C3B6A8F009DF6C4 /* StoryBoardId.h */,
+				D3110C071C3B6AA7009DF6C4 /* Utilities.h */,
+				D3110C081C3B6AA7009DF6C4 /* Utilities.m */,
+				D3110C0A1C3B6C2E009DF6C4 /* Enumeration.h */,
+				D3110C0D1C3B7059009DF6C4 /* Macro.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		D3110C011C3B6393009DF6C4 /* Prefix */ = {
+			isa = PBXGroup;
+			children = (
+				D3110C021C3B63A9009DF6C4 /* PrefixHeader.pch */,
+			);
+			name = Prefix;
+			sourceTree = "<group>";
+		};
+		D3110C0B1C3B6EF5009DF6C4 /* UIDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D3110C0C1C3B6F11009DF6C4 /* UIDelegate.h */,
+				D3110C0E1C3B71A0009DF6C4 /* FixAutoLayoutDelegate.h */,
+			);
+			name = UIDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +395,7 @@
 				D3110BAD1C3B5CC9009DF6C4 /* AppDelegate.m in Sources */,
 				D3110BAA1C3B5CC9009DF6C4 /* main.m in Sources */,
 				D3110BB61C3B5CC9009DF6C4 /* ProtoEditor.xcdatamodeld in Sources */,
+				D3110C091C3B6AA7009DF6C4 /* Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +477,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "${PROJECT_DIR}/ProtoEditor/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -474,6 +522,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "${PROJECT_DIR}/ProtoEditor/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -493,7 +543,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "${PROJECT_DIR}/ProtoEditor/PrefixHeader.pch";
 				INFOPLIST_FILE = ProtoEditor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Brian.ProtoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,7 +558,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "${PROJECT_DIR}/ProtoEditor/PrefixHeader.pch";
 				INFOPLIST_FILE = ProtoEditor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Brian.ProtoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";

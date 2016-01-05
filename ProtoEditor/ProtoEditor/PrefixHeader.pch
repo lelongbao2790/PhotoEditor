@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  ProtoEditor
+//
+//  Created by Bao (Brian) L. LE on 1/5/16.
+//  Copyright © 2016 Brian. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Constant
+#import "UIDelegate/UIDelegate.h"
+#import <UIKit/UIKit.h>
+#import "CommonString.h"
+#import "CommonSize.h"
+#import "Enumeration.h"
+#import "StoryBoardId.h"
+#import "Utilities.h"
+#import "Macro.h"
+#import "FixAutoLayoutDelegate.h"
+
+#endif /* PrefixHeader_pch */
