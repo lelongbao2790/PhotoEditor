@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		D3110BAA1C3B5CC9009DF6C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BA91C3B5CC9009DF6C4 /* main.m */; };
 		D3110BAD1C3B5CC9009DF6C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BAC1C3B5CC9009DF6C4 /* AppDelegate.m */; };
-		D3110BB01C3B5CC9009DF6C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BAF1C3B5CC9009DF6C4 /* ViewController.m */; };
 		D3110BB31C3B5CC9009DF6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3110BB11C3B5CC9009DF6C4 /* Main.storyboard */; };
 		D3110BB61C3B5CC9009DF6C4 /* ProtoEditor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3110BB41C3B5CC9009DF6C4 /* ProtoEditor.xcdatamodeld */; };
 		D3110BB81C3B5CC9009DF6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3110BB71C3B5CC9009DF6C4 /* Assets.xcassets */; };
 		D3110BBB1C3B5CC9009DF6C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3110BB91C3B5CC9009DF6C4 /* LaunchScreen.storyboard */; };
 		D3110BC61C3B5CC9009DF6C4 /* ProtoEditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BC51C3B5CC9009DF6C4 /* ProtoEditorTests.m */; };
 		D3110BD11C3B5CC9009DF6C4 /* ProtoEditorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BD01C3B5CC9009DF6C4 /* ProtoEditorUITests.m */; };
+		D3110BF11C3B5EF4009DF6C4 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BF01C3B5EF4009DF6C4 /* MainController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,6 @@
 		D3110BA91C3B5CC9009DF6C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3110BAB1C3B5CC9009DF6C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D3110BAC1C3B5CC9009DF6C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D3110BAE1C3B5CC9009DF6C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D3110BAF1C3B5CC9009DF6C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D3110BB21C3B5CC9009DF6C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3110BB51C3B5CC9009DF6C4 /* ProtoEditor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProtoEditor.xcdatamodel; sourceTree = "<group>"; };
 		D3110BB71C3B5CC9009DF6C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +51,8 @@
 		D3110BCC1C3B5CC9009DF6C4 /* ProtoEditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProtoEditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3110BD01C3B5CC9009DF6C4 /* ProtoEditorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtoEditorUITests.m; sourceTree = "<group>"; };
 		D3110BD21C3B5CC9009DF6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3110BEF1C3B5EF4009DF6C4 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainController.h; path = Controller/MainController/MainController.h; sourceTree = "<group>"; };
+		D3110BF01C3B5EF4009DF6C4 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainController.m; path = Controller/MainController/MainController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +103,10 @@
 		D3110BA71C3B5CC9009DF6C4 /* ProtoEditor */ = {
 			isa = PBXGroup;
 			children = (
-				D3110BAB1C3B5CC9009DF6C4 /* AppDelegate.h */,
-				D3110BAC1C3B5CC9009DF6C4 /* AppDelegate.m */,
-				D3110BAE1C3B5CC9009DF6C4 /* ViewController.h */,
-				D3110BAF1C3B5CC9009DF6C4 /* ViewController.m */,
-				D3110BB11C3B5CC9009DF6C4 /* Main.storyboard */,
-				D3110BB71C3B5CC9009DF6C4 /* Assets.xcassets */,
-				D3110BB91C3B5CC9009DF6C4 /* LaunchScreen.storyboard */,
-				D3110BBC1C3B5CC9009DF6C4 /* Info.plist */,
-				D3110BB41C3B5CC9009DF6C4 /* ProtoEditor.xcdatamodeld */,
+				D3110BEE1C3B5ED4009DF6C4 /* Controller */,
+				D3110BE91C3B5E9F009DF6C4 /* AppDelegate */,
+				D3110BEA1C3B5EAE009DF6C4 /* StoryBoard */,
+				D3110BED1C3B5ECA009DF6C4 /* Resource */,
 				D3110BA81C3B5CC9009DF6C4 /* Supporting Files */,
 			);
 			path = ProtoEditor;
@@ -141,6 +136,67 @@
 				D3110BD21C3B5CC9009DF6C4 /* Info.plist */,
 			);
 			path = ProtoEditorUITests;
+			sourceTree = "<group>";
+		};
+		D3110BE91C3B5E9F009DF6C4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D3110BAB1C3B5CC9009DF6C4 /* AppDelegate.h */,
+				D3110BAC1C3B5CC9009DF6C4 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D3110BEA1C3B5EAE009DF6C4 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D3110BB11C3B5CC9009DF6C4 /* Main.storyboard */,
+				D3110BB91C3B5CC9009DF6C4 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		D3110BEB1C3B5EB9009DF6C4 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				D3110BB71C3B5CC9009DF6C4 /* Assets.xcassets */,
+				D3110BBC1C3B5CC9009DF6C4 /* Info.plist */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
+		D3110BEC1C3B5EC4009DF6C4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D3110BB41C3B5CC9009DF6C4 /* ProtoEditor.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		D3110BED1C3B5ECA009DF6C4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D3110BEB1C3B5EB9009DF6C4 /* System */,
+				D3110BEC1C3B5EC4009DF6C4 /* CoreData */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		D3110BEE1C3B5ED4009DF6C4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3110BF21C3B5EF8009DF6C4 /* MainController */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D3110BF21C3B5EF8009DF6C4 /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				D3110BEF1C3B5EF4009DF6C4 /* MainController.h */,
+				D3110BF01C3B5EF4009DF6C4 /* MainController.m */,
+			);
+			name = MainController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3110BB01C3B5CC9009DF6C4 /* ViewController.m in Sources */,
+				D3110BF11C3B5EF4009DF6C4 /* MainController.m in Sources */,
 				D3110BAD1C3B5CC9009DF6C4 /* AppDelegate.m in Sources */,
 				D3110BAA1C3B5CC9009DF6C4 /* main.m in Sources */,
 				D3110BB61C3B5CC9009DF6C4 /* ProtoEditor.xcdatamodeld in Sources */,
@@ -502,6 +558,7 @@
 				D3110BD71C3B5CC9009DF6C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3110BD81C3B5CC9009DF6C4 /* Build configuration list for PBXNativeTarget "ProtoEditorTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +567,7 @@
 				D3110BDA1C3B5CC9009DF6C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3110BDB1C3B5CC9009DF6C4 /* Build configuration list for PBXNativeTarget "ProtoEditorUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +576,7 @@
 				D3110BDD1C3B5CC9009DF6C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
