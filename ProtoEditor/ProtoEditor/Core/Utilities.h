@@ -11,6 +11,9 @@
 
 @interface Utilities : NSObject
 
+// typedef block failed
+typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
+
 /**
  * fix auto layout for iPhone 5/5S, iPhone 6/6S, iPhone 6/6S Plus
  */
@@ -27,5 +30,14 @@
 + (void)hideViewOnWindown:(nonnull UIView *)subView withTag:(NSInteger)tagView;
 
 + (void)caculateImageSizeToPresent:(nonnull UIImageView *)imageView;
+
+//*****************************************************************************
+#pragma mark -
+#pragma mark - ** Blend **
+
+/*
+ * Filter Image with type
+ */
++ (void)filterImageWithImage:(nonnull UIImage *)originalImage andType:(NSInteger )typeFilter withCompletion:(nonnull LoadImageCompleted)callBack;
 
 @end

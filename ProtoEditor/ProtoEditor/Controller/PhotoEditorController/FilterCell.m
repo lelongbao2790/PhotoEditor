@@ -22,7 +22,7 @@
     self.imageFilter.hidden = YES;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
-        [UIImage filterImageWithImage:kImageSample andType:typeFilter withCompletion:^(UIImage * _Nonnull imageComplete) {
+        [Utilities filterImageWithImage:kImageSample andType:typeFilter withCompletion:^(UIImage * _Nonnull imageComplete) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imageFilter.image = imageComplete;
                 self.labelFilter.text = nameFilter;

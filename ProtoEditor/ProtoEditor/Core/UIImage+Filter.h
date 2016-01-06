@@ -10,15 +10,4 @@
 
 @interface UIImage (Filter)
 
-// typedef block failed
-typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
-//*****************************************************************************
-#pragma mark -
-#pragma mark - ** Blend **
-
-/*
- * Filter Image with type
- */
-+ (nonnull UIImage *)filterImageWithImage:(nonnull UIImage *)originalImage andType:(NSInteger )typeFilter withCompletion:(nonnull LoadImageCompleted)callBack;
-
 @end

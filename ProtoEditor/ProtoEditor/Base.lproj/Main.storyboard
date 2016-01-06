@@ -118,7 +118,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl_sample.png" translatesAutoresizingMaskIntoConstraints="NO" id="A4Y-Ye-5Eh">
-                                                            <rect key="frame" x="0.0" y="6" width="86" height="69"/>
+                                                            <rect key="frame" x="3" y="6" width="83" height="69"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0c-Rc-SaO">
                                                             <rect key="frame" x="0.0" y="77" width="86" height="15"/>
@@ -144,7 +144,7 @@
                                                     <constraint firstItem="A0c-Rc-SaO" firstAttribute="top" secondItem="A4Y-Ye-5Eh" secondAttribute="bottom" constant="2" id="iXh-Eg-r5z"/>
                                                     <constraint firstItem="lwz-4g-kbC" firstAttribute="leading" secondItem="rS5-U0-Rnw" secondAttribute="leadingMargin" constant="25" id="pSm-7Z-xc0"/>
                                                     <constraint firstAttribute="leadingMargin" secondItem="A0c-Rc-SaO" secondAttribute="leading" constant="8" id="qSd-5g-RVk"/>
-                                                    <constraint firstItem="A4Y-Ye-5Eh" firstAttribute="leading" secondItem="rS5-U0-Rnw" secondAttribute="leadingMargin" constant="-8" id="vHQ-EF-HLg"/>
+                                                    <constraint firstItem="A4Y-Ye-5Eh" firstAttribute="leading" secondItem="rS5-U0-Rnw" secondAttribute="leadingMargin" constant="-5" id="vHQ-EF-HLg"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="activityLoading" destination="lwz-4g-kbC" id="z1Q-9n-KZ2"/>
