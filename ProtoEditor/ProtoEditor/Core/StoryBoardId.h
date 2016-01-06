@@ -10,5 +10,7 @@
 #define StoryBoardId_h
 
 #define kPhotoEditorController @"PhotoEditorController"
+#define kFilterCell @"FilterCell"
+#define kFilterCellIdentifier @"FilterCellIdentifier"
 
 #endif /* StoryBoardId_h */

@@ -10,6 +10,11 @@
 
 @interface UIImage (AutoScaleResize)
 
+/*
+ * Resize Image
+ */
 + (nonnull UIImage *)imageWithImage:(nonnull UIImage *)image scaledToSize:(CGSize)newSize;
+
+
 
 @end

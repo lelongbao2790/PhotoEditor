@@ -54,4 +54,13 @@
     [[window viewWithTag:tagView] removeFromSuperview];
 }
 
++ (void)caculateImageSizeToPresent:(nonnull UIImageView *)imageView {
+    // Caculate image size to present
+    imageView.contentMode = UIViewContentModeCenter;
+    if (kWidthImageView(imageView) > (kWidthImagePhoto && kHeighImageView(imageView) > (kHeighImagePhoto))) {
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+    }
+}
+
 @end

@@ -26,4 +26,6 @@
  */
 + (void)hideViewOnWindown:(nonnull UIView *)subView withTag:(NSInteger)tagView;
 
++ (void)caculateImageSizeToPresent:(nonnull UIImageView *)imageView;
+
 @end

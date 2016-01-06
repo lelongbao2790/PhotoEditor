@@ -21,9 +21,11 @@
 #import "FixAutoLayoutDelegate.h"
 #import "Photo.h"
 #import "UIImage+AutoScaleResize.h"
+#import "UIImage+Filter.h"
 #import "GPUImage.h"
 
 // Storyboard
 #import "PhotoEditorController.h"
+#import "FilterCell.h"
 
 #endif /* PrefixHeader_pch */

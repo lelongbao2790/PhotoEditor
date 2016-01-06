@@ -195,6 +195,14 @@
 		D3D7CCA81C3CAA7E00953610 /* GPUImageMovieWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D7CCA21C3CAA7E00953610 /* GPUImageMovieWriter.m */; };
 		D3D7CCA91C3CAA7E00953610 /* GPUImageTextureOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D7CCA41C3CAA7E00953610 /* GPUImageTextureOutput.m */; };
 		D3D7CCAA1C3CAA7E00953610 /* GPUImageRawDataOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D7CCA61C3CAA7E00953610 /* GPUImageRawDataOutput.m */; };
+		D3D7CCB11C3CB0F600953610 /* UIImage+Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D7CCB01C3CB0F600953610 /* UIImage+Filter.m */; };
+		D3D7CCB41C3CB98A00953610 /* FilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D7CCB31C3CB98A00953610 /* FilterCell.m */; };
+		D3D7CCB91C3CC79500953610 /* girl_sample.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCB81C3CC79500953610 /* girl_sample.png */; };
+		D3D7CCBF1C3CD62B00953610 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBA1C3CD62B00953610 /* lookup_amatorka.png */; };
+		D3D7CCC01C3CD62B00953610 /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBB1C3CD62B00953610 /* lookup_miss_etikate.png */; };
+		D3D7CCC11C3CD62B00953610 /* lookup_soft_elegance_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBC1C3CD62B00953610 /* lookup_soft_elegance_1.png */; };
+		D3D7CCC21C3CD62B00953610 /* lookup_soft_elegance_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBD1C3CD62B00953610 /* lookup_soft_elegance_2.png */; };
+		D3D7CCC31C3CD62B00953610 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBE1C3CD62B00953610 /* lookup.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -593,6 +601,16 @@
 		D3D7CCA41C3CAA7E00953610 /* GPUImageTextureOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageTextureOutput.m; sourceTree = "<group>"; };
 		D3D7CCA51C3CAA7E00953610 /* GPUImageRawDataOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageRawDataOutput.h; sourceTree = "<group>"; };
 		D3D7CCA61C3CAA7E00953610 /* GPUImageRawDataOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageRawDataOutput.m; sourceTree = "<group>"; };
+		D3D7CCAF1C3CB0F600953610 /* UIImage+Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Filter.h"; path = "Core/UIImage+Filter.h"; sourceTree = "<group>"; };
+		D3D7CCB01C3CB0F600953610 /* UIImage+Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Filter.m"; path = "Core/UIImage+Filter.m"; sourceTree = "<group>"; };
+		D3D7CCB21C3CB98A00953610 /* FilterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterCell.h; path = Controller/PhotoEditorController/FilterCell.h; sourceTree = "<group>"; };
+		D3D7CCB31C3CB98A00953610 /* FilterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterCell.m; path = Controller/PhotoEditorController/FilterCell.m; sourceTree = "<group>"; };
+		D3D7CCB81C3CC79500953610 /* girl_sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl_sample.png; sourceTree = "<group>"; };
+		D3D7CCBA1C3CD62B00953610 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
+		D3D7CCBB1C3CD62B00953610 /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_miss_etikate.png; sourceTree = "<group>"; };
+		D3D7CCBC1C3CD62B00953610 /* lookup_soft_elegance_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_1.png; sourceTree = "<group>"; };
+		D3D7CCBD1C3CD62B00953610 /* lookup_soft_elegance_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_2.png; sourceTree = "<group>"; };
+		D3D7CCBE1C3CD62B00953610 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -726,6 +744,7 @@
 		D3110BED1C3B5ECA009DF6C4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D3D7CCB51C3CBA0B00953610 /* Image */,
 				D3D7CAA21C3CA86E00953610 /* Framework */,
 				D3110C011C3B6393009DF6C4 /* Prefix */,
 				D3110BEB1C3B5EB9009DF6C4 /* System */,
@@ -801,6 +820,8 @@
 			children = (
 				D3110C101C3B7635009DF6C4 /* PhotoEditorController.h */,
 				D3110C111C3B7635009DF6C4 /* PhotoEditorController.m */,
+				D3D7CCB21C3CB98A00953610 /* FilterCell.h */,
+				D3D7CCB31C3CB98A00953610 /* FilterCell.m */,
 			);
 			name = PhotoEditor;
 			sourceTree = "<group>";
@@ -1186,6 +1207,8 @@
 			children = (
 				D3110C161C3B874C009DF6C4 /* UIImage+AutoScaleResize.h */,
 				D3110C171C3B874C009DF6C4 /* UIImage+AutoScaleResize.m */,
+				D3D7CCAF1C3CB0F600953610 /* UIImage+Filter.h */,
+				D3D7CCB01C3CB0F600953610 /* UIImage+Filter.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -1200,6 +1223,19 @@
 				D3110C0D1C3B7059009DF6C4 /* Macro.h */,
 			);
 			name = Constant;
+			sourceTree = "<group>";
+		};
+		D3D7CCB51C3CBA0B00953610 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				D3D7CCB81C3CC79500953610 /* girl_sample.png */,
+				D3D7CCBA1C3CD62B00953610 /* lookup_amatorka.png */,
+				D3D7CCBB1C3CD62B00953610 /* lookup_miss_etikate.png */,
+				D3D7CCBC1C3CD62B00953610 /* lookup_soft_elegance_1.png */,
+				D3D7CCBD1C3CD62B00953610 /* lookup_soft_elegance_2.png */,
+				D3D7CCBE1C3CD62B00953610 /* lookup.png */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1306,9 +1342,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D7CCC11C3CD62B00953610 /* lookup_soft_elegance_1.png in Resources */,
+				D3D7CCBF1C3CD62B00953610 /* lookup_amatorka.png in Resources */,
 				D3110BBB1C3B5CC9009DF6C4 /* LaunchScreen.storyboard in Resources */,
+				D3D7CCB91C3CC79500953610 /* girl_sample.png in Resources */,
 				D3110BB81C3B5CC9009DF6C4 /* Assets.xcassets in Resources */,
 				D3110BB31C3B5CC9009DF6C4 /* Main.storyboard in Resources */,
+				D3D7CCC31C3CD62B00953610 /* lookup.png in Resources */,
+				D3D7CCC21C3CD62B00953610 /* lookup_soft_elegance_2.png in Resources */,
+				D3D7CCC01C3CD62B00953610 /* lookup_miss_etikate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1403,6 +1445,7 @@
 				D3D7CC641C3CAA5D00953610 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				D3D7CC471C3CAA5D00953610 /* GPUImageDirectionalSobelEdgeDetectionFilter.m in Sources */,
 				D3D7CC761C3CAA5D00953610 /* GPUImageSubtractBlendFilter.m in Sources */,
+				D3D7CCB41C3CB98A00953610 /* FilterCell.m in Sources */,
 				D3D7CC771C3CAA5D00953610 /* GPUImageDivideBlendFilter.m in Sources */,
 				D3D7CC151C3CAA5C00953610 /* GPUImageLevelsFilter.m in Sources */,
 				D3D7CC131C3CAA5C00953610 /* GPUImageBuffer.m in Sources */,
@@ -1472,6 +1515,7 @@
 				D3D7CC1F1C3CAA5C00953610 /* GPUImageFalseColorFilter.m in Sources */,
 				D3D7CC171C3CAA5C00953610 /* GPUImageContrastFilter.m in Sources */,
 				D3D7CC391C3CAA5C00953610 /* GPUImageSharpenFilter.m in Sources */,
+				D3D7CCB11C3CB0F600953610 /* UIImage+Filter.m in Sources */,
 				D3D7CC291C3CAA5C00953610 /* GPUImageHistogramEqualizationFilter.m in Sources */,
 				D3D7CC6B1C3CAA5D00953610 /* GPUImageSourceOverBlendFilter.m in Sources */,
 				D3D7CC4D1C3CAA5D00953610 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,

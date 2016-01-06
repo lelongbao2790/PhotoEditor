@@ -8,15 +8,14 @@
 
 #import "PhotoEditorController.h"
 
-@interface PhotoEditorController ()
+@interface PhotoEditorController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 #pragma mark - Properties
-@property (strong, nonatomic) NSMutableArray *faceDetect;
+@property (strong, nonatomic) NSDictionary *dictFilter;
 
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UICollectionView *filterCollectionView;
-@property (weak, nonatomic) IBOutlet UICollectionView *optionCollectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantBottomImage;
 
 @end
@@ -51,11 +50,16 @@
     // Set delegate for multiple device
     [Utilities fixAutolayoutWithDelegate:self];
     
-    // Set image
+    // Init
+    self.filterCollectionView.delegate = self;
+    self.dictFilter = kDictListFilter;
+
+    // Register custom cell
+    [self.filterCollectionView registerClass:[FilterCell class] forCellWithReuseIdentifier:kFilterCell];
+    
+    // Show image
     [self showImage];
     
-    // Detect face
-    if ([Photo share].imgPhoto) {}
 }
 
 /*
@@ -64,13 +68,32 @@
 - (void)showImage {
     
     self.imageView.image = [Photo share].imgPhoto;
+    [Utilities caculateImageSizeToPresent:self.imageView];
+}
+
+//*****************************************************************************
+#pragma mark -
+#pragma mark - ** Collection View Delegate **
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    // Caculate image size to present
-    self.imageView.contentMode = UIViewContentModeCenter;
-    if (kWidthImageView(self.imageView) > (kWidthImagePhoto && kHeighImageView(self.imageView) > (kHeighImagePhoto))) {
-        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        
-    }
+    return [self.dictFilter count];
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    FilterCell *cell = (FilterCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kFilterCellIdentifier forIndexPath:indexPath];
+    cell.labelFilter.text = self.dictFilter.allKeys[indexPath.row];
+    cell.imageFilter.image = self.dictFilter.allValues[indexPath.row];
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.imageView.image = self.dictFilter.allValues[indexPath.row];
 }
 
 @end

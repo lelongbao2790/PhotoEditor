@@ -23,4 +23,8 @@ typedef NS_ENUM(NSInteger, TagFace) {
     kTagMouthView = 4,
 };
 
+typedef NS_ENUM(NSInteger, PhotoEditorControllerTag) {
+    kTagCollectionViewFilter = 100,
+};
+
 #endif /* Enumeration_h */
