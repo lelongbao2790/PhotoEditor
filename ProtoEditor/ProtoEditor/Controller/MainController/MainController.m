@@ -74,7 +74,6 @@
 - (void)openLibraryPhoto {
     self.imagePicker = [[UIImagePickerController alloc] init];
     self.imagePicker.delegate = self;
-    self.imagePicker.allowsEditing = YES;
     self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:self.imagePicker animated:YES completion:nil];
 }

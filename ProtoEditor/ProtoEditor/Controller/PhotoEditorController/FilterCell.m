@@ -12,9 +12,28 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
-    self.labelFilter.backgroundColor = [UIColor colorWithHue:0 saturation:0 brightness:0 alpha:0.5];
     [Utilities caculateImageSizeToPresent:self.imageFilter];
+}
+
+- (void)loadImageWithType:(NSInteger)typeFilter andText:(NSString *)nameFilter {
+    // Hide
+    self.activityLoading.hidden = NO;
+    self.labelFilter.hidden = YES;
+    self.imageFilter.hidden = YES;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        [UIImage filterImageWithImage:kImageSample andType:typeFilter withCompletion:^(UIImage * _Nonnull imageComplete) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageFilter.image = imageComplete;
+                self.labelFilter.text = nameFilter;
+                
+                // Show
+                [self.activityLoading stopAnimating];
+                self.labelFilter.hidden = NO;
+                self.imageFilter.hidden = NO;
+            });
+        }];
+    });
 }
 
 @end

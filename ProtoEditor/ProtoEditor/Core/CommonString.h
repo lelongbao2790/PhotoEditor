@@ -18,9 +18,14 @@
 
 // Common string
 #define kUIImagePickerOriginalImage @"UIImagePickerControllerOriginalImage"
-#define kDictListFilter [[NSDictionary alloc] initWithObjectsAndKeys: [Photo share].imgPhoto, @"None", \
-                                                                      [UIImage filterImageWithSepiaFilter:[Photo share].imgPhoto], @"Sepia", \
-                                                                      [UIImage filterImageWithGrayScaleFilter:[Photo share].imgPhoto], @"Grayscale", \
-                                                                      [UIImage filterImageWithAmatorkaFilter:[Photo share].imgPhoto], @"Amatorka", nil]
+#define kDictListFilter [[NSDictionary alloc] initWithObjectsAndKeys: [NSNumber numberWithInteger:kTypeNone], @"None", \
+[NSNumber numberWithInteger:kTypeMissEtikate], @"Miss Etikate", \
+[NSNumber numberWithInteger:kTypeSoftElegan1], @"Soft Elegan", \
+[NSNumber numberWithInteger:kTypeInvert], @"Invert", \
+[NSNumber numberWithInteger:kTypeSepia], @"Sepia", \
+[NSNumber numberWithInteger:kTypeGrayScale], @"Grayscale", \
+[NSNumber numberWithInteger:kTypeAmatorka], @"Amatorka", nil]
+
+#define kImageSample [UIImage imageNamed:@"girl_sample.png"]
 
 #endif /* CommonString_h */

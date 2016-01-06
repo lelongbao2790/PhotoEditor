@@ -11,5 +11,8 @@
 @interface FilterCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imageFilter;
 @property (weak, nonatomic) IBOutlet UILabel *labelFilter;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoading;
+
+- (void)loadImageWithType:(NSInteger)typeFilter andText:(NSString *)nameFilter;
 
 @end

@@ -53,9 +53,12 @@
     // Init
     self.filterCollectionView.delegate = self;
     self.dictFilter = kDictListFilter;
+    self.title = @"Blend";
 
     // Register custom cell
     [self.filterCollectionView registerClass:[FilterCell class] forCellWithReuseIdentifier:kFilterCell];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[self.dictFilter.allKeys indexOfObject:@"None"] inSection:0];
+    [self.filterCollectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
     
     // Show image
     [self showImage];
@@ -81,19 +84,26 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return [self.dictFilter count];
+    return self.dictFilter.count;
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FilterCell *cell = (FilterCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kFilterCellIdentifier forIndexPath:indexPath];
-    cell.labelFilter.text = self.dictFilter.allKeys[indexPath.row];
-    cell.imageFilter.image = self.dictFilter.allValues[indexPath.row];
+    NSInteger numberType = [self.dictFilter.allValues[indexPath.row] integerValue];
+    [cell loadImageWithType:numberType andText:self.dictFilter.allKeys[indexPath.row]];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    self.imageView.image = self.dictFilter.allValues[indexPath.row];
+    NSInteger numberType = [self.dictFilter.allValues[indexPath.row] integerValue];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        [UIImage filterImageWithImage:[Photo share].imgPhoto andType:numberType withCompletion:^(UIImage * _Nonnull imageComplete) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageView.image = imageComplete;
+            });
+        }];
+    });
 }
 
 @end

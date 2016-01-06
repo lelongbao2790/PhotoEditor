@@ -10,29 +10,15 @@
 
 @interface UIImage (Filter)
 
-/*
- * Filter Image with : Sepial
- */
-+ (nonnull UIImage *)filterImageWithSepiaFilter:(nonnull UIImage *)originalImage;
+// typedef block failed
+typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
+//*****************************************************************************
+#pragma mark -
+#pragma mark - ** Blend **
 
 /*
- * Filter Image with : Gray Scale
+ * Filter Image with type
  */
-+ (nonnull UIImage *)filterImageWithGrayScaleFilter:(nonnull UIImage *)originalImage;
-
-/*
- * Filter Image with : Amatorka
- */
-+ (nonnull UIImage *)filterImageWithAmatorkaFilter:(nonnull UIImage *)originalImage;
-
-/*
- * Filter Image with : Brightness
- */
-+ (nonnull UIImage *)filterImageWithGausian:(nonnull UIImage *)originalImage withBlur:(CGFloat)blur;
-
-/*
- * Filter Image with : HighPass
- */
-+ (nonnull UIImage *)filterImageWithHighPass:(nonnull UIImage *)originalImage withFilterStrength:(CGFloat)strength;
++ (nonnull UIImage *)filterImageWithImage:(nonnull UIImage *)originalImage andType:(NSInteger )typeFilter withCompletion:(nonnull LoadImageCompleted)callBack;
 
 @end

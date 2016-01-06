@@ -27,4 +27,17 @@ typedef NS_ENUM(NSInteger, PhotoEditorControllerTag) {
     kTagCollectionViewFilter = 100,
 };
 
+typedef NS_ENUM(NSInteger, FilterNumber) {
+    kTypeNone = 0,
+    kTypeSepia = 1,
+    kTypeGrayScale = 2,
+    kTypeAmatorka = 3,
+    kTypeHighPass = 4,
+    kTypeGaussian = 5,
+    kTypeMissEtikate = 6,
+    kTypeSoftElegan1 = 7,
+    kTypeSoftElegan2 = 8,
+    kTypeInvert = 9,
+};
+
 #endif /* Enumeration_h */

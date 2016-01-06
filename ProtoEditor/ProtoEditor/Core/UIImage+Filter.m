@@ -10,89 +10,99 @@
 
 @implementation UIImage (Filter)
 
-/*
- * Filter Image with : Sepial
- */
-+ (nonnull UIImage *)filterImageWithSepiaFilter:(nonnull UIImage *)originalImage {
-    UIImage *inputImage = originalImage;
-    
-    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage:inputImage];
-    GPUImageSepiaFilter *stillImageFilter = [[GPUImageSepiaFilter alloc] init];
-    
-    [stillImageSource addTarget:stillImageFilter];
-    [stillImageFilter useNextFrameForImageCapture];
-    [stillImageSource processImage];
-    
-    UIImage *currentFilteredVideoFrame = [stillImageFilter imageFromCurrentFramebuffer];
-    return currentFilteredVideoFrame;
-}
+//*****************************************************************************
+#pragma mark -
+#pragma mark - ** Blend **
 
 /*
- * Filter Image with : Gray Scale
+ * Filter Image with type
  */
-+ (nonnull UIImage *)filterImageWithGrayScaleFilter:(nonnull UIImage *)originalImage {
-    UIImage *inputImage = originalImage;
++ (nonnull UIImage *)filterImageWithImage:(nonnull UIImage *)originalImage andType:(NSInteger )typeFilter withCompletion:(nonnull LoadImageCompleted)callBack {
+    // Init
+    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage:originalImage];
+    GPUImageFilter *stillImageFilter = nil;
+    GPUImageFilterGroup *stillImageFilterGroup = nil;
+    __block UIImage *outputImage = originalImage;
     
-    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage:inputImage];
-    GPUImageGrayscaleFilter *stillImageFilter = [[GPUImageGrayscaleFilter alloc] init];
+    // Check type filter
+    switch (typeFilter) {
+            
+        // Blend
+        case kTypeSepia: {
+            stillImageFilter = [[GPUImageSepiaFilter alloc] init];
+        } break;
+            
+        case kTypeGrayScale: {
+            stillImageFilter = [[GPUImageGrayscaleFilter alloc] init];
+        } break;
+            
+        case kTypeAmatorka: {
+            stillImageFilterGroup = [[GPUImageAmatorkaFilter alloc] init];
+            
+        } break;
+            
+        case kTypeGaussian: {
+            stillImageFilter = [[GPUImageGaussianBlurFilter alloc] init];
+        } break;
     
-    [stillImageSource addTarget:stillImageFilter];
-    [stillImageFilter useNextFrameForImageCapture];
-    [stillImageSource processImage];
+        case kTypeHighPass: {
+            stillImageFilterGroup = [[GPUImageHighPassFilter alloc] init];
+        } break;
+            
+        case kTypeMissEtikate: {
+            stillImageFilterGroup = [[GPUImageMissEtikateFilter alloc] init];
+        } break;
+           
+        case kTypeSoftElegan1: {
+            stillImageFilterGroup = [[GPUImageSoftEleganceFilter alloc] init];
+        } break;
+            
+        case kTypeInvert: {
+            stillImageFilter = [[GPUImageColorInvertFilter alloc] init];
+        } break;
+            
+        default:
+            break;
+    }
     
-    UIImage *currentFilteredVideoFrame = [stillImageFilter imageFromCurrentFramebuffer];
-    return currentFilteredVideoFrame;
-}
-
-/*
- * Filter Image with : Amatorka
- */
-+ (nonnull UIImage *)filterImageWithAmatorkaFilter:(nonnull UIImage *)originalImage {
-    UIImage *inputImage = originalImage;
+    // Export image
+    if (stillImageFilter) {
+        [stillImageSource addTarget:stillImageFilter];
+        [stillImageFilter useNextFrameForImageCapture];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+            [stillImageSource processImageWithCompletionHandler:^{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    outputImage = [stillImageFilter imageFromCurrentFramebuffer];
+                    
+                    callBack(outputImage);
+                });
+            }];
+        });
+        
+//        [stillImageSource processImage];
+//        outputImage = [stillImageFilter imageFromCurrentFramebuffer];
+        
+    } else if (stillImageFilterGroup) {
+        [stillImageSource addTarget:stillImageFilterGroup];
+        [stillImageFilterGroup useNextFrameForImageCapture];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+            [stillImageSource processImageWithCompletionHandler:^{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    outputImage = [stillImageFilterGroup imageFromCurrentFramebuffer];
+                    callBack(outputImage);
+                });
+            }];
+        });
+        
+//        [stillImageSource processImage];
+//        outputImage = [stillImageFilterGroup imageFromCurrentFramebuffer];
+    } else {
+        outputImage = originalImage;
+        callBack(outputImage);
+    }
     
-    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage:inputImage];
-    GPUImageAmatorkaFilter *stillImageFilter = [[GPUImageAmatorkaFilter alloc] init];
-    
-    [stillImageSource addTarget:stillImageFilter];
-    [stillImageFilter useNextFrameForImageCapture];
-    [stillImageSource processImage];
-    
-    UIImage *currentFilteredVideoFrame = [stillImageFilter imageFromCurrentFramebuffer];
-    return currentFilteredVideoFrame;
-}
-
-/*
- * Filter Image with : Brightness
- */
-+ (nonnull UIImage *)filterImageWithGausian:(nonnull UIImage *)originalImage withBlur:(CGFloat)blur {
-    UIImage *inputImage = originalImage;
-    
-    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage:inputImage];
-    GPUImageGaussianBlurFilter *stillImageFilter = [[GPUImageGaussianBlurFilter alloc] init];
-    stillImageFilter.blurRadiusInPixels = blur;
-    [stillImageSource addTarget:stillImageFilter];
-    [stillImageFilter useNextFrameForImageCapture];
-    [stillImageSource processImage];
-    
-    UIImage *currentFilteredVideoFrame = [stillImageFilter imageFromCurrentFramebuffer];
-    return currentFilteredVideoFrame;
-}
-
-/*
- * Filter Image with : HighPass
- */
-+ (nonnull UIImage *)filterImageWithHighPass:(nonnull UIImage *)originalImage withFilterStrength:(CGFloat)strength {
-    UIImage *inputImage = originalImage;
-    
-    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage:inputImage];
-    GPUImageHighPassFilter *stillImageFilter = [[GPUImageHighPassFilter alloc] init];
-    stillImageFilter.filterStrength = strength;
-    [stillImageSource addTarget:stillImageFilter];
-    [stillImageFilter useNextFrameForImageCapture];
-    [stillImageSource processImage];
-    
-    UIImage *currentFilteredVideoFrame = [stillImageFilter imageFromCurrentFramebuffer];
-    return currentFilteredVideoFrame;
+    return outputImage;
 }
 
 @end
