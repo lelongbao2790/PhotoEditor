@@ -10,6 +10,9 @@
 
 @interface PhotoEditorController ()
 
+#pragma mark - Properties
+@property (strong, nonatomic) NSMutableArray *faceDetect;
+
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UICollectionView *filterCollectionView;
@@ -50,18 +53,23 @@
     
     // Set image
     [self showImage];
+    
+    // Detect face
+    if ([Photo share].imgPhoto) {}
 }
 
 /*
  * Show image from photo
  */
 - (void)showImage {
+    
     self.imageView.image = [Photo share].imgPhoto;
     
     // Caculate image size to present
     self.imageView.contentMode = UIViewContentModeCenter;
     if (kWidthImageView(self.imageView) > (kWidthImagePhoto && kHeighImageView(self.imageView) > (kHeighImagePhoto))) {
         self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
     }
 }
 

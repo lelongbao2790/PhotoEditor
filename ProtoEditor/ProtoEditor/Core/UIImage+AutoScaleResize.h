@@ -10,6 +10,6 @@
 
 @interface UIImage (AutoScaleResize)
 
-- (UIImage *)imageByScalingAndCroppingForSize:(CGSize)targetSize;
++ (nonnull UIImage *)imageWithImage:(nonnull UIImage *)image scaledToSize:(CGSize)newSize;
 
 @end

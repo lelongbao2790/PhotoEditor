@@ -20,5 +20,7 @@
 #define kWidthImagePhoto [Photo share].imgPhoto.size.width
 #define kHeighImageView(imageView) imageView.bounds.size.height
 #define kHeighImagePhoto [Photo share].imgPhoto.size.height
+#define kWindow [UIApplication sharedApplication].keyWindow
+
 
 #endif /* Macro_h */

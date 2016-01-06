@@ -37,4 +37,21 @@
     }
 }
 
+/*
+ * Show view on windown
+ */
++ (void)showViewOnWindow:(nonnull UIView *)subView  withTag:(NSInteger)tagView {
+    subView.tag = tagView;
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:subView];
+}
+
+/*
+ * Hide view on windown
+ */
++ (void)hideViewOnWindown:(nonnull UIView *)subView withTag:(NSInteger)tagView  {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [[window viewWithTag:tagView] removeFromSuperview];
+}
+
 @end

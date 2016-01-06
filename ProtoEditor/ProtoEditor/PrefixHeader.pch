@@ -21,6 +21,7 @@
 #import "FixAutoLayoutDelegate.h"
 #import "Photo.h"
 #import "UIImage+AutoScaleResize.h"
+#import "GPUImage.h"
 
 // Storyboard
 #import "PhotoEditorController.h"

@@ -15,4 +15,12 @@ typedef NS_ENUM(NSInteger, ConstantMainController) {
     kConstantWidthButtonIpad = 150,
 };
 
+// Tag face
+typedef NS_ENUM(NSInteger, TagFace) {
+    kTagFaceView = 1,
+    kTagLeftEyeView = 2,
+    kTagRightEyeView = 3,
+    kTagMouthView = 4,
+};
+
 #endif /* Enumeration_h */
