@@ -23,9 +23,11 @@
 #import "UIImage+AutoScaleResize.h"
 #import "UIImage+Filter.h"
 #import "GPUImage.h"
+#import "CommonColor.h"
 
 // Storyboard
 #import "PhotoEditorController.h"
+#import "BlendViewController.h"
 #import "FilterCell.h"
 
 #endif /* PrefixHeader_pch */

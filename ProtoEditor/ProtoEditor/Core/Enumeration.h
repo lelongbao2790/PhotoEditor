@@ -23,8 +23,15 @@ typedef NS_ENUM(NSInteger, TagFace) {
     kTagMouthView = 4,
 };
 
-typedef NS_ENUM(NSInteger, PhotoEditorControllerTag) {
+typedef NS_ENUM(NSInteger, BlendTag) {
     kTagCollectionViewFilter = 100,
+    kTagBlendController = 1,
+};
+
+typedef NS_ENUM(NSInteger, MultipleDevicePhotoEdit) {
+    kConstantWidthButtonPhotoEditIp5 = 100,
+    kConstantWidthButtonPhotoEditIp6 = 118,
+    kConstantWidthButtonPhotoEditIpad = 190,
 };
 
 typedef NS_ENUM(NSInteger, FilterNumber) {

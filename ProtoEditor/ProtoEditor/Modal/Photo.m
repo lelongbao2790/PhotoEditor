@@ -26,6 +26,7 @@
     if (self) {
         // Set name default for user name
         self.imgPhoto = nil;
+        self.imgPhotoBlend = nil;
     }
     return self;
 }

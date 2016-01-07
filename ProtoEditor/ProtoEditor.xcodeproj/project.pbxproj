@@ -203,6 +203,7 @@
 		D3D7CCC11C3CD62B00953610 /* lookup_soft_elegance_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBC1C3CD62B00953610 /* lookup_soft_elegance_1.png */; };
 		D3D7CCC21C3CD62B00953610 /* lookup_soft_elegance_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBD1C3CD62B00953610 /* lookup_soft_elegance_2.png */; };
 		D3D7CCC31C3CD62B00953610 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBE1C3CD62B00953610 /* lookup.png */; };
+		D3D7CCC61C3DF76C00953610 /* BlendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D7CCC51C3DF76C00953610 /* BlendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -611,6 +612,9 @@
 		D3D7CCBC1C3CD62B00953610 /* lookup_soft_elegance_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_1.png; sourceTree = "<group>"; };
 		D3D7CCBD1C3CD62B00953610 /* lookup_soft_elegance_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_2.png; sourceTree = "<group>"; };
 		D3D7CCBE1C3CD62B00953610 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
+		D3D7CCC41C3DF76C00953610 /* BlendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlendViewController.h; path = Controller/PhotoEditorController/BlendViewController.h; sourceTree = "<group>"; };
+		D3D7CCC51C3DF76C00953610 /* BlendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlendViewController.m; path = Controller/PhotoEditorController/BlendViewController.m; sourceTree = "<group>"; };
+		D3D7CCC71C3E185B00953610 /* CommonColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonColor.h; path = Core/CommonColor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -822,6 +826,8 @@
 				D3110C111C3B7635009DF6C4 /* PhotoEditorController.m */,
 				D3D7CCB21C3CB98A00953610 /* FilterCell.h */,
 				D3D7CCB31C3CB98A00953610 /* FilterCell.m */,
+				D3D7CCC41C3DF76C00953610 /* BlendViewController.h */,
+				D3D7CCC51C3DF76C00953610 /* BlendViewController.m */,
 			);
 			name = PhotoEditor;
 			sourceTree = "<group>";
@@ -1221,6 +1227,7 @@
 				D3110C061C3B6A8F009DF6C4 /* StoryBoardId.h */,
 				D3110C0A1C3B6C2E009DF6C4 /* Enumeration.h */,
 				D3110C0D1C3B7059009DF6C4 /* Macro.h */,
+				D3D7CCC71C3E185B00953610 /* CommonColor.h */,
 			);
 			name = Constant;
 			sourceTree = "<group>";
@@ -1471,6 +1478,7 @@
 				D3D7CC051C3CAA5C00953610 /* GPUImageTextureInput.m in Sources */,
 				D3D7CC521C3CAA5D00953610 /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
 				D3D7CC1E1C3CAA5C00953610 /* GPUImageMonochromeFilter.m in Sources */,
+				D3D7CCC61C3DF76C00953610 /* BlendViewController.m in Sources */,
 				D3D7CC091C3CAA5C00953610 /* GPUImageFilterPipeline.m in Sources */,
 				D3D7CC021C3CAA5C00953610 /* GPUImagePicture+TextureSubimage.m in Sources */,
 				D3D7CC7E1C3CAA5D00953610 /* GPUImageColorBlendFilter.m in Sources */,

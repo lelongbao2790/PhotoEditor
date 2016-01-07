@@ -10,6 +10,7 @@
 #define StoryBoardId_h
 
 #define kPhotoEditorController @"PhotoEditorController"
+#define kBlendController @"BlendViewController"
 #define kFilterCell @"FilterCell"
 #define kFilterCellIdentifier @"FilterCellIdentifier"
 

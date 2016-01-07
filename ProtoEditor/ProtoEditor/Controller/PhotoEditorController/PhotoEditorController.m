@@ -8,15 +8,17 @@
 
 #import "PhotoEditorController.h"
 
-@interface PhotoEditorController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PhotoEditorController ()
 
 #pragma mark - Properties
-@property (strong, nonatomic) NSDictionary *dictFilter;
+@property (assign, nonatomic) BOOL isShowViewEdit;
 
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UICollectionView *filterCollectionView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantBottomImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantWidthButton;
+@property (weak, nonatomic) IBOutlet UIView *viewEdit;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollEdit;
+
 
 @end
 
@@ -29,14 +31,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    // Config
-    [self config];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    // Config
+    [self config];
+}
+
+- (void)viewDidLayoutSubviews {
+    [self.scrollEdit setContentSize:CGSizeMake(self.viewEdit.frame.size.width * 2, self.viewEdit.frame.size.height)];
 }
 
 //*****************************************************************************
@@ -50,60 +58,92 @@
     // Set delegate for multiple device
     [Utilities fixAutolayoutWithDelegate:self];
     
-    // Init
-    self.filterCollectionView.delegate = self;
-    self.dictFilter = kDictListFilter;
-    self.title = @"Blend";
-
-    // Register custom cell
-    [self.filterCollectionView registerClass:[FilterCell class] forCellWithReuseIdentifier:kFilterCell];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[self.dictFilter.allKeys indexOfObject:@"None"] inSection:0];
-    [self.filterCollectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+    
+    // Edit view
+    self.viewEdit.hidden = YES;
+    self.isShowViewEdit = NO;
+    self.scrollEdit.hidden = YES;
+    self.scrollEdit.backgroundColor = kColorBlackWithAlpha;
+    
     
     // Show image
     [self showImage];
+}
+
+- (void)showImage {
+    if ([Photo share].imgPhotoBlend) {
+        self.imageView.image = [Photo share].imgPhotoBlend;
+    } else {
+        self.imageView.image = [Photo share].imgPhoto;
+    }
+    [Utilities caculateImageSizeToPresent:self.imageView];
+}
+
+- (void)configScrollView {
     
 }
 
+
+//*****************************************************************************
+#pragma mark -
+#pragma mark - ** IBAction **
+- (IBAction)btnEdit:(id)sender {
+    if (self.isShowViewEdit) {
+        [self hideEditView];
+    } else {
+        [self showEditView];
+    }
+}
+
 /*
- * Show image from photo
+ * Show / Hide view edit
  */
-- (void)showImage {
-    
-    self.imageView.image = [Photo share].imgPhoto;
-    [Utilities caculateImageSizeToPresent:self.imageView];
+- (void)showEditView {
+    self.isShowViewEdit = YES;
+    [Utilities addAnimation:self.scrollEdit];
+    self.viewEdit.hidden = NO;
+    self.scrollEdit.hidden = NO;
+}
+
+/*
+ * Hide edit view
+ */
+- (void)hideEditView {
+    self.isShowViewEdit = NO;
+    [Utilities addAnimation:self.scrollEdit];
+    self.viewEdit.hidden = YES;
+    self.scrollEdit.hidden = YES;
+}
+
+
+- (IBAction)btnBlend:(id)sender {
+    [self hideEditView];
+    BlendViewController *blendController = InitStoryBoardWithIdentifier(kBlendController);
+    [self presentViewController:blendController animated:YES completion:nil];
+}
+- (IBAction)btnFrame:(id)sender {
+    [self hideEditView];
 }
 
 //*****************************************************************************
 #pragma mark -
-#pragma mark - ** Collection View Delegate **
+#pragma mark - ** Config screen with multiple device **
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+- (void)fixAutolayoutFor35 {
+    self.constantWidthButton.constant = kConstantWidthButtonPhotoEditIp5;
+}
+- (void)fixAutolayoutFor40 {
+    self.constantWidthButton.constant = kConstantWidthButtonPhotoEditIp5;
+}
+- (void)fixAutolayoutFor47 {
+    self.constantWidthButton.constant = kConstantWidthButtonPhotoEditIp6;
+}
+- (void)fixAutolayoutFor55 {
+    self.constantWidthButton.constant = kConstantWidthButtonPhotoEditIp6;
+}
+- (void)fixAutolayoutForIpad {
+    self.constantWidthButton.constant = kConstantWidthButtonPhotoEditIp6;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    return self.dictFilter.count;
-}
-
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FilterCell *cell = (FilterCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kFilterCellIdentifier forIndexPath:indexPath];
-    NSInteger numberType = [self.dictFilter.allValues[indexPath.row] integerValue];
-    [cell loadImageWithType:numberType andText:self.dictFilter.allKeys[indexPath.row]];
-    return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger numberType = [self.dictFilter.allValues[indexPath.row] integerValue];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
-        [Utilities filterImageWithImage:[Photo share].imgPhoto andType:numberType withCompletion:^(UIImage * _Nonnull imageComplete) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.imageView.image = imageComplete;
-            });
-        }];
-    });
-}
 
 @end

@@ -19,6 +19,8 @@ typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
  */
 + (void) fixAutolayoutWithDelegate:(nonnull id /*<UIFixAutolayoutDelegate>*/)delegate;
 
++ (void)addAnimation:(nonnull UIView *)view;
+
 /*
  * Show view on windown
  */

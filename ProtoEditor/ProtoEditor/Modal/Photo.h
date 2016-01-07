@@ -13,5 +13,6 @@
 + (Photo *)share;
 
 @property (strong, nonatomic) UIImage *imgPhoto;
+@property (strong, nonatomic) UIImage *imgPhotoBlend;
 
 @end

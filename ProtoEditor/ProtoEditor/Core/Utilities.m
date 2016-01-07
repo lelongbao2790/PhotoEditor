@@ -37,6 +37,14 @@
     }
 }
 
++ (void)addAnimation:(nonnull UIView *)view {
+    [UIView transitionWithView:view
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:NULL
+                    completion:NULL];
+}
+
 /*
  * Show view on windown
  */
