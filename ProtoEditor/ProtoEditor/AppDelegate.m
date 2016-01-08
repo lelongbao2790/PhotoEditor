@@ -14,9 +14,19 @@
 
 @implementation AppDelegate
 
++ (AppDelegate *)share {
+    static dispatch_once_t once;
+    static AppDelegate *shareInstance;
+    
+    dispatch_once(&once, ^{
+        shareInstance = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    });
+    return shareInstance;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.homeController = nil;
     return YES;
 }
 

@@ -8,7 +8,7 @@
 
 #import "MainController.h"
 
-@interface MainController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface MainController () 
 
 #pragma mark - Properties
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
@@ -56,33 +56,13 @@
 }
 
 - (IBAction)btnPhotoEdit:(id)sender {
-    [self openLibraryPhoto];
+    
 }
 
 - (IBAction)btnFilterCamera:(id)sender {
 }
 
 - (IBAction)btnSetting:(id)sender {
-}
-
-//*****************************************************************************
-#pragma mark -
-#pragma mark - ** Action for Photo Editor **
-/*
- * Open library photo
- */
-- (void)openLibraryPhoto {
-    self.imagePicker = [[UIImagePickerController alloc] init];
-    self.imagePicker.delegate = self;
-    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController:self.imagePicker animated:YES completion:nil];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    [Photo share].imgPhoto = [info objectForKey:kUIImagePickerOriginalImage];
-    PhotoEditorController *photoController = InitStoryBoardWithIdentifier(kPhotoEditorController);
-    [self.navigationController pushViewController:photoController animated:YES];
 }
 
 //*****************************************************************************

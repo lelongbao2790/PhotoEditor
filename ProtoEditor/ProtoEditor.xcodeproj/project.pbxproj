@@ -204,6 +204,14 @@
 		D3D7CCC21C3CD62B00953610 /* lookup_soft_elegance_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBD1C3CD62B00953610 /* lookup_soft_elegance_2.png */; };
 		D3D7CCC31C3CD62B00953610 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCBE1C3CD62B00953610 /* lookup.png */; };
 		D3D7CCC61C3DF76C00953610 /* BlendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D7CCC51C3DF76C00953610 /* BlendViewController.m */; };
+		D3D7CCCA1C3E49DA00953610 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCC81C3E49DA00953610 /* delete.png */; };
+		D3D7CCCD1C3E4A6500953610 /* apply.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D7CCCC1C3E4A6500953610 /* apply.png */; };
+		D3F9DC121C3F58E600B624DD /* NYPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F9DC0F1C3F58E600B624DD /* NYPopover.m */; };
+		D3F9DC131C3F58E600B624DD /* NYSliderPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F9DC111C3F58E600B624DD /* NYSliderPopover.m */; };
+		D3F9DC191C3F6C3C00B624DD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F9DC161C3F6C3C00B624DD /* MBProgressHUD.m */; };
+		D3F9DC1A1C3F6C3C00B624DD /* SNLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F9DC181C3F6C3C00B624DD /* SNLoading.m */; };
+		D3F9DC1D1C3FA2F700B624DD /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F9DC1C1C3FA2F700B624DD /* HomeController.m */; };
+		D3F9DC1F1C3FB9C000B624DD /* girl_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3F9DC1E1C3FB9C000B624DD /* girl_1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -615,6 +623,19 @@
 		D3D7CCC41C3DF76C00953610 /* BlendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlendViewController.h; path = Controller/PhotoEditorController/BlendViewController.h; sourceTree = "<group>"; };
 		D3D7CCC51C3DF76C00953610 /* BlendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlendViewController.m; path = Controller/PhotoEditorController/BlendViewController.m; sourceTree = "<group>"; };
 		D3D7CCC71C3E185B00953610 /* CommonColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonColor.h; path = Core/CommonColor.h; sourceTree = "<group>"; };
+		D3D7CCC81C3E49DA00953610 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		D3D7CCCC1C3E4A6500953610 /* apply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apply.png; sourceTree = "<group>"; };
+		D3F9DC0E1C3F58E600B624DD /* NYPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYPopover.h; sourceTree = "<group>"; };
+		D3F9DC0F1C3F58E600B624DD /* NYPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYPopover.m; sourceTree = "<group>"; };
+		D3F9DC101C3F58E600B624DD /* NYSliderPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSliderPopover.h; sourceTree = "<group>"; };
+		D3F9DC111C3F58E600B624DD /* NYSliderPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSliderPopover.m; sourceTree = "<group>"; };
+		D3F9DC151C3F6C3C00B624DD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		D3F9DC161C3F6C3C00B624DD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		D3F9DC171C3F6C3C00B624DD /* SNLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNLoading.h; sourceTree = "<group>"; };
+		D3F9DC181C3F6C3C00B624DD /* SNLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNLoading.m; sourceTree = "<group>"; };
+		D3F9DC1B1C3FA2F700B624DD /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeController.h; path = Controller/HomeController/HomeController.h; sourceTree = "<group>"; };
+		D3F9DC1C1C3FA2F700B624DD /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeController.m; path = Controller/HomeController/HomeController.m; sourceTree = "<group>"; };
+		D3F9DC1E1C3FB9C000B624DD /* girl_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl_1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -672,6 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				D3D7C87D1C3CA7A600953610 /* Dependencies */,
+				D3F9DC141C3F6C3C00B624DD /* MBProgressHUD */,
 				D3110C0B1C3B6EF5009DF6C4 /* UIDelegate */,
 				D3110BF51C3B609B009DF6C4 /* Helper */,
 				D3110BF41C3B5F49009DF6C4 /* View */,
@@ -762,6 +784,8 @@
 			children = (
 				D3110C0F1C3B7611009DF6C4 /* PhotoEditor */,
 				D3110BF21C3B5EF8009DF6C4 /* MainController */,
+				D3F9DC1B1C3FA2F700B624DD /* HomeController.h */,
+				D3F9DC1C1C3FA2F700B624DD /* HomeController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -835,6 +859,7 @@
 		D3D7C87D1C3CA7A600953610 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				D3F9DC0D1C3F58E600B624DD /* NYSliderPopover */,
 				D3D7C87E1C3CA7AE00953610 /* GPUImage */,
 			);
 			name = Dependencies;
@@ -1235,6 +1260,9 @@
 		D3D7CCB51C3CBA0B00953610 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				D3F9DC1E1C3FB9C000B624DD /* girl_1.jpg */,
+				D3D7CCCC1C3E4A6500953610 /* apply.png */,
+				D3D7CCC81C3E49DA00953610 /* delete.png */,
 				D3D7CCB81C3CC79500953610 /* girl_sample.png */,
 				D3D7CCBA1C3CD62B00953610 /* lookup_amatorka.png */,
 				D3D7CCBB1C3CD62B00953610 /* lookup_miss_etikate.png */,
@@ -1243,6 +1271,28 @@
 				D3D7CCBE1C3CD62B00953610 /* lookup.png */,
 			);
 			name = Image;
+			sourceTree = "<group>";
+		};
+		D3F9DC0D1C3F58E600B624DD /* NYSliderPopover */ = {
+			isa = PBXGroup;
+			children = (
+				D3F9DC0E1C3F58E600B624DD /* NYPopover.h */,
+				D3F9DC0F1C3F58E600B624DD /* NYPopover.m */,
+				D3F9DC101C3F58E600B624DD /* NYSliderPopover.h */,
+				D3F9DC111C3F58E600B624DD /* NYSliderPopover.m */,
+			);
+			path = NYSliderPopover;
+			sourceTree = "<group>";
+		};
+		D3F9DC141C3F6C3C00B624DD /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				D3F9DC151C3F6C3C00B624DD /* MBProgressHUD.h */,
+				D3F9DC161C3F6C3C00B624DD /* MBProgressHUD.m */,
+				D3F9DC171C3F6C3C00B624DD /* SNLoading.h */,
+				D3F9DC181C3F6C3C00B624DD /* SNLoading.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1354,10 +1404,13 @@
 				D3110BBB1C3B5CC9009DF6C4 /* LaunchScreen.storyboard in Resources */,
 				D3D7CCB91C3CC79500953610 /* girl_sample.png in Resources */,
 				D3110BB81C3B5CC9009DF6C4 /* Assets.xcassets in Resources */,
+				D3D7CCCD1C3E4A6500953610 /* apply.png in Resources */,
 				D3110BB31C3B5CC9009DF6C4 /* Main.storyboard in Resources */,
 				D3D7CCC31C3CD62B00953610 /* lookup.png in Resources */,
 				D3D7CCC21C3CD62B00953610 /* lookup_soft_elegance_2.png in Resources */,
+				D3D7CCCA1C3E49DA00953610 /* delete.png in Resources */,
 				D3D7CCC01C3CD62B00953610 /* lookup_miss_etikate.png in Resources */,
+				D3F9DC1F1C3FB9C000B624DD /* girl_1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1383,6 +1436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3D7CC591C3CAA5D00953610 /* GPUImageRGBOpeningFilter.m in Sources */,
+				D3F9DC121C3F58E600B624DD /* NYPopover.m in Sources */,
 				D3D7CC431C3CAA5D00953610 /* GPUImage3x3ConvolutionFilter.m in Sources */,
 				D3D7CC4B1C3CAA5D00953610 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
 				D3D7CC461C3CAA5D00953610 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
@@ -1398,6 +1452,7 @@
 				D3D7CC551C3CAA5D00953610 /* GPUImageRGBDilationFilter.m in Sources */,
 				D3D7CC081C3CAA5C00953610 /* GPUImageColorConversion.m in Sources */,
 				D3D7CC911C3CAA5D00953610 /* GPUImageCGAColorspaceFilter.m in Sources */,
+				D3F9DC131C3F58E600B624DD /* NYSliderPopover.m in Sources */,
 				D3D7CC581C3CAA5D00953610 /* GPUImageOpeningFilter.m in Sources */,
 				D3D7CC3F1C3CAA5C00953610 /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,
 				D3D7CC661C3CAA5D00953610 /* GPUImageMotionBlurFilter.m in Sources */,
@@ -1510,12 +1565,15 @@
 				D3D7CC321C3CAA5C00953610 /* GPUImageLuminosity.m in Sources */,
 				D3D7CC931C3CAA5D00953610 /* GPUImageSwirlFilter.m in Sources */,
 				D3D7CCA81C3CAA7E00953610 /* GPUImageMovieWriter.m in Sources */,
+				D3F9DC191C3F6C3C00B624DD /* MBProgressHUD.m in Sources */,
 				D3D7CC211C3CAA5C00953610 /* GPUImageSepiaFilter.m in Sources */,
 				D3D7CC331C3CAA5C00953610 /* GPUImageSolidColorGenerator.m in Sources */,
+				D3F9DC1A1C3F6C3C00B624DD /* SNLoading.m in Sources */,
 				D3D7CC9C1C3CAA5D00953610 /* GPUImageJFAVoronoiFilter.m in Sources */,
 				D3110BAA1C3B5CC9009DF6C4 /* main.m in Sources */,
 				D3D7CBFB1C3CAA5C00953610 /* GPUImageContext.m in Sources */,
 				D3D7CC4E1C3CAA5D00953610 /* GPUImageNobleCornerDetectionFilter.m in Sources */,
+				D3F9DC1D1C3FA2F700B624DD /* HomeController.m in Sources */,
 				D3D7CC721C3CAA5D00953610 /* GPUImageHardLightBlendFilter.m in Sources */,
 				D3D7CC961C3CAA5D00953610 /* GPUImageStretchDistortionFilter.m in Sources */,
 				D3D7CC8C1C3CAA5D00953610 /* GPUImageSketchFilter.m in Sources */,

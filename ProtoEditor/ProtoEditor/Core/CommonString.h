@@ -27,5 +27,10 @@
 [NSNumber numberWithInteger:kTypeAmatorka], @"Amatorka", nil]
 
 #define kImageSample [UIImage imageNamed:@"girl_sample.png"]
+#define kStringLoading @"Loading"
+#define kStringDone @"Done"
+#define kStringColor @"Color"
+#define kStringBlend @"Blend"
+#define kEmptyString @""
 
 #endif /* CommonString_h */

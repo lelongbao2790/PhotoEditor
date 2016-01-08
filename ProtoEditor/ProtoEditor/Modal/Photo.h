@@ -14,5 +14,10 @@
 
 @property (strong, nonatomic) UIImage *imgPhoto;
 @property (strong, nonatomic) UIImage *imgPhotoBlend;
+@property (assign, nonatomic) float brightnessValue;
+@property (assign, nonatomic) float exposureValue;
+@property (assign, nonatomic) float constrastValue;
+
+- (void)setPhotoColor:(float)brightValue andExposure:(float)exposure andConstrast:(float)constrast;
 
 @end

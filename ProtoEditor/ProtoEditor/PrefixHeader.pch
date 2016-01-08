@@ -24,10 +24,15 @@
 #import "UIImage+Filter.h"
 #import "GPUImage.h"
 #import "CommonColor.h"
+#import "NYSliderPopover.h"
+#import "SNLoading.h"
 
 // Storyboard
 #import "PhotoEditorController.h"
 #import "BlendViewController.h"
+#import "MainController.h"
+#import "HomeController.h"
 #import "FilterCell.h"
+#import "AppDelegate.h"
 
 #endif /* PrefixHeader_pch */

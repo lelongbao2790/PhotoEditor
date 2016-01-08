@@ -85,45 +85,72 @@
     GPUImageFilterGroup *stillImageFilterGroup = nil;
     __block UIImage *outputImage = originalImage;
     
-    // Check type filter
-    switch (typeFilter) {
-            
-            // Blend
-        case kTypeSepia: {
-            stillImageFilter = [[GPUImageSepiaFilter alloc] init];
-        } break;
-            
-        case kTypeGrayScale: {
-            stillImageFilter = [[GPUImageGrayscaleFilter alloc] init];
-        } break;
-            
-        case kTypeAmatorka: {
-            stillImageFilterGroup = [[GPUImageAmatorkaFilter alloc] init];
-            
-        } break;
-            
-        case kTypeGaussian: {
-            stillImageFilter = [[GPUImageGaussianBlurFilter alloc] init];
-        } break;
-            
-        case kTypeHighPass: {
-            stillImageFilterGroup = [[GPUImageHighPassFilter alloc] init];
-        } break;
-            
-        case kTypeMissEtikate: {
-            stillImageFilterGroup = [[GPUImageMissEtikateFilter alloc] init];
-        } break;
-            
-        case kTypeSoftElegan1: {
-            stillImageFilterGroup = [[GPUImageSoftEleganceFilter alloc] init];
-        } break;
-            
-        case kTypeInvert: {
-            stillImageFilter = [[GPUImageColorInvertFilter alloc] init];
-        } break;
-            
-        default:
-            break;
+    if (typeFilter == kTypeColor) {
+        // Init and set value
+        GPUImageBrightnessFilter *brightnessImage = [[GPUImageBrightnessFilter alloc] init];
+        GPUImageContrastFilter *constrastImage = [[GPUImageContrastFilter alloc] init];
+        GPUImageExposureFilter *exposure = [[GPUImageExposureFilter alloc] init];
+        brightnessImage.brightness = [Photo share].brightnessValue;
+        constrastImage.contrast = [Photo share].constrastValue;
+        exposure.exposure = [Photo share].exposureValue;
+        
+        // Add target
+        [stillImageSource addTarget:brightnessImage];
+        [brightnessImage addTarget:exposure];
+        [exposure addTarget:constrastImage];
+        [constrastImage useNextFrameForImageCapture];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+            [stillImageSource processImageWithCompletionHandler:^{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    outputImage = [constrastImage imageFromCurrentFramebuffer];
+                    callBack(outputImage);
+                });
+            }];
+        });
+        return;
+        
+    } else {
+        // Check type filter
+        switch (typeFilter) {
+                
+                // Blend
+            case kTypeSepia: {
+                stillImageFilter = [[GPUImageSepiaFilter alloc] init];
+            } break;
+                
+            case kTypeGrayScale: {
+                stillImageFilter = [[GPUImageGrayscaleFilter alloc] init];
+            } break;
+                
+            case kTypeAmatorka: {
+                stillImageFilterGroup = [[GPUImageAmatorkaFilter alloc] init];
+                
+            } break;
+                
+            case kTypeGaussian: {
+                stillImageFilter = [[GPUImageGaussianBlurFilter alloc] init];
+            } break;
+                
+            case kTypeHighPass: {
+                stillImageFilterGroup = [[GPUImageHighPassFilter alloc] init];
+            } break;
+                
+            case kTypeMissEtikate: {
+                stillImageFilterGroup = [[GPUImageMissEtikateFilter alloc] init];
+            } break;
+                
+            case kTypeSoftElegan1: {
+                stillImageFilterGroup = [[GPUImageSoftEleganceFilter alloc] init];
+            } break;
+                
+            case kTypeInvert: {
+                stillImageFilter = [[GPUImageColorInvertFilter alloc] init];
+            } break;
+                
+            default:
+                break;
+        }
+
     }
     
     // Export image
@@ -155,5 +182,38 @@
         callBack(outputImage);
     }
 }
+
+/*
+ * Get child root view controller
+ */
++ (nonnull UIViewController*) getChildRootViewController {
+    NSArray *s_viewController = @[kMainController,
+                                  kPhotoEditorController,
+                                  kBlendController];
+    for (NSString *stringViewController in s_viewController) {
+        if ([[AppDelegate share].homeController.navigationController.topViewController isKindOfClass:NSClassFromString(stringViewController)]) {
+            return [AppDelegate share].homeController.navigationController.topViewController;
+        }
+    }
+    
+    return nil;
+}
+
+/*
+ * Turn off left and right bar button
+ */
++ (void)turnOffBarButton:(nonnull UIViewController *)controller {
+    controller.navigationItem.leftBarButtonItem = nil;
+    controller.navigationItem.rightBarButtonItem = nil;
+}
+
+/*
+ * Turn on left and right bar button
+ */
++ (void)turnOnBarButton:(nonnull  UIViewController *)controller {
+    controller.navigationItem.leftBarButtonItem = [AppDelegate share].homeController.navigationBarCustom.leftBarButtonItem;
+    controller.navigationItem.rightBarButtonItem = [AppDelegate share].homeController.navigationBarCustom.rightBarButtonItem;
+}
+
 
 @end

@@ -25,11 +25,19 @@
     self = [super init];
     if (self) {
         // Set name default for user name
-        self.imgPhoto = nil;
+        self.imgPhoto = [UIImage imageNamed:@"girl_1.jpg"];
         self.imgPhotoBlend = nil;
+        self.brightnessValue = 0.0;
+        self.exposureValue = 0.0;
+        self.constrastValue = 1.0;
     }
     return self;
 }
 
+- (void)setPhotoColor:(float)brightValue andExposure:(float)exposure andConstrast:(float)constrast {
+    self.brightnessValue = brightValue;
+    self.exposureValue = exposure;
+    self.constrastValue = constrast;
+}
 
 @end

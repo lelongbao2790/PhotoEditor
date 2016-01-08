@@ -42,4 +42,19 @@ typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
  */
 + (void)filterImageWithImage:(nonnull UIImage *)originalImage andType:(NSInteger )typeFilter withCompletion:(nonnull LoadImageCompleted)callBack;
 
+/*
+ * Get child root view controller
+ */
++ (nonnull UIViewController*) getChildRootViewController;
+
+/*
+ * Turn off left and right bar button
+ */
++ (void)turnOffBarButton:(nonnull  UIViewController *)controller;
+
+/*
+ * Turn on left and right bar button
+ */
++ (void)turnOnBarButton:(nonnull  UIViewController *)controller;
+
 @end

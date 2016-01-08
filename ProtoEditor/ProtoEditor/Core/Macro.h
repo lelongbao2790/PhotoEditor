@@ -22,5 +22,13 @@
 #define kHeighImagePhoto [Photo share].imgPhoto.size.height
 #define kWindow [UIApplication sharedApplication].keyWindow
 
+#define kPhotoBlend ([Photo share].imgPhotoBlend) ?  [Photo share].imgPhotoBlend : [Photo share].imgPhoto
+#define kValueString(value) [NSString stringWithFormat:@"%.2f", value]
+
+// Progress Bar
+#define ProgressBarShowLoading(_Title_) [SNLoading showWithTitle:_Title_]
+#define ProgressBarDismissLoading(_Title_) [SNLoading hideWithTitle:_Title_]
+#define ProgressBarUpdateLoading(_Title_, _DetailsText_) [SNLoading updateWithTitle:_Title_ detailsText:_DetailsText_]
+#define getController [Utilities getChildRootViewController]
 
 #endif /* Macro_h */

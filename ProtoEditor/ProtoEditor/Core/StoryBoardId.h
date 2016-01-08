@@ -11,6 +11,7 @@
 
 #define kPhotoEditorController @"PhotoEditorController"
 #define kBlendController @"BlendViewController"
+#define kMainController @"MainController"
 #define kFilterCell @"FilterCell"
 #define kFilterCellIdentifier @"FilterCellIdentifier"
 

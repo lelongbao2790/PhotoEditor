@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UICollectionView *filterCollectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantBottomImage;
-@property (weak, nonatomic) IBOutlet UIView *viewLoading;
 
 @end
 
@@ -46,6 +45,8 @@
  * Method config view
  */
 - (void)config {
+    [Utilities turnOnBarButton:self];
+    
     // Set delegate for multiple device
     [Utilities fixAutolayoutWithDelegate:self];
     
@@ -59,6 +60,7 @@
     [self.filterCollectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
     
     // Show image
+    [Photo share].imgPhoto = kPhotoBlend;
     self.imageView.image = [Photo share].imgPhoto;
     [Utilities caculateImageSizeToPresent:self.imageView];
     
@@ -86,13 +88,15 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self.viewLoading setHidden:NO];
+    ProgressBarShowLoading(kStringLoading);
     NSInteger numberType = [self.dictFilter.allValues[indexPath.row] integerValue];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
         [Utilities filterImageWithImage:[Photo share].imgPhoto andType:numberType withCompletion:^(UIImage * _Nonnull imageComplete) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                ProgressBarDismissLoading(kStringDone);
                 self.imageView.image = imageComplete;
-                [self.viewLoading setHidden:YES];
+//                [Utilities caculateImageSizeToPresent:self.imageView];
+                
             });
         }];
     });
@@ -101,14 +105,5 @@
 //*****************************************************************************
 #pragma mark -
 #pragma mark - ** IBAction **
-
-- (IBAction)btnDelete:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)btnDone:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [Photo share].imgPhotoBlend = self.imageView.image;
-}
 
 @end

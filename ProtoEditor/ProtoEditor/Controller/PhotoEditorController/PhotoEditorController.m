@@ -8,17 +8,26 @@
 
 #import "PhotoEditorController.h"
 
-@interface PhotoEditorController ()
+@interface PhotoEditorController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 #pragma mark - Properties
-@property (assign, nonatomic) BOOL isShowViewEdit;
+@property (assign, nonatomic) NSInteger typePhotoEdit;
+@property (strong, nonatomic) UIImagePickerController *imagePicker;
 
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantWidthButton;
 @property (weak, nonatomic) IBOutlet UIView *viewEdit;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollEdit;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantBottomImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantLeftImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantRightImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantTopImage;
+@property (strong, nonatomic) IBOutlet UIView *viewChangeEdit;
+@property (weak, nonatomic) IBOutlet NYSliderPopover *sliderChange;
+@property (weak, nonatomic) IBOutlet UIView *viewChangePhotoEdit;
+@property (weak, nonatomic) IBOutlet NYSliderPopover *sliderExposure;
+@property (weak, nonatomic) IBOutlet NYSliderPopover *sliderConstrast;
 
 @end
 
@@ -31,6 +40,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self openLibraryPhoto];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,10 +52,31 @@
 - (void)viewWillAppear:(BOOL)animated {
     // Config
     [self config];
+    [self showImage];
 }
 
 - (void)viewDidLayoutSubviews {
-    [self.scrollEdit setContentSize:CGSizeMake(self.viewEdit.frame.size.width * 2, self.viewEdit.frame.size.height)];
+    [self.scrollEdit setContentSize:CGSizeMake(self.viewEdit.frame.size.width + 100, self.viewEdit.frame.size.height)];
+}
+
+//*****************************************************************************
+#pragma mark -
+#pragma mark - ** Action for Photo Editor **
+/*
+ * Open library photo
+ */
+- (void)openLibraryPhoto {
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.delegate = self;
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [Photo share].imgPhoto = [info objectForKey:kUIImagePickerOriginalImage];
+    [Photo share].imgPhotoBlend = nil;
+    [self showImage];
 }
 
 //*****************************************************************************
@@ -55,53 +87,106 @@
  * Method config view
  */
 - (void)config {
+    
+    [AppDelegate share].photoController = self;
+    
     // Set delegate for multiple device
     [Utilities fixAutolayoutWithDelegate:self];
     
-    
-    // Edit view
-    self.viewEdit.hidden = YES;
-    self.isShowViewEdit = NO;
-    self.scrollEdit.hidden = YES;
-    self.scrollEdit.backgroundColor = kColorBlackWithAlpha;
-    
-    
-    // Show image
-    [self showImage];
+    // Update slider value
+    [self updateSliderValue];
+}
+
+/*
+ * Update slider value
+ */
+- (void)updateSliderValue {
+    // Slider
+    self.sliderChange.popover.textLabel.text = kValueString(self.sliderChange.value);
+    self.sliderExposure.popover.textLabel.text = kValueString(self.sliderExposure.value);
+    self.sliderConstrast.popover.textLabel.text = kValueString(self.sliderConstrast.value);
 }
 
 - (void)showImage {
-    if ([Photo share].imgPhotoBlend) {
-        self.imageView.image = [Photo share].imgPhotoBlend;
-    } else {
-        self.imageView.image = [Photo share].imgPhoto;
-    }
+    self.imageView.image = kPhotoBlend;
     [Utilities caculateImageSizeToPresent:self.imageView];
 }
 
-- (void)configScrollView {
-    
+/*
+ * Zoom in image
+ */
+- (void)zoomInImage {
+    [Utilities addAnimation:self.imageView];
+    self.constantTopImage.constant = kConstantTopImageEdit;
+    self.constantBottomImage.constant = kConstantBottomImageEdit;
+    self.constantLeftImage.constant = kConstantLeftImageEdit;
+    self.constantRightImage.constant = kConstantRightImageEdit;
 }
 
+/*
+ * Zoom out image
+ */
+- (void)zoomOutImage {
+    [Utilities addAnimation:self.imageView];
+    self.constantTopImage.constant = kConstantTopImageNormal;
+    self.constantBottomImage.constant = kConstantBottomImageNormal;
+    self.constantLeftImage.constant = kConstantLeftImageNormal;
+    self.constantRightImage.constant = kConstantRightImageNormal;
+}
 
-//*****************************************************************************
-#pragma mark -
-#pragma mark - ** IBAction **
-- (IBAction)btnEdit:(id)sender {
-    if (self.isShowViewEdit) {
-        [self hideEditView];
-    } else {
-        [self showEditView];
-    }
+/*
+ * Delete action
+ */
+- (void)deleteAction {
+    [Photo share].imgPhotoBlend = nil;
+    [self hideEditView];
+    [self zoomOutImage];
+    [Utilities addAnimation:self.viewChangePhotoEdit];
+    self.viewChangePhotoEdit.hidden = YES;
+}
+
+/*
+ * Delete action
+ */
+- (void)applyAction {
+    // Reset to default
+    [self hideEditView];
+    [self zoomOutImage];
+    
+    [Utilities addAnimation:self.viewChangePhotoEdit];
+    self.viewChangePhotoEdit.hidden = YES;
+}
+
+/*
+ * Apply image
+ */
+- (void)applyImageWithSlideValue {
+    // Set value slider to photo
+    [[Photo share] setPhotoColor:self.sliderChange.value andExposure:self.sliderExposure.value andConstrast:self.sliderConstrast.value];
+    
+    // Filter image
+    ProgressBarShowLoading(kStringLoading);
+    [Utilities filterImageWithImage:kPhotoBlend andType:self.typePhotoEdit withCompletion:^(UIImage * _Nonnull imageComplete) {
+        ProgressBarDismissLoading(kStringDone);
+        [Photo share].imgPhotoBlend = imageComplete;
+        self.imageView.image = imageComplete;
+        [Utilities caculateImageSizeToPresent:self.imageView];
+        [self applyAction];
+        
+    }];
 }
 
 /*
  * Show / Hide view edit
  */
 - (void)showEditView {
-    self.isShowViewEdit = YES;
+    // Config slider menu
+    self.sliderChange.value = [Photo share].brightnessValue;
+    self.sliderConstrast.value = [Photo share].constrastValue;
+    self.sliderExposure.value = [Photo share].exposureValue;
+    
+    // Show view
     [Utilities addAnimation:self.scrollEdit];
-    self.viewEdit.hidden = NO;
     self.scrollEdit.hidden = NO;
 }
 
@@ -109,20 +194,65 @@
  * Hide edit view
  */
 - (void)hideEditView {
-    self.isShowViewEdit = NO;
     [Utilities addAnimation:self.scrollEdit];
-    self.viewEdit.hidden = YES;
     self.scrollEdit.hidden = YES;
 }
 
+/*
+ * Zoom photo
+ */
+- (void)zoomPhoto {
+    [self hideEditView];
+    [self zoomInImage];
+}
+
+/*
+ * Config view change edit
+ */
+- (void)configViewChangeEdit {
+    [Utilities addAnimation:self.viewChangePhotoEdit];
+    self.viewChangePhotoEdit.hidden = NO;
+}
+
+//*****************************************************************************
+#pragma mark -
+#pragma mark - ** IBAction **
+- (IBAction)btnEdit:(id)sender {
+    if (self.scrollEdit.hidden && self.viewChangePhotoEdit.hidden) {
+        [self showEditView];
+    } else {
+        [self hideEditView];
+    }
+}
 
 - (IBAction)btnBlend:(id)sender {
     [self hideEditView];
-    BlendViewController *blendController = InitStoryBoardWithIdentifier(kBlendController);
-    [self presentViewController:blendController animated:YES completion:nil];
 }
 - (IBAction)btnFrame:(id)sender {
     [self hideEditView];
+}
+
+//*****************************************************************************
+#pragma mark -
+#pragma mark - ** Edit action **
+
+- (IBAction)btnColor:(id)sender {
+    [Utilities turnOnBarButton:self];
+    
+    [self.viewChangePhotoEdit addSubview:self.viewChangeEdit];
+    self.typePhotoEdit = kTypeColor;
+    [self zoomPhoto];
+    [self configViewChangeEdit];
+}
+- (IBAction)btnBrightnessChange:(id)sender {
+    [self updateSliderValue];
+}
+
+- (IBAction)btnSliderExposure:(id)sender {
+    [self updateSliderValue];
+}
+- (IBAction)btnSliderConstrast:(id)sender {
+    [self updateSliderValue];
 }
 
 //*****************************************************************************
