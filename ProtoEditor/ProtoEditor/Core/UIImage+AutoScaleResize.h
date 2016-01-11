@@ -15,6 +15,16 @@
  */
 + (nonnull UIImage *)imageWithImage:(nonnull UIImage *)image scaledToSize:(CGSize)newSize;
 
+/*
+ * Mark image
+ */
++ (nonnull UIImage*) maskImage:(nonnull UIImage *)image withMask:(nonnull UIImage *)maskImage;
 
+/*
+ * Crop image
+ */
++ (nonnull UIImage*)imageByCropping:(nonnull UIImage *)imageToCrop toRect:(CGRect)rect;
+
++ (nonnull UIImage *) addImageToImage:(nonnull UIImage *)img withImage2:(nonnull UIImage *)img2 andRect:(CGRect)cropRect withImageWidth:(int) width;
 
 @end

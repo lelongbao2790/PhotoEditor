@@ -29,9 +29,9 @@ typedef NS_ENUM(NSInteger, BlendTag) {
 };
 
 typedef NS_ENUM(NSInteger, MultipleDevicePhotoEdit) {
-    kConstantWidthButtonPhotoEditIp5 = 100,
-    kConstantWidthButtonPhotoEditIp6 = 118,
-    kConstantWidthButtonPhotoEditIpad = 190,
+    kConstantWidthButtonPhotoEditIp5 = 70,
+    kConstantWidthButtonPhotoEditIp6 = 88,
+    kConstantWidthButtonPhotoEditIpad = 160,
     kConstantBottomImageNormal = 95,
     kConstantLeftImageNormal = -10,
     kConstantRightImageNormal = -10,
@@ -40,6 +40,7 @@ typedef NS_ENUM(NSInteger, MultipleDevicePhotoEdit) {
     kConstantRightImageEdit = 35,
     kConstantTopImageNormal = 8,
     kConstantTopImageEdit = 2,
+    kSpaceCrop = 40,
 };
 
 typedef NS_ENUM(NSInteger, FilterNumber) {

@@ -20,6 +20,27 @@
 		D3110C121C3B7635009DF6C4 /* PhotoEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C111C3B7635009DF6C4 /* PhotoEditorController.m */; };
 		D3110C151C3B765F009DF6C4 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C141C3B765F009DF6C4 /* Photo.m */; };
 		D3110C181C3B874C009DF6C4 /* UIImage+AutoScaleResize.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C171C3B874C009DF6C4 /* UIImage+AutoScaleResize.m */; };
+		D34A38C81C434A1B0018A030 /* PhotoFrameController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34A38C71C434A1B0018A030 /* PhotoFrameController.m */; };
+		D34A38CB1C434BEF0018A030 /* PhotoFrameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34A38CA1C434BEF0018A030 /* PhotoFrameCell.m */; };
+		D34A38D31C4360BA0018A030 /* frame_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38CC1C4360BA0018A030 /* frame_1.png */; };
+		D34A38D41C4360BA0018A030 /* frame_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38CD1C4360BA0018A030 /* frame_2.png */; };
+		D34A38D61C4360BA0018A030 /* frame_4.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38CF1C4360BA0018A030 /* frame_4.png */; };
+		D34A38D81C4360BA0018A030 /* frame_6.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38D11C4360BA0018A030 /* frame_6.png */; };
+		D34A38DD1C4360ED0018A030 /* frame_3.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38DA1C4360ED0018A030 /* frame_3.png */; };
+		D34A38DE1C4360ED0018A030 /* frame_5.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38DB1C4360ED0018A030 /* frame_5.png */; };
+		D34A38DF1C4360ED0018A030 /* frame_7.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38DC1C4360ED0018A030 /* frame_7.png */; };
+		D34A38E61C4381430018A030 /* DragView.m in Sources */ = {isa = PBXBuildFile; fileRef = D34A38E51C4381430018A030 /* DragView.m */; };
+		D34A38EA1C43985C0018A030 /* StickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34A38E91C43985C0018A030 /* StickerController.m */; };
+		D34A38EF1C43998F0018A030 /* sticker1.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38EB1C43998F0018A030 /* sticker1.png */; };
+		D34A38F01C43998F0018A030 /* sticker2.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38EC1C43998F0018A030 /* sticker2.png */; };
+		D34A38F11C43998F0018A030 /* sticker3.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38ED1C43998F0018A030 /* sticker3.png */; };
+		D34A38F21C43998F0018A030 /* sticker4.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38EE1C43998F0018A030 /* sticker4.png */; };
+		D34A38F91C43AA4D0018A030 /* sticker5.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38F31C43AA4D0018A030 /* sticker5.png */; };
+		D34A38FA1C43AA4D0018A030 /* sticker6.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38F41C43AA4D0018A030 /* sticker6.png */; };
+		D34A38FB1C43AA4D0018A030 /* sticker7.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38F51C43AA4D0018A030 /* sticker7.png */; };
+		D34A38FC1C43AA4D0018A030 /* sticker8.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38F61C43AA4D0018A030 /* sticker8.png */; };
+		D34A38FD1C43AA4D0018A030 /* sticker9.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38F71C43AA4D0018A030 /* sticker9.png */; };
+		D34A38FE1C43AA4D0018A030 /* sticker10.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38F81C43AA4D0018A030 /* sticker10.png */; };
 		D3D7CAA41C3CA88500953610 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D7CAA31C3CA88500953610 /* CoreMedia.framework */; };
 		D3D7CAA61C3CA89000953610 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D7CAA51C3CA89000953610 /* CoreVideo.framework */; };
 		D3D7CAA81C3CA89600953610 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D7CAA71C3CA89600953610 /* OpenGLES.framework */; };
@@ -265,6 +286,31 @@
 		D3110C141C3B765F009DF6C4 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = Modal/Photo.m; sourceTree = "<group>"; };
 		D3110C161C3B874C009DF6C4 /* UIImage+AutoScaleResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AutoScaleResize.h"; path = "Core/UIImage+AutoScaleResize.h"; sourceTree = "<group>"; };
 		D3110C171C3B874C009DF6C4 /* UIImage+AutoScaleResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AutoScaleResize.m"; path = "Core/UIImage+AutoScaleResize.m"; sourceTree = "<group>"; };
+		D34A38C61C434A1B0018A030 /* PhotoFrameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoFrameController.h; path = Controller/PhotoFrameController/PhotoFrameController.h; sourceTree = "<group>"; };
+		D34A38C71C434A1B0018A030 /* PhotoFrameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoFrameController.m; path = Controller/PhotoFrameController/PhotoFrameController.m; sourceTree = "<group>"; };
+		D34A38C91C434BEF0018A030 /* PhotoFrameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoFrameCell.h; path = Controller/PhotoFrameController/PhotoFrameCell.h; sourceTree = "<group>"; };
+		D34A38CA1C434BEF0018A030 /* PhotoFrameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoFrameCell.m; path = Controller/PhotoFrameController/PhotoFrameCell.m; sourceTree = "<group>"; };
+		D34A38CC1C4360BA0018A030 /* frame_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_1.png; sourceTree = "<group>"; };
+		D34A38CD1C4360BA0018A030 /* frame_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_2.png; sourceTree = "<group>"; };
+		D34A38CF1C4360BA0018A030 /* frame_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_4.png; sourceTree = "<group>"; };
+		D34A38D11C4360BA0018A030 /* frame_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_6.png; sourceTree = "<group>"; };
+		D34A38DA1C4360ED0018A030 /* frame_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_3.png; sourceTree = "<group>"; };
+		D34A38DB1C4360ED0018A030 /* frame_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_5.png; sourceTree = "<group>"; };
+		D34A38DC1C4360ED0018A030 /* frame_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_7.png; sourceTree = "<group>"; };
+		D34A38E41C4381430018A030 /* DragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragView.h; sourceTree = "<group>"; };
+		D34A38E51C4381430018A030 /* DragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragView.m; sourceTree = "<group>"; };
+		D34A38E81C43985C0018A030 /* StickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StickerController.h; path = Controller/StickerController/StickerController.h; sourceTree = "<group>"; };
+		D34A38E91C43985C0018A030 /* StickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StickerController.m; path = Controller/StickerController/StickerController.m; sourceTree = "<group>"; };
+		D34A38EB1C43998F0018A030 /* sticker1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker1.png; sourceTree = "<group>"; };
+		D34A38EC1C43998F0018A030 /* sticker2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker2.png; sourceTree = "<group>"; };
+		D34A38ED1C43998F0018A030 /* sticker3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker3.png; sourceTree = "<group>"; };
+		D34A38EE1C43998F0018A030 /* sticker4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker4.png; sourceTree = "<group>"; };
+		D34A38F31C43AA4D0018A030 /* sticker5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker5.png; sourceTree = "<group>"; };
+		D34A38F41C43AA4D0018A030 /* sticker6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker6.png; sourceTree = "<group>"; };
+		D34A38F51C43AA4D0018A030 /* sticker7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker7.png; sourceTree = "<group>"; };
+		D34A38F61C43AA4D0018A030 /* sticker8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker8.png; sourceTree = "<group>"; };
+		D34A38F71C43AA4D0018A030 /* sticker9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker9.png; sourceTree = "<group>"; };
+		D34A38F81C43AA4D0018A030 /* sticker10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker10.png; sourceTree = "<group>"; };
 		D3D7CAA31C3CA88500953610 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D3D7CAA51C3CA89000953610 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		D3D7CAA71C3CA89600953610 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -782,10 +828,11 @@
 		D3110BEE1C3B5ED4009DF6C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D34A38E71C43983C0018A030 /* StickerController */,
+				D34A38C51C4349F10018A030 /* PhotoFrameController */,
 				D3110C0F1C3B7611009DF6C4 /* PhotoEditor */,
 				D3110BF21C3B5EF8009DF6C4 /* MainController */,
-				D3F9DC1B1C3FA2F700B624DD /* HomeController.h */,
-				D3F9DC1C1C3FA2F700B624DD /* HomeController.m */,
+				D34A38C41C4348460018A030 /* HomeController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -811,6 +858,7 @@
 		D3110BF41C3B5F49009DF6C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D34A38E01C4380550018A030 /* Custom */,
 				D3110BEA1C3B5EAE009DF6C4 /* StoryBoard */,
 			);
 			name = View;
@@ -854,6 +902,44 @@
 				D3D7CCC51C3DF76C00953610 /* BlendViewController.m */,
 			);
 			name = PhotoEditor;
+			sourceTree = "<group>";
+		};
+		D34A38C41C4348460018A030 /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
+				D3F9DC1B1C3FA2F700B624DD /* HomeController.h */,
+				D3F9DC1C1C3FA2F700B624DD /* HomeController.m */,
+			);
+			name = HomeController;
+			sourceTree = "<group>";
+		};
+		D34A38C51C4349F10018A030 /* PhotoFrameController */ = {
+			isa = PBXGroup;
+			children = (
+				D34A38C61C434A1B0018A030 /* PhotoFrameController.h */,
+				D34A38C71C434A1B0018A030 /* PhotoFrameController.m */,
+				D34A38C91C434BEF0018A030 /* PhotoFrameCell.h */,
+				D34A38CA1C434BEF0018A030 /* PhotoFrameCell.m */,
+			);
+			name = PhotoFrameController;
+			sourceTree = "<group>";
+		};
+		D34A38E01C4380550018A030 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D34A38E41C4381430018A030 /* DragView.h */,
+				D34A38E51C4381430018A030 /* DragView.m */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		D34A38E71C43983C0018A030 /* StickerController */ = {
+			isa = PBXGroup;
+			children = (
+				D34A38E81C43985C0018A030 /* StickerController.h */,
+				D34A38E91C43985C0018A030 /* StickerController.m */,
+			);
+			name = StickerController;
 			sourceTree = "<group>";
 		};
 		D3D7C87D1C3CA7A600953610 /* Dependencies */ = {
@@ -1260,6 +1346,23 @@
 		D3D7CCB51C3CBA0B00953610 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				D34A38F31C43AA4D0018A030 /* sticker5.png */,
+				D34A38F41C43AA4D0018A030 /* sticker6.png */,
+				D34A38F51C43AA4D0018A030 /* sticker7.png */,
+				D34A38F61C43AA4D0018A030 /* sticker8.png */,
+				D34A38F71C43AA4D0018A030 /* sticker9.png */,
+				D34A38F81C43AA4D0018A030 /* sticker10.png */,
+				D34A38EB1C43998F0018A030 /* sticker1.png */,
+				D34A38EC1C43998F0018A030 /* sticker2.png */,
+				D34A38ED1C43998F0018A030 /* sticker3.png */,
+				D34A38EE1C43998F0018A030 /* sticker4.png */,
+				D34A38DA1C4360ED0018A030 /* frame_3.png */,
+				D34A38DB1C4360ED0018A030 /* frame_5.png */,
+				D34A38DC1C4360ED0018A030 /* frame_7.png */,
+				D34A38CC1C4360BA0018A030 /* frame_1.png */,
+				D34A38CD1C4360BA0018A030 /* frame_2.png */,
+				D34A38CF1C4360BA0018A030 /* frame_4.png */,
+				D34A38D11C4360BA0018A030 /* frame_6.png */,
 				D3F9DC1E1C3FB9C000B624DD /* girl_1.jpg */,
 				D3D7CCCC1C3E4A6500953610 /* apply.png */,
 				D3D7CCC81C3E49DA00953610 /* delete.png */,
@@ -1399,18 +1502,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34A38D81C4360BA0018A030 /* frame_6.png in Resources */,
 				D3D7CCC11C3CD62B00953610 /* lookup_soft_elegance_1.png in Resources */,
+				D34A38DD1C4360ED0018A030 /* frame_3.png in Resources */,
+				D34A38FC1C43AA4D0018A030 /* sticker8.png in Resources */,
+				D34A38DE1C4360ED0018A030 /* frame_5.png in Resources */,
 				D3D7CCBF1C3CD62B00953610 /* lookup_amatorka.png in Resources */,
 				D3110BBB1C3B5CC9009DF6C4 /* LaunchScreen.storyboard in Resources */,
 				D3D7CCB91C3CC79500953610 /* girl_sample.png in Resources */,
+				D34A38D41C4360BA0018A030 /* frame_2.png in Resources */,
+				D34A38FE1C43AA4D0018A030 /* sticker10.png in Resources */,
+				D34A38FD1C43AA4D0018A030 /* sticker9.png in Resources */,
 				D3110BB81C3B5CC9009DF6C4 /* Assets.xcassets in Resources */,
+				D34A38FA1C43AA4D0018A030 /* sticker6.png in Resources */,
+				D34A38F91C43AA4D0018A030 /* sticker5.png in Resources */,
+				D34A38F01C43998F0018A030 /* sticker2.png in Resources */,
+				D34A38EF1C43998F0018A030 /* sticker1.png in Resources */,
 				D3D7CCCD1C3E4A6500953610 /* apply.png in Resources */,
+				D34A38D31C4360BA0018A030 /* frame_1.png in Resources */,
 				D3110BB31C3B5CC9009DF6C4 /* Main.storyboard in Resources */,
+				D34A38DF1C4360ED0018A030 /* frame_7.png in Resources */,
 				D3D7CCC31C3CD62B00953610 /* lookup.png in Resources */,
 				D3D7CCC21C3CD62B00953610 /* lookup_soft_elegance_2.png in Resources */,
+				D34A38F21C43998F0018A030 /* sticker4.png in Resources */,
+				D34A38D61C4360BA0018A030 /* frame_4.png in Resources */,
 				D3D7CCCA1C3E49DA00953610 /* delete.png in Resources */,
 				D3D7CCC01C3CD62B00953610 /* lookup_miss_etikate.png in Resources */,
+				D34A38FB1C43AA4D0018A030 /* sticker7.png in Resources */,
 				D3F9DC1F1C3FB9C000B624DD /* girl_1.jpg in Resources */,
+				D34A38F11C43998F0018A030 /* sticker3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1475,6 +1595,7 @@
 				D3D7CC011C3CAA5C00953610 /* GPUImagePicture.m in Sources */,
 				D3D7CC9E1C3CAA5D00953610 /* GPUImageVoronoiConsumerFilter.m in Sources */,
 				D3D7CC701C3CAA5D00953610 /* GPUImageDissolveBlendFilter.m in Sources */,
+				D34A38C81C434A1B0018A030 /* PhotoFrameController.m in Sources */,
 				D3D7CC6D1C3CAA5D00953610 /* GPUImageColorDodgeBlendFilter.m in Sources */,
 				D3D7CC0C1C3CAA5C00953610 /* GPUImageThreeInputFilter.m in Sources */,
 				D3D7CC5F1C3CAA5D00953610 /* GPUImageLanczosResamplingFilter.m in Sources */,
@@ -1484,6 +1605,7 @@
 				D3D7CC071C3CAA5C00953610 /* GPUImageUIElement.m in Sources */,
 				D3D7CC3E1C3CAA5C00953610 /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				D3D7CBFD1C3CAA5C00953610 /* GPUImageFramebufferCache.m in Sources */,
+				D34A38E61C4381430018A030 /* DragView.m in Sources */,
 				D3D7CC6C1C3CAA5D00953610 /* GPUImageColorBurnBlendFilter.m in Sources */,
 				D3D7CC6F1C3CAA5D00953610 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				D3D7CC631C3CAA5D00953610 /* GPUImageHoughTransformLineDetector.m in Sources */,
@@ -1504,6 +1626,7 @@
 				D3D7CC971C3CAA5D00953610 /* GPUImageSphereRefractionFilter.m in Sources */,
 				D3D7CC561C3CAA5D00953610 /* GPUImageErosionFilter.m in Sources */,
 				D3D7CC041C3CAA5C00953610 /* GPUImageMovieComposition.m in Sources */,
+				D34A38EA1C43985C0018A030 /* StickerController.m in Sources */,
 				D3D7CC641C3CAA5D00953610 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				D3D7CC471C3CAA5D00953610 /* GPUImageDirectionalSobelEdgeDetectionFilter.m in Sources */,
 				D3D7CC761C3CAA5D00953610 /* GPUImageSubtractBlendFilter.m in Sources */,
@@ -1545,6 +1668,7 @@
 				D3D7CC5A1C3CAA5D00953610 /* GPUImageClosingFilter.m in Sources */,
 				D3D7CC531C3CAA5D00953610 /* GPUImageCrosshairGenerator.m in Sources */,
 				D3D7CBFF1C3CAA5C00953610 /* GPUImageVideoCamera.m in Sources */,
+				D34A38CB1C434BEF0018A030 /* PhotoFrameCell.m in Sources */,
 				D3D7CCA71C3CAA7E00953610 /* GPUImageView.m in Sources */,
 				D3D7CC8E1C3CAA5D00953610 /* GPUImageEmbossFilter.m in Sources */,
 				D3D7CC881C3CAA5D00953610 /* GPUImagePolkaDotFilter.m in Sources */,
@@ -1772,7 +1896,7 @@
 				INFOPLIST_FILE = ProtoEditor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Brian.ProtoEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = brian.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1787,7 +1911,7 @@
 				INFOPLIST_FILE = ProtoEditor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Brian.ProtoEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = brian.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

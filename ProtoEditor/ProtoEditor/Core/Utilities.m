@@ -189,6 +189,8 @@
 + (nonnull UIViewController*) getChildRootViewController {
     NSArray *s_viewController = @[kMainController,
                                   kPhotoEditorController,
+                                  kPhotoFrameController,
+                                  kStickerController,
                                   kBlendController];
     for (NSString *stringViewController in s_viewController) {
         if ([[AppDelegate share].homeController.navigationController.topViewController isKindOfClass:NSClassFromString(stringViewController)]) {
@@ -213,6 +215,34 @@
 + (void)turnOnBarButton:(nonnull  UIViewController *)controller {
     controller.navigationItem.leftBarButtonItem = [AppDelegate share].homeController.navigationBarCustom.leftBarButtonItem;
     controller.navigationItem.rightBarButtonItem = [AppDelegate share].homeController.navigationBarCustom.rightBarButtonItem;
+}
+
+/*
+ * Capture screen
+ */
++ (nonnull UIImage*)captureView:(nonnull UIView *)yourView withRect:(CGRect)frameCapture {
+//    CGRect rect = frameCapture;
+//    UIGraphicsBeginImageContext(rect.size);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [yourView.layer renderInContext:context];
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    return image;
+    
+    // Create a graphics context with the target size
+    // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
+    // On iOS prior to 4, fall back to use UIGraphicsBeginImageContext
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(frameCapture.size, NO, [UIScreen mainScreen].scale);
+    } else {
+        UIGraphicsBeginImageContext(frameCapture.size);
+    }
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(ctx, -frameCapture.origin.x, -frameCapture.origin.y);
+    [yourView.layer renderInContext:ctx];
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return viewImage;
 }
 
 

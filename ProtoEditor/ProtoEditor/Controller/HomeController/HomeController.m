@@ -37,20 +37,26 @@
 */
 - (IBAction)btnDelete:(id)sender {
     [Utilities turnOffBarButton:getController];
-    if ([getController isKindOfClass:[BlendViewController class]]) {
-        [getController.navigationController popViewControllerAnimated:YES];
-        [Photo share].imgPhotoBlend = nil;
-    } else if ([getController isKindOfClass:[PhotoEditorController class]]) {
-         [[AppDelegate share].photoController deleteAction];
-    }
     
+    if ([getController isKindOfClass:[PhotoEditorController class]]) {
+        [[AppDelegate share].photoController deleteAction];
+    } else {
+        [getController.navigationController popViewControllerAnimated:YES];
+    }
 }
 - (IBAction)btnDone:(id)sender {
     [Utilities turnOffBarButton:getController];
-    if ([getController isKindOfClass:[BlendViewController class]]) {
-        [getController.navigationController popViewControllerAnimated:YES];
-    } else if ([getController isKindOfClass:[PhotoEditorController class]]) {
+    if ([getController isKindOfClass:[PhotoEditorController class]]) {
         [[AppDelegate share].photoController applyImageWithSlideValue];
+    } else if ([getController isKindOfClass:[PhotoFrameController class]]) {
+        [[AppDelegate share].photoFrameController applyFrameImage];
+        [getController.navigationController popViewControllerAnimated:YES];
+    } else if ([getController isKindOfClass:[StickerController class]]) {
+        [[AppDelegate share].stickerController applyFrameImage];
+        [getController.navigationController popViewControllerAnimated:YES];
+    }
+    else {
+        [getController.navigationController popViewControllerAnimated:YES];
     }
 }
 

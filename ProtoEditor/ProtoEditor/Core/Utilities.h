@@ -57,4 +57,14 @@ typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
  */
 + (void)turnOnBarButton:(nonnull  UIViewController *)controller;
 
+/*
+ * Capture screen
+ */
++ (nonnull UIImage*)captureView:(nonnull UIView *)yourView withRect:(CGRect)frameCapture;
+
+/*
+ * Get image from name
+ */
++ (nonnull UIImage *)drawImage:(nonnull UIImage *)inputImage inRect:(CGRect)frame originalImage:(nonnull UIImage *)originalImage;
+
 @end

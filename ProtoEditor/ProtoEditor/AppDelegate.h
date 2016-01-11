@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+@class PhotoFrameController;
+@class StickerController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 + (AppDelegate *)share;
@@ -20,6 +23,8 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) HomeController *homeController;
 @property (strong, nonatomic) PhotoEditorController *photoController;
+@property (strong, nonatomic) PhotoFrameController *photoFrameController;
+@property (strong, nonatomic) StickerController *stickerController;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

@@ -41,7 +41,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self openLibraryPhoto];
+    [self config];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +51,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     // Config
-    [self config];
+    
     [self showImage];
 }
 
@@ -95,6 +95,9 @@
     
     // Update slider value
     [self updateSliderValue];
+     [self.imageView setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openLibraryPhoto)];
+    [self.imageView addGestureRecognizer:tapImage];
 }
 
 /*
@@ -109,7 +112,7 @@
 
 - (void)showImage {
     self.imageView.image = kPhotoBlend;
-    [Utilities caculateImageSizeToPresent:self.imageView];
+//    [Utilities caculateImageSizeToPresent:self.imageView];
 }
 
 /*

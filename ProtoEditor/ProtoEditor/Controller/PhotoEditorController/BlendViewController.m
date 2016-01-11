@@ -16,7 +16,6 @@
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UICollectionView *filterCollectionView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantBottomImage;
 
 @end
 
@@ -51,7 +50,6 @@
     [Utilities fixAutolayoutWithDelegate:self];
     
     // Init
-    self.filterCollectionView.delegate = self;
     self.dictFilter = kDictListFilter;
     
     // Register custom cell
@@ -95,6 +93,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 ProgressBarDismissLoading(kStringDone);
                 self.imageView.image = imageComplete;
+                [Photo share].imgPhotoBlend = imageComplete;
 //                [Utilities caculateImageSizeToPresent:self.imageView];
                 
             });

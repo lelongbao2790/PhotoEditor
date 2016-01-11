@@ -26,6 +26,26 @@
 [NSNumber numberWithInteger:kTypeGrayScale], @"Grayscale", \
 [NSNumber numberWithInteger:kTypeAmatorka], @"Amatorka", nil]
 
+#define kDictListFrameImage [[NSDictionary alloc] initWithObjectsAndKeys: [UIImage imageNamed:@"frame_1.png"], [NSNumber numberWithInteger:0], \
+[UIImage imageNamed:@"frame_2.png"], [NSNumber numberWithInteger:1], \
+[UIImage imageNamed:@"frame_3.png"], [NSNumber numberWithInteger:2], \
+[UIImage imageNamed:@"frame_4.png"], [NSNumber numberWithInteger:3], \
+[UIImage imageNamed:@"frame_5.png"], [NSNumber numberWithInteger:4], \
+[UIImage imageNamed:@"frame_6.png"], [NSNumber numberWithInteger:5], \
+[UIImage imageNamed:@"frame_7.png"], [NSNumber numberWithInteger:6], nil]
+
+#define kListStickerImage [NSArray arrayWithObjects:[UIImage imageNamed:@"sticker1.png"], \
+[UIImage imageNamed:@"sticker2.png"], \
+[UIImage imageNamed:@"sticker3.png"], \
+[UIImage imageNamed:@"sticker4.png"], \
+[UIImage imageNamed:@"sticker5.png"], \
+[UIImage imageNamed:@"sticker6.png"], \
+[UIImage imageNamed:@"sticker7.png"], \
+[UIImage imageNamed:@"sticker8.png"], \
+[UIImage imageNamed:@"sticker9.png"], \
+[UIImage imageNamed:@"sticker10.png"], nil]
+
+
 #define kImageSample [UIImage imageNamed:@"girl_sample.png"]
 #define kStringLoading @"Loading"
 #define kStringDone @"Done"
