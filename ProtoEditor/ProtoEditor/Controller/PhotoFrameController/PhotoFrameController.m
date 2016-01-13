@@ -54,7 +54,6 @@
     
     // Show image
     self.imageOrignial.image = kPhotoBlend;
-    self.imageOrignial.frame = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.imageOrignial];
     self.imageOrignial.userInteractionEnabled = YES;
     self.imageOrignial.viewDrag = self.imageView;
     
@@ -84,7 +83,6 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     UIImage *frameImg = self.dictPhotoFrame.allValues[indexPath.row];
     self.imageView.image = frameImg;
-    self.imageView.frame = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.imageView];
 }
 
 - (void)applyFrameImage {

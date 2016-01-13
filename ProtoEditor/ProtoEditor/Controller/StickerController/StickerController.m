@@ -96,7 +96,9 @@
 }
 
 - (void)applyFrameImage {
-    [Photo share].imgPhotoBlend = [Utilities captureView:self.view withRect:self.imageOriginal.frame];
+    [Photo share].imgPhotoBlend = [UIImage imageWithImage:[Utilities captureView:self.view withRect:self.imageOriginal.frame]
+                                             scaledToSize:[Photo share].imgPhoto.size];
+
 }
 
 @end
