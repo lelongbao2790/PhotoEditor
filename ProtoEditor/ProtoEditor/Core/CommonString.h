@@ -52,5 +52,6 @@
 #define kStringColor @"Color"
 #define kStringBlend @"Blend"
 #define kEmptyString @""
+#define kSaveImageSuccess @"Photo saved to album"
 
 #endif /* CommonString_h */

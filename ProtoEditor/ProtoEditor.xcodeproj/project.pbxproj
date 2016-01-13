@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30C9B811C45E829001B161C /* SPUserResizableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D30C9B801C45E829001B161C /* SPUserResizableView.m */; };
+		D30C9B841C45F26A001B161C /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = D30C9B831C45F26A001B161C /* no_image.png */; };
+		D30C9B871C45FC34001B161C /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D30C9B861C45FC34001B161C /* iToast.m */; };
 		D3110BAA1C3B5CC9009DF6C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BA91C3B5CC9009DF6C4 /* main.m */; };
 		D3110BAD1C3B5CC9009DF6C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BAC1C3B5CC9009DF6C4 /* AppDelegate.m */; };
 		D3110BB31C3B5CC9009DF6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3110BB11C3B5CC9009DF6C4 /* Main.storyboard */; };
@@ -253,6 +256,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D30C9B7F1C45E829001B161C /* SPUserResizableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUserResizableView.h; sourceTree = "<group>"; };
+		D30C9B801C45E829001B161C /* SPUserResizableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUserResizableView.m; sourceTree = "<group>"; };
+		D30C9B831C45F26A001B161C /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no\U0010_image.png"; sourceTree = "<group>"; };
+		D30C9B851C45FC34001B161C /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		D30C9B861C45FC34001B161C /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 		D3110BA51C3B5CC9009DF6C4 /* ProtoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3110BA91C3B5CC9009DF6C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3110BAB1C3B5CC9009DF6C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -689,8 +697,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3D7CAAE1C3CA9F100953610 /* UIKit.framework in Frameworks */,
 				D3D7CAAC1C3CA8A500953610 /* QuartzCore.framework in Frameworks */,
+				D3D7CAAE1C3CA9F100953610 /* UIKit.framework in Frameworks */,
 				D3D7CAAA1C3CA89F00953610 /* AVFoundation.framework in Frameworks */,
 				D3D7CAA81C3CA89600953610 /* OpenGLES.framework in Frameworks */,
 				D3D7CAA61C3CA89000953610 /* CoreVideo.framework in Frameworks */,
@@ -715,6 +723,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D30C9B821C45E82E001B161C /* SPUserResizableView */ = {
+			isa = PBXGroup;
+			children = (
+				D30C9B7F1C45E829001B161C /* SPUserResizableView.h */,
+				D30C9B801C45E829001B161C /* SPUserResizableView.m */,
+			);
+			name = SPUserResizableView;
+			sourceTree = "<group>";
+		};
+		D30C9B881C45FC38001B161C /* iToast */ = {
+			isa = PBXGroup;
+			children = (
+				D30C9B851C45FC34001B161C /* iToast.h */,
+				D30C9B861C45FC34001B161C /* iToast.m */,
+			);
+			name = iToast;
+			sourceTree = "<group>";
+		};
 		D3110B9C1C3B5CC9009DF6C4 = {
 			isa = PBXGroup;
 			children = (
@@ -945,6 +971,8 @@
 		D3D7C87D1C3CA7A600953610 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				D30C9B881C45FC38001B161C /* iToast */,
+				D30C9B821C45E82E001B161C /* SPUserResizableView */,
 				D3F9DC0D1C3F58E600B624DD /* NYSliderPopover */,
 				D3D7C87E1C3CA7AE00953610 /* GPUImage */,
 			);
@@ -1346,6 +1374,7 @@
 		D3D7CCB51C3CBA0B00953610 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				D30C9B831C45F26A001B161C /* no_image.png */,
 				D34A38F31C43AA4D0018A030 /* sticker5.png */,
 				D34A38F41C43AA4D0018A030 /* sticker6.png */,
 				D34A38F51C43AA4D0018A030 /* sticker7.png */,
@@ -1529,6 +1558,7 @@
 				D3D7CCCA1C3E49DA00953610 /* delete.png in Resources */,
 				D3D7CCC01C3CD62B00953610 /* lookup_miss_etikate.png in Resources */,
 				D34A38FB1C43AA4D0018A030 /* sticker7.png in Resources */,
+				D30C9B841C45F26A001B161C /* no_image.png in Resources */,
 				D3F9DC1F1C3FB9C000B624DD /* girl_1.jpg in Resources */,
 				D34A38F11C43998F0018A030 /* sticker3.png in Resources */,
 			);
@@ -1623,6 +1653,7 @@
 				D3D7CC4A1C3CAA5D00953610 /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
 				D3110BAD1C3B5CC9009DF6C4 /* AppDelegate.m in Sources */,
 				D3D7CC8F1C3CAA5D00953610 /* GPUImageToonFilter.m in Sources */,
+				D30C9B871C45FC34001B161C /* iToast.m in Sources */,
 				D3D7CC971C3CAA5D00953610 /* GPUImageSphereRefractionFilter.m in Sources */,
 				D3D7CC561C3CAA5D00953610 /* GPUImageErosionFilter.m in Sources */,
 				D3D7CC041C3CAA5C00953610 /* GPUImageMovieComposition.m in Sources */,
@@ -1671,6 +1702,7 @@
 				D34A38CB1C434BEF0018A030 /* PhotoFrameCell.m in Sources */,
 				D3D7CCA71C3CAA7E00953610 /* GPUImageView.m in Sources */,
 				D3D7CC8E1C3CAA5D00953610 /* GPUImageEmbossFilter.m in Sources */,
+				D30C9B811C45E829001B161C /* SPUserResizableView.m in Sources */,
 				D3D7CC881C3CAA5D00953610 /* GPUImagePolkaDotFilter.m in Sources */,
 				D3D7CC061C3CAA5C00953610 /* GPUImageRawDataInput.m in Sources */,
 				D3D7CC0F1C3CAA5C00953610 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,

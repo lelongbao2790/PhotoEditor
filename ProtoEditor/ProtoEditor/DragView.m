@@ -10,8 +10,9 @@
 
 @implementation DragView
 @synthesize p;
+
 - (void)touchesMoved:(NSSet *)set withEvent:(UIEvent *)event {
-    p = [[set anyObject] locationInView:self.superview];
+    p = [[set anyObject] locationInView:self.viewDrag];
     self.center = p;
 }
 

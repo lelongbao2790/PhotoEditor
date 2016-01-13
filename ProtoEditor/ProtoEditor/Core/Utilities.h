@@ -62,9 +62,14 @@ typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
  */
 + (nonnull UIImage*)captureView:(nonnull UIView *)yourView withRect:(CGRect)frameCapture;
 
-/*
- * Get image from name
+/**
+ * Show iToast message for informing.
+ * @param message
  */
-+ (nonnull UIImage *)drawImage:(nonnull UIImage *)inputImage inRect:(CGRect)frame originalImage:(nonnull UIImage *)originalImage;
++ (void)showiToastMessage:(nonnull NSString *)message;
+
++ (CGRect)frameForImage:(nonnull UIImage*)image inImageViewAspectFit:(nonnull UIImageView*)imageView;
+
++ (CGRect)caculateFrameImage:(nonnull UIImage *)imageComplete andImageView:(nonnull UIImageView *)imageView andTopConstant:(CGFloat)topConstant;
 
 @end

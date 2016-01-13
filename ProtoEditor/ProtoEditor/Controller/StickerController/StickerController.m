@@ -89,17 +89,14 @@
     DragView *imageStickerTmp = [[DragView alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - imgSticker.size.width,
                                                                                 self.view.frame.size.height / 2 - imgSticker.size.height
                                                                                  , imgSticker.size.width, imgSticker.size.height)];
+    imageStickerTmp.viewDrag = self.imageOriginal;
     imageStickerTmp.userInteractionEnabled = YES;
     imageStickerTmp.image = imgSticker;
     [self.view addSubview:imageStickerTmp];
 }
 
 - (void)applyFrameImage {
-    CGRect captureFrame = CGRectMake(self.view.frame.origin.x,
-                                     self.view.frame.origin.y+kSpaceCrop,
-                                     self.view.frame.size.width,
-                                     self.view.frame.size.height - self.photoStickerCollectionView.frame.size.height - kSpaceCrop);
-    [Photo share].imgPhotoBlend = [Utilities captureView:self.view withRect:captureFrame];
+    [Photo share].imgPhotoBlend = [Utilities captureView:self.view withRect:self.imageOriginal.frame];
 }
 
 @end

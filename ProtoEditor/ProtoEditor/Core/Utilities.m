@@ -8,6 +8,8 @@
 
 #import "Utilities.h"
 
+#define TIME_DURATION_TOAST 300
+
 @implementation Utilities
 
 /**
@@ -103,6 +105,9 @@
             [stillImageSource processImageWithCompletionHandler:^{
                 dispatch_async(dispatch_get_main_queue(), ^{
                     outputImage = [constrastImage imageFromCurrentFramebuffer];
+                    
+                    // Prevent output image auto rotate
+                    outputImage = [UIImage imageWithCGImage:[outputImage CGImage] scale:1.0 orientation:originalImage.imageOrientation];
                     callBack(outputImage);
                 });
             }];
@@ -147,6 +152,12 @@
                 stillImageFilter = [[GPUImageColorInvertFilter alloc] init];
             } break;
                 
+            case kTypeBlur: {
+                GPUImageGaussianBlurFilter *blurImage = [[GPUImageGaussianBlurFilter alloc] init];
+                blurImage.blurRadiusInPixels = 40.0;
+                stillImageFilter = blurImage;
+            }
+                
             default:
                 break;
         }
@@ -161,6 +172,7 @@
             [stillImageSource processImageWithCompletionHandler:^{
                 dispatch_async(dispatch_get_main_queue(), ^{
                     outputImage = [stillImageFilter imageFromCurrentFramebuffer];
+                    outputImage = [UIImage imageWithCGImage:[outputImage CGImage] scale:1.0 orientation:originalImage.imageOrientation];
                     callBack(outputImage);
                 });
             }];
@@ -173,6 +185,7 @@
             [stillImageSource processImageWithCompletionHandler:^{
                 dispatch_async(dispatch_get_main_queue(), ^{
                     outputImage = [stillImageFilterGroup imageFromCurrentFramebuffer];
+                    outputImage = [UIImage imageWithCGImage:[outputImage CGImage] scale:1.0 orientation:originalImage.imageOrientation];
                     callBack(outputImage);
                 });
             }];
@@ -221,17 +234,6 @@
  * Capture screen
  */
 + (nonnull UIImage*)captureView:(nonnull UIView *)yourView withRect:(CGRect)frameCapture {
-//    CGRect rect = frameCapture;
-//    UIGraphicsBeginImageContext(rect.size);
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    [yourView.layer renderInContext:context];
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    return image;
-    
-    // Create a graphics context with the target size
-    // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
-    // On iOS prior to 4, fall back to use UIGraphicsBeginImageContext
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
         UIGraphicsBeginImageContextWithOptions(frameCapture.size, NO, [UIScreen mainScreen].scale);
     } else {
@@ -243,7 +245,76 @@
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return viewImage;
+    
 }
 
+/**
+ * Show iToast message for informing.
+ * @param message
+ */
++ (void)showiToastMessage:(nonnull NSString *)message
+{
+    
+    iToastSettings *theSettings = [iToastSettings getSharedSettings];
+    theSettings.duration = TIME_DURATION_TOAST;
+    
+    // Prevent crash with null string
+    if (message == (id)[NSNull null]) {
+        message = kEmptyString;
+    }
+    
+    [[[[iToast makeText:message]
+       setGravity:iToastGravityBottom] setDuration:iToastDurationNormal] show];
+}
+
++ (CGRect)frameForImage:(nonnull UIImage*)image inImageViewAspectFit:(nonnull UIImageView*)imageView
+{
+    float imageRatio = image.size.width / image.size.height;
+    
+    float viewRatio = imageView.frame.size.width / imageView.frame.size.height;
+    
+    if(imageRatio < viewRatio)
+    {
+        float scale = imageView.frame.size.height / image.size.height;
+        
+        float width = scale * image.size.width;
+        
+        float topLeftX = (imageView.frame.size.width - width) * 0.5;
+        
+        return CGRectMake(topLeftX, 0, width, imageView.frame.size.height);
+    }
+    else
+    {
+        float scale = imageView.frame.size.width / image.size.width;
+        
+        float height = scale * image.size.height;
+        
+        float topLeftY = (imageView.frame.size.height - height) * 0.5;
+        
+        return CGRectMake(0, topLeftY, imageView.frame.size.width, height);
+    }
+}
+
++ (CGRect)caculateFrameImage:(nonnull UIImage *)imageComplete andImageView:(nonnull UIImageView *)imageView andTopConstant:(CGFloat)topConstant {
+    
+    CGRect rectImageConvert = [Utilities frameForImage:imageComplete inImageViewAspectFit:imageView];
+    CGRect rectImageView = imageView.frame;
+    
+    if (rectImageView.size.width > rectImageConvert.size.width) {
+        rectImageConvert.origin.x = (rectImageView.size.width - rectImageConvert.size.width)/2;
+    } else if (rectImageView.size.width < rectImageConvert.size.width) {
+        rectImageConvert.origin.x = (rectImageConvert.size.width - rectImageView.size.width)/2;
+    } else {
+        rectImageConvert.origin.x = rectImageView.origin.x;
+    }
+    
+    if (rectImageView.size.height > rectImageConvert.size.height) {
+        rectImageConvert.origin.y = (rectImageView.size.height - rectImageConvert.size.height)/2 + 64 + topConstant;
+    } else if (rectImageView.size.height < rectImageConvert.size.height) {
+        rectImageConvert.origin.y = (rectImageConvert.size.height - rectImageView.size.height)/2 + 64 + topConstant;
+    }
+    
+    return rectImageConvert;
+}
 
 @end

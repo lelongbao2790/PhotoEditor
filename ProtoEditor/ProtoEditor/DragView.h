@@ -10,6 +10,8 @@
 
 @interface DragView : UIImageView
 
+@property (strong, nonatomic) UIView *viewDrag;
+
 @property CGPoint p;
 
 @end

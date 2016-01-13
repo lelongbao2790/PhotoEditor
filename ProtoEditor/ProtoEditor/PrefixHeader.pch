@@ -26,6 +26,8 @@
 #import "CommonColor.h"
 #import "NYSliderPopover.h"
 #import "SNLoading.h"
+#import "iToast.h"
+#import "MBProgressHUD.h"
 
 // Storyboard
 #import "PhotoEditorController.h"
@@ -38,5 +40,6 @@
 #import "PhotoFrameController.h"
 #import "StickerController.h"
 #import "DragView.h"
+#import "SPUserResizableView.h"
 
 #endif /* PrefixHeader_pch */

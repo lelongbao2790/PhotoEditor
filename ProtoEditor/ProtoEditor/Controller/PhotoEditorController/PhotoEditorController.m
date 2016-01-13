@@ -13,6 +13,7 @@
 #pragma mark - Properties
 @property (assign, nonatomic) NSInteger typePhotoEdit;
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
+@property (strong, nonatomic) UIImage *tempImage;
 
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -23,11 +24,15 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantLeftImage;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantRightImage;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantTopImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintWidthCenterImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintHeightCenterImage;
 @property (strong, nonatomic) IBOutlet UIView *viewChangeEdit;
 @property (weak, nonatomic) IBOutlet NYSliderPopover *sliderChange;
 @property (weak, nonatomic) IBOutlet UIView *viewChangePhotoEdit;
 @property (weak, nonatomic) IBOutlet NYSliderPopover *sliderExposure;
 @property (weak, nonatomic) IBOutlet NYSliderPopover *sliderConstrast;
+@property (weak, nonatomic) IBOutlet UIImageView *centerImageBlur;
+
 
 @end
 
@@ -52,7 +57,15 @@
 - (void)viewWillAppear:(BOOL)animated {
     // Config
     
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveImage)];
+    self.navigationItem.rightBarButtonItem = barButton;
+    
     [self showImage];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationItem.rightBarButtonItem = nil;
+    self.centerImageBlur.hidden = YES;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -111,8 +124,9 @@
 }
 
 - (void)showImage {
+    
     self.imageView.image = kPhotoBlend;
-//    [Utilities caculateImageSizeToPresent:self.imageView];
+    self.centerImageBlur.hidden = YES;
 }
 
 /*
@@ -256,6 +270,48 @@
 }
 - (IBAction)btnSliderConstrast:(id)sender {
     [self updateSliderValue];
+}
+- (IBAction)btnBlur:(id)sender {
+    if (self.centerImageBlur.hidden) {
+        ProgressBarShowLoading(kStringLoading);
+        [self performSelectorInBackground:@selector(blurImage) withObject:nil];
+    }
+}
+
+- (void)blurImage {
+    [Utilities filterImageWithImage:kPhotoBlend andType:kTypeBlur withCompletion:^(UIImage * _Nonnull imageComplete) {
+        [self performSelectorOnMainThread:@selector(updateBlurImageInMain:) withObject:imageComplete waitUntilDone:YES];
+    }];
+}
+
+- (void)updateBlurImageInMain:(UIImage *)imageComplete {
+    [self hideEditView];
+    ProgressBarDismissLoading(@"");
+    self.imageView.image = imageComplete;
+    self.centerImageBlur.image = kPhotoBlend;
+    self.centerImageBlur.hidden = NO;
+    self.centerImageBlur.layer.cornerRadius = 5.0;
+    self.centerImageBlur.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.centerImageBlur.layer.borderWidth = 1.0f;
+    self.constraintWidthCenterImage.constant = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.centerImageBlur].size.width;
+    self.constraintHeightCenterImage.constant = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.centerImageBlur].size.height;
+    CGRect realRectImage = [Utilities caculateFrameImage:imageComplete andImageView:self.imageView andTopConstant:self.constantTopImage.constant];
+     [Photo share].imgPhotoBlend = [UIImage imageWithImage:[Utilities captureView:self.view withRect:realRectImage] scaledToSize:[Photo share].imgPhoto.size];
+}
+
+- (IBAction)btnCropImage:(id)sender {
+    
+}
+
+- (void)saveImage {
+    if (self.tempImage) {
+        self.imageView.image = self.tempImage;
+        [Photo share].imgPhotoBlend = self.tempImage;
+        self.tempImage = nil;
+    }
+    
+    UIImageWriteToSavedPhotosAlbum(kPhotoBlend, nil, nil, nil);
+    [Utilities showiToastMessage:kSaveImageSuccess];
 }
 
 //*****************************************************************************

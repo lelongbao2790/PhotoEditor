@@ -76,4 +76,16 @@
     
 }
 
+/*
+ * Get image from name
+ */
++ (nonnull UIImage *)drawImage:(nonnull UIImage *)inputImage inRect:(CGRect)frame originalImage:(nonnull UIImage *)originalImage {
+    UIGraphicsBeginImageContextWithOptions(originalImage.size, NO, 0.0);
+    [originalImage drawInRect:CGRectMake(0.0, 0.0, originalImage.size.width, originalImage.size.height)];
+    [inputImage drawInRect:frame];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 @end

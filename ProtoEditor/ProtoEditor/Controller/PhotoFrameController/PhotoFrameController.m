@@ -54,8 +54,9 @@
     
     // Show image
     self.imageOrignial.image = kPhotoBlend;
+    self.imageOrignial.frame = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.imageOrignial];
     self.imageOrignial.userInteractionEnabled = YES;
-    [Utilities caculateImageSizeToPresent:self.imageOrignial];
+    self.imageOrignial.viewDrag = self.imageView;
     
 }
 
@@ -81,16 +82,13 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIImage *frameImg = [UIImage imageWithImage:self.dictPhotoFrame.allValues[indexPath.row] scaledToSize:self.imageView.frame.size];
+    UIImage *frameImg = self.dictPhotoFrame.allValues[indexPath.row];
     self.imageView.image = frameImg;
+    self.imageView.frame = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.imageView];
 }
 
 - (void)applyFrameImage {
-    CGRect captureFrame = CGRectMake(self.view.frame.origin.x,
-                                     self.imageView.frame.origin.y + kSpaceCrop,
-                                     self.view.frame.size.width,
-                                     self.imageView.frame.size.height - self.photoFrameCollectionView.frame.size.height - kSpaceCrop);
-    [Photo share].imgPhotoBlend = [Utilities captureView:self.view withRect:captureFrame];
+    [Photo share].imgPhotoBlend = [Utilities captureView:self.view withRect:self.imageView.frame];
 }
 
 @end

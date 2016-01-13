@@ -25,7 +25,7 @@
     self = [super init];
     if (self) {
         // Set name default for user name
-        self.imgPhoto = [UIImage imageNamed:@"girl_1.jpg"];
+        self.imgPhoto = [UIImage imageNamed:@"no_image.png"];
         self.imgPhotoBlend = nil;
         self.brightnessValue = 0.0;
         self.exposureValue = 0.0;

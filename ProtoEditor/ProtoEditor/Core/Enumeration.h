@@ -55,6 +55,7 @@ typedef NS_ENUM(NSInteger, FilterNumber) {
     kTypeSoftElegan2 = 8,
     kTypeInvert = 9,
     kTypeColor = 10,
+    kTypeBlur = 11,
 };
 
 #endif /* Enumeration_h */

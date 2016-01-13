@@ -59,8 +59,8 @@
     
     // Show image
     [Photo share].imgPhoto = kPhotoBlend;
-    self.imageView.image = [Photo share].imgPhoto;
-    [Utilities caculateImageSizeToPresent:self.imageView];
+    self.imageView.image = kPhotoBlend;
+    self.imageView.frame = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.imageView];
     
 }
 
@@ -94,7 +94,6 @@
                 ProgressBarDismissLoading(kStringDone);
                 self.imageView.image = imageComplete;
                 [Photo share].imgPhotoBlend = imageComplete;
-//                [Utilities caculateImageSizeToPresent:self.imageView];
                 
             });
         }];

@@ -27,4 +27,9 @@
 
 + (nonnull UIImage *) addImageToImage:(nonnull UIImage *)img withImage2:(nonnull UIImage *)img2 andRect:(CGRect)cropRect withImageWidth:(int) width;
 
+/*
+ * Get image from name
+ */
++ (nonnull UIImage *)drawImage:(nonnull UIImage *)inputImage inRect:(CGRect)frame originalImage:(nonnull UIImage *)originalImage;
+
 @end
