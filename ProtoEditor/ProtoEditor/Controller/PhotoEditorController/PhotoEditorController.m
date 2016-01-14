@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantWidthButton;
 @property (weak, nonatomic) IBOutlet UIView *viewEdit;
+@property (strong, nonatomic) IBOutlet UIView *viewSaturation;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollEdit;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantBottomImage;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantLeftImage;
@@ -31,7 +32,9 @@
 @property (weak, nonatomic) IBOutlet UIView *viewChangePhotoEdit;
 @property (weak, nonatomic) IBOutlet NYSliderPopover *sliderExposure;
 @property (weak, nonatomic) IBOutlet NYSliderPopover *sliderConstrast;
+@property (weak, nonatomic) IBOutlet NYSliderPopover *sliderSaturation;
 @property (weak, nonatomic) IBOutlet UIImageView *centerImageBlur;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantHeightViewChangeEdit;
 
 
 @end
@@ -55,15 +58,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    // Config
-    
     [self initSaveBarButton];
-    
     [self showImage];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    self.navigationItem.rightBarButtonItem = nil;
     self.centerImageBlur.hidden = YES;
 }
 
@@ -85,9 +84,9 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    [picker dismissViewControllerAnimated:YES completion:nil];
     [Photo share].imgPhoto = [info objectForKey:kUIImagePickerOriginalImage];
     [Photo share].imgPhotoBlend = nil;
+    [picker dismissViewControllerAnimated:YES completion:nil];
     [self showImage];
 }
 
@@ -96,8 +95,10 @@
 #pragma mark - ** Helper Method **
 
 - (void)initSaveBarButton {
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveImage)];
-    self.navigationItem.rightBarButtonItem = barButton;
+    if ([Photo share].imgPhotoBlend) {
+        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveImage)];
+        self.navigationItem.rightBarButtonItem = barButton;
+    }
 }
 
 /*
@@ -125,6 +126,7 @@
     self.sliderChange.popover.textLabel.text = kValueString(self.sliderChange.value);
     self.sliderExposure.popover.textLabel.text = kValueString(self.sliderExposure.value);
     self.sliderConstrast.popover.textLabel.text = kValueString(self.sliderConstrast.value);
+    self.sliderSaturation.popover.textLabel.text = kValueString(self.sliderSaturation.value);
 }
 
 - (void)showImage {
@@ -147,7 +149,7 @@
 /*
  * Zoom out image
  */
-- (void)zoomOutImage {
+- (void)resetConstantToNormal {
     [Utilities addAnimation:self.imageView];
     self.constantTopImage.constant = kConstantTopImageNormal;
     self.constantBottomImage.constant = kConstantBottomImageNormal;
@@ -161,7 +163,7 @@
 - (void)deleteAction {
     [Photo share].imgPhotoBlend = nil;
     [self hideEditView];
-    [self zoomOutImage];
+    [self resetConstantToNormal];
     [Utilities addAnimation:self.viewChangePhotoEdit];
     self.viewChangePhotoEdit.hidden = YES;
 }
@@ -172,10 +174,11 @@
 - (void)applyAction {
     // Reset to default
     [self hideEditView];
-    [self zoomOutImage];
+    [self resetConstantToNormal];
     
     [Utilities addAnimation:self.viewChangePhotoEdit];
     self.viewChangePhotoEdit.hidden = YES;
+    [self initSaveBarButton];
 }
 
 /*
@@ -183,7 +186,10 @@
  */
 - (void)applyImageWithSlideValue {
     // Set value slider to photo
-    [[Photo share] setPhotoColor:self.sliderChange.value andExposure:self.sliderExposure.value andConstrast:self.sliderConstrast.value];
+    [[Photo share] setPhotoColor:self.sliderChange.value
+                     andExposure:self.sliderExposure.value
+                    andConstrast:self.sliderConstrast.value
+                   andSaturation:self.sliderSaturation.value];
     
     // Filter image
     ProgressBarShowLoading(kStringLoading);
@@ -192,7 +198,6 @@
         [Photo share].imgPhotoBlend = imageComplete;
         self.imageView.image = imageComplete;
         [self applyAction];
-        
     }];
 }
 
@@ -257,8 +262,10 @@
 #pragma mark - ** Edit action **
 
 - (IBAction)btnColor:(id)sender {
+    self.constantHeightViewChangeEdit.constant = self.viewChangeEdit.frame.size.height;
     [Utilities turnOnBarButton:self];
     
+    [self.viewChangePhotoEdit.subviews makeObjectsPerformSelector: @selector(removeFromSuperview)];
     [self.viewChangePhotoEdit addSubview:self.viewChangeEdit];
     self.typePhotoEdit = kTypeColor;
     [self zoomPhoto];
@@ -273,6 +280,19 @@
 }
 - (IBAction)btnSliderConstrast:(id)sender {
     [self updateSliderValue];
+}
+- (IBAction)btnSliderSaturation:(id)sender {
+    [self updateSliderValue];
+}
+- (IBAction)btnSaturation:(id)sender {
+    self.constantHeightViewChangeEdit.constant = self.viewSaturation.frame.size.height;
+    [Utilities turnOnBarButton:self];
+    
+    [self.viewChangePhotoEdit.subviews makeObjectsPerformSelector: @selector(removeFromSuperview)];
+    [self.viewChangePhotoEdit addSubview:self.viewSaturation];
+    self.typePhotoEdit = kTypeSaturation;
+    [self hideEditView];
+    [self configViewChangeEdit];
 }
 - (IBAction)btnBlur:(id)sender {
     if (self.centerImageBlur.hidden) {
@@ -300,6 +320,8 @@
     self.constraintHeightCenterImage.constant = frameForImageWithAspectFit(self.centerImageBlur).size.height;
     CGRect realRectImage = realFrameForImage(imageComplete, self.imageView, self.constantTopImage.constant);
      [Photo share].imgPhotoBlend = [UIImage scaleTo2xImage:takeScreenShot(self.view, realRectImage)];
+    self.imageView.image = [Photo share].imgPhotoBlend;
+    self.centerImageBlur.hidden = YES;
 }
 
 - (IBAction)btnCropImage:(id)sender {
@@ -320,7 +342,7 @@
             
             // Hide right bar button
             [_self applyAction];
-            [_self resetConstantToDefault];
+            [_self resetConstantToNormal];
             _self.cropper = nil;
         } else {
             _self.cropper = nil;
@@ -328,10 +350,6 @@
     };
 }
 
-- (void)resetConstantToDefault {
-    self.constantTopImage.constant = kTopImageViewConstant;
-    self.constantBottomImage.constant = kTopImageViewConstant;
-}
 
 - (void)saveImage {
     if (!self.cropper) {

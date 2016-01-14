@@ -17,7 +17,9 @@
 @property (assign, nonatomic) float brightnessValue;
 @property (assign, nonatomic) float exposureValue;
 @property (assign, nonatomic) float constrastValue;
+@property (assign, nonatomic) float saturationValue;
 
-- (void)setPhotoColor:(float)brightValue andExposure:(float)exposure andConstrast:(float)constrast;
+
+- (void)setPhotoColor:(float)brightValue andExposure:(float)exposure andConstrast:(float)constrast andSaturation:(float)saturation;
 
 @end

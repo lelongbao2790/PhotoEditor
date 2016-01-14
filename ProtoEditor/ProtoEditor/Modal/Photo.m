@@ -30,14 +30,16 @@
         self.brightnessValue = 0.0;
         self.exposureValue = 0.0;
         self.constrastValue = 1.0;
+        self.saturationValue = 1.0;
     }
     return self;
 }
 
-- (void)setPhotoColor:(float)brightValue andExposure:(float)exposure andConstrast:(float)constrast {
+- (void)setPhotoColor:(float)brightValue andExposure:(float)exposure andConstrast:(float)constrast andSaturation:(float)saturation {
     self.brightnessValue = brightValue;
     self.exposureValue = exposure;
     self.constrastValue = constrast;
+    self.saturationValue = saturation;
 }
 
 @end

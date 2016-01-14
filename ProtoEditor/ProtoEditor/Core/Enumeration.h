@@ -32,16 +32,15 @@ typedef NS_ENUM(NSInteger, MultipleDevicePhotoEdit) {
     kConstantWidthButtonPhotoEditIp5 = 70,
     kConstantWidthButtonPhotoEditIp6 = 88,
     kConstantWidthButtonPhotoEditIpad = 160,
-    kConstantBottomImageNormal = 95,
-    kConstantLeftImageNormal = -10,
-    kConstantRightImageNormal = -10,
+    kConstantBottomImageNormal = 25,
+    kConstantLeftImageNormal = 0,
+    kConstantRightImageNormal = 0,
     kConstantBottomImageEdit = 140,
     kConstantLeftImageEdit = 35,
     kConstantRightImageEdit = 35,
-    kConstantTopImageNormal = 8,
+    kConstantTopImageNormal = 25,
     kConstantTopImageEdit = 2,
     kSpaceCrop = 40,
-    kTopImageViewConstant = 25,
 };
 
 typedef NS_ENUM(NSInteger, FilterNumber) {
@@ -57,6 +56,7 @@ typedef NS_ENUM(NSInteger, FilterNumber) {
     kTypeInvert = 9,
     kTypeColor = 10,
     kTypeBlur = 11,
+    kTypeSaturation = 12,
 };
 
 #endif /* Enumeration_h */

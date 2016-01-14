@@ -157,6 +157,9 @@
                                                 <state key="normal" title="Saturation">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnSaturation:" destination="QtJ-lu-0aa" eventType="touchUpInside" id="cHl-QQ-1Vw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTT-YU-fVB">
                                                 <rect key="frame" x="194" y="15" width="84" height="40"/>
@@ -223,11 +226,11 @@
                                 </constraints>
                             </view>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sZ5-AC-zhl">
-                                <rect key="frame" x="175" y="112" width="250" height="250"/>
+                                <rect key="frame" x="125" y="62" width="350" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="ZQl-Ub-irg"/>
-                                    <constraint firstAttribute="height" constant="250" id="o9T-qe-zld"/>
+                                    <constraint firstAttribute="width" constant="350" id="ZQl-Ub-irg"/>
+                                    <constraint firstAttribute="height" constant="350" id="o9T-qe-zld"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -255,6 +258,7 @@
                     <connections>
                         <outlet property="centerImageBlur" destination="sZ5-AC-zhl" id="1UD-Rg-FzG"/>
                         <outlet property="constantBottomImage" destination="XVR-87-VMZ" id="Vkf-ex-kCx"/>
+                        <outlet property="constantHeightViewChangeEdit" destination="5Ck-dz-MLo" id="ZNk-ft-wHt"/>
                         <outlet property="constantLeftImage" destination="5Fu-Ca-7me" id="jO8-EA-qts"/>
                         <outlet property="constantRightImage" destination="8Be-1Q-b3S" id="oyj-GU-GZW"/>
                         <outlet property="constantTopImage" destination="Cwn-2J-D18" id="PVy-QJ-JN8"/>
@@ -266,12 +270,34 @@
                         <outlet property="sliderChange" destination="Fs6-y3-W8Y" id="xiK-Sx-Qqb"/>
                         <outlet property="sliderConstrast" destination="E2a-nB-ugz" id="YCs-19-0rg"/>
                         <outlet property="sliderExposure" destination="0Rf-it-Er2" id="H1k-K3-NO1"/>
+                        <outlet property="sliderSaturation" destination="WwP-zc-kgC" id="DyU-vy-mmY"/>
                         <outlet property="viewChangeEdit" destination="UUk-ke-D00" id="QSR-r0-tq5"/>
                         <outlet property="viewChangePhotoEdit" destination="6UD-FN-pyP" id="C5o-HB-ONp"/>
                         <outlet property="viewEdit" destination="lzC-Hd-ZTH" id="nvF-R2-pue"/>
+                        <outlet property="viewSaturation" destination="pOu-Sd-WSK" id="0MI-5h-U9u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcu-lB-PJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="pOu-Sd-WSK">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saturation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99K-IS-fPf">
+                            <rect key="frame" x="8" y="13" width="100" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="WwP-zc-kgC" customClass="NYSliderPopover">
+                            <rect key="frame" x="116" y="10" width="179" height="31"/>
+                            <color key="tintColor" red="1" green="0.64871508410000001" blue="0.02284003204" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="btnSliderSaturation:" destination="QtJ-lu-0aa" eventType="valueChanged" id="ecc-Me-RIk"/>
+                            </connections>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                </view>
                 <view contentMode="scaleToFill" id="UUk-ke-D00">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

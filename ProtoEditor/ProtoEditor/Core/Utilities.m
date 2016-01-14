@@ -118,6 +118,12 @@
         // Check type filter
         switch (typeFilter) {
                 
+            case kTypeSaturation: {
+                GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc] init];
+                saturationFilter.saturation = [Photo share].saturationValue;
+                stillImageFilter = saturationFilter;
+            } break;
+                
                 // Blend
             case kTypeSepia: {
                 stillImageFilter = [[GPUImageSepiaFilter alloc] init];
@@ -301,9 +307,9 @@
     CGRect rectImageView = imageView.frame;
     
     if (rectImageView.size.width > rectImageConvert.size.width) {
-        rectImageConvert.origin.x = (rectImageView.size.width - rectImageConvert.size.width)/2;
+        rectImageConvert.origin.x = (rectImageView.size.width - rectImageConvert.size.width)/2 + rectImageView.origin.x;
     } else if (rectImageView.size.width < rectImageConvert.size.width) {
-        rectImageConvert.origin.x = (rectImageConvert.size.width - rectImageView.size.width)/2;
+        rectImageConvert.origin.x = (rectImageConvert.size.width - rectImageView.size.width)/2 + rectImageView.origin.x;
     } else {
         rectImageConvert.origin.x = rectImageView.origin.x;
     }
