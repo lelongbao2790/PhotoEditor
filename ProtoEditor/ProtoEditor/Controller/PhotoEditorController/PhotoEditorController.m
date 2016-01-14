@@ -293,10 +293,10 @@
     self.centerImageBlur.layer.cornerRadius = 5.0;
     self.centerImageBlur.layer.borderColor = [UIColor whiteColor].CGColor;
     self.centerImageBlur.layer.borderWidth = 1.0f;
-    self.constraintWidthCenterImage.constant = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.centerImageBlur].size.width;
-    self.constraintHeightCenterImage.constant = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.centerImageBlur].size.height;
-    CGRect realRectImage = [Utilities caculateFrameImage:imageComplete andImageView:self.imageView andTopConstant:self.constantTopImage.constant];
-     [Photo share].imgPhotoBlend = [UIImage imageWithImage:[Utilities captureView:self.view withRect:realRectImage] scaledToSize:[Photo share].imgPhoto.size];
+    self.constraintWidthCenterImage.constant = frameForImageWithAspectFit(self.centerImageBlur).size.width;
+    self.constraintHeightCenterImage.constant = frameForImageWithAspectFit(self.centerImageBlur).size.height;
+    CGRect realRectImage = realFrameForImage(imageComplete, self.imageView, self.constantTopImage.constant);
+     [Photo share].imgPhotoBlend = [UIImage scaleTo2xImage:takeScreenShot(self.view, realRectImage)];
 }
 
 - (IBAction)btnCropImage:(id)sender {

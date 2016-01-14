@@ -31,4 +31,12 @@
 #define ProgressBarUpdateLoading(_Title_, _DetailsText_) [SNLoading updateWithTitle:_Title_ detailsText:_DetailsText_]
 #define getController [Utilities getChildRootViewController]
 
+// Frame
+#define frameForImageWithAspectFit(imageView) [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:imageView]
+#define realFrameForImage(image, imageview, topConstant) [Utilities caculateFrameImage:image andImageView:imageview andTopConstant:topConstant]
+#define takeScreenShot(view, rect) [Utilities captureView:view withRect:rect]
+#define frameForSticker(view, imgSticker) CGRectMake(view.frame.size.width / 2 - imgSticker.size.width /2 ,\
+view.frame.size.height / 2 - imgSticker.size.height /2\
+, imgSticker.size.width, imgSticker.size.height)
+
 #endif /* Macro_h */

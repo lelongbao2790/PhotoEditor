@@ -11,6 +11,11 @@
 @interface UIImage (AutoScaleResize)
 
 /*
+ * Scale image to 2x
+ */
++ (nonnull UIImage *)scaleTo2xImage:(nonnull UIImage *)image;
+
+/*
  * Resize Image
  */
 + (nonnull UIImage *)imageWithImage:(nonnull UIImage *)image scaledToSize:(CGSize)newSize;

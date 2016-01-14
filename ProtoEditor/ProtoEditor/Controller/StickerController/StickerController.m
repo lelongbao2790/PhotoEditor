@@ -87,9 +87,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     UIImage *imgSticker = self.listPhotoSticker[indexPath.row];
-    DragView *imageStickerTmp = [[DragView alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - imgSticker.size.width,
-                                                                                self.view.frame.size.height / 2 - imgSticker.size.height
-                                                                                 , imgSticker.size.width, imgSticker.size.height)];
+    DragView *imageStickerTmp = [[DragView alloc] initWithFrame:frameForSticker(self.view, imgSticker)];
     imageStickerTmp.viewDrag = self.imageOriginal;
     imageStickerTmp.userInteractionEnabled = YES;
     imageStickerTmp.image = imgSticker;
@@ -97,9 +95,8 @@
 }
 
 - (void)applyFrameImage {
-    CGRect realRectImage = [Utilities caculateFrameImage:kPhotoBlend andImageView:self.imageOriginal andTopConstant:self.constraintTopImageOriginal.constant];
-    [Photo share].imgPhotoBlend = [Utilities captureView:self.view withRect:realRectImage];
-
+    UIImage *screenShot = takeScreenShot(self.view, realFrameForImage(kPhotoBlend, self.imageOriginal, self.constraintTopImageOriginal.constant));
+    [Photo share].imgPhotoBlend =[UIImage scaleTo2xImage:screenShot];
 }
 
 @end

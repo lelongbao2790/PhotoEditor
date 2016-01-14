@@ -10,6 +10,12 @@
 
 @implementation UIImage (AutoScaleResize)
 
++ (nonnull UIImage *)scaleTo2xImage:(nonnull UIImage *)image {
+    UIImage *imageScale = [UIImage imageWithImage:image scaledToSize:CGSizeMake(image.size.width * 2, image.size.height * 2)];
+    return imageScale;
+   
+}
+
 + (nonnull UIImage *)imageWithImage:(nonnull UIImage *)image scaledToSize:(CGSize)newSize
 {
     UIGraphicsBeginImageContext(newSize);
@@ -26,18 +32,6 @@
      [maskImage drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
       UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     return result;
-      
-//    CGImageRef maskRef = maskImage.CGImage;
-//    
-//    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
-//                                        CGImageGetHeight(maskRef),
-//                                        CGImageGetBitsPerComponent(maskRef),
-//                                        CGImageGetBitsPerPixel(maskRef),
-//                                        CGImageGetBytesPerRow(maskRef),
-//                                        CGImageGetDataProvider(maskRef), NULL, false);
-//    
-//    CGImageRef masked = CGImageCreateWithMask([image CGImage], mask);
-//    return [UIImage imageWithCGImage:masked];
 }
 
 + (nonnull UIImage*)imageByCropping:(nonnull UIImage *)imageToCrop toRect:(CGRect)rect {

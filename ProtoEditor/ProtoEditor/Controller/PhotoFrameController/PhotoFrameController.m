@@ -86,7 +86,7 @@
 }
 
 - (void)applyFrameImage {
-    [Photo share].imgPhotoBlend = [Utilities captureView:self.view withRect:self.imageView.frame];
+    [Photo share].imgPhotoBlend = [UIImage scaleTo2xImage:takeScreenShot(self.view, self.imageView.frame)];
 }
 
 @end
