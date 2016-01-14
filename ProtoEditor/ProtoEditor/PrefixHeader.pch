@@ -28,6 +28,7 @@
 #import "SNLoading.h"
 #import "iToast.h"
 #import "MBProgressHUD.h"
+#import "Cropper.h"
 
 // Storyboard
 #import "PhotoEditorController.h"

@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, MultipleDevicePhotoEdit) {
     kConstantTopImageNormal = 8,
     kConstantTopImageEdit = 2,
     kSpaceCrop = 40,
+    kTopImageViewConstant = 25,
 };
 
 typedef NS_ENUM(NSInteger, FilterNumber) {

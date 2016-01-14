@@ -10,6 +10,7 @@
 		D30C9B811C45E829001B161C /* SPUserResizableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D30C9B801C45E829001B161C /* SPUserResizableView.m */; };
 		D30C9B841C45F26A001B161C /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = D30C9B831C45F26A001B161C /* no_image.png */; };
 		D30C9B871C45FC34001B161C /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D30C9B861C45FC34001B161C /* iToast.m */; };
+		D30C9B8C1C474727001B161C /* Cropper.m in Sources */ = {isa = PBXBuildFile; fileRef = D30C9B8B1C474727001B161C /* Cropper.m */; };
 		D3110BAA1C3B5CC9009DF6C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BA91C3B5CC9009DF6C4 /* main.m */; };
 		D3110BAD1C3B5CC9009DF6C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BAC1C3B5CC9009DF6C4 /* AppDelegate.m */; };
 		D3110BB31C3B5CC9009DF6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3110BB11C3B5CC9009DF6C4 /* Main.storyboard */; };
@@ -261,6 +262,8 @@
 		D30C9B831C45F26A001B161C /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no\U0010_image.png"; sourceTree = "<group>"; };
 		D30C9B851C45FC34001B161C /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		D30C9B861C45FC34001B161C /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
+		D30C9B8A1C474727001B161C /* Cropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cropper.h; sourceTree = "<group>"; };
+		D30C9B8B1C474727001B161C /* Cropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cropper.m; sourceTree = "<group>"; };
 		D3110BA51C3B5CC9009DF6C4 /* ProtoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3110BA91C3B5CC9009DF6C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3110BAB1C3B5CC9009DF6C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -741,6 +744,15 @@
 			name = iToast;
 			sourceTree = "<group>";
 		};
+		D30C9B891C474717001B161C /* CropImage */ = {
+			isa = PBXGroup;
+			children = (
+				D30C9B8A1C474727001B161C /* Cropper.h */,
+				D30C9B8B1C474727001B161C /* Cropper.m */,
+			);
+			name = CropImage;
+			sourceTree = "<group>";
+		};
 		D3110B9C1C3B5CC9009DF6C4 = {
 			isa = PBXGroup;
 			children = (
@@ -971,6 +983,7 @@
 		D3D7C87D1C3CA7A600953610 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				D30C9B891C474717001B161C /* CropImage */,
 				D30C9B881C45FC38001B161C /* iToast */,
 				D30C9B821C45E82E001B161C /* SPUserResizableView */,
 				D3F9DC0D1C3F58E600B624DD /* NYSliderPopover */,
@@ -1712,6 +1725,7 @@
 				D3D7CC9B1C3CAA5D00953610 /* GPUImageVignetteFilter.m in Sources */,
 				D3D7CC401C3CAA5D00953610 /* GPUImageMedianFilter.m in Sources */,
 				D3D7CC651C3CAA5D00953610 /* GPUImageLineGenerator.m in Sources */,
+				D30C9B8C1C474727001B161C /* Cropper.m in Sources */,
 				D3D7CC1A1C3CAA5C00953610 /* GPUImageColorMatrixFilter.m in Sources */,
 				D3D7CC381C3CAA5C00953610 /* GPUImageCropFilter.m in Sources */,
 				D3D7CC691C3CAA5D00953610 /* GPUImageColourFASTFeatureDetector.m in Sources */,

@@ -13,7 +13,7 @@
 #pragma mark - Properties
 @property (assign, nonatomic) NSInteger typePhotoEdit;
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
-@property (strong, nonatomic) UIImage *tempImage;
+@property (strong, nonatomic) Cropper *cropper;
 
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -57,8 +57,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     // Config
     
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveImage)];
-    self.navigationItem.rightBarButtonItem = barButton;
+    [self initSaveBarButton];
     
     [self showImage];
 }
@@ -95,6 +94,11 @@
 //*****************************************************************************
 #pragma mark -
 #pragma mark - ** Helper Method **
+
+- (void)initSaveBarButton {
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveImage)];
+    self.navigationItem.rightBarButtonItem = barButton;
+}
 
 /*
  * Method config view
@@ -187,7 +191,6 @@
         ProgressBarDismissLoading(kStringDone);
         [Photo share].imgPhotoBlend = imageComplete;
         self.imageView.image = imageComplete;
-        [Utilities caculateImageSizeToPresent:self.imageView];
         [self applyAction];
         
     }];
@@ -300,18 +303,41 @@
 }
 
 - (IBAction)btnCropImage:(id)sender {
-    
+    if (!self.cropper) {
+        [self hideEditView];
+        [self cropImage];
+    }
+}
+
+- (void)cropImage {
+    self.cropper = [[Cropper alloc] initWithImageView:self.imageView];
+    __weak PhotoEditorController *_self = self;
+    _cropper.cropAction = ^(CropperAction action, UIImage *image){
+        if( action == CropperActionDidCrop )
+        {
+            _self.imageView.image = image;
+            [Photo share].imgPhotoBlend = image;
+            
+            // Hide right bar button
+            [_self applyAction];
+            [_self resetConstantToDefault];
+            _self.cropper = nil;
+        } else {
+            _self.cropper = nil;
+        }
+    };
+}
+
+- (void)resetConstantToDefault {
+    self.constantTopImage.constant = kTopImageViewConstant;
+    self.constantBottomImage.constant = kTopImageViewConstant;
 }
 
 - (void)saveImage {
-    if (self.tempImage) {
-        self.imageView.image = self.tempImage;
-        [Photo share].imgPhotoBlend = self.tempImage;
-        self.tempImage = nil;
+    if (!self.cropper) {
+        UIImageWriteToSavedPhotosAlbum(kPhotoBlend, nil, nil, nil);
+        [Utilities showiToastMessage:kSaveImageSuccess];
     }
-    
-    UIImageWriteToSavedPhotosAlbum(kPhotoBlend, nil, nil, nil);
-    [Utilities showiToastMessage:kSaveImageSuccess];
 }
 
 //*****************************************************************************
