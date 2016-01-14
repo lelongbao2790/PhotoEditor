@@ -16,6 +16,7 @@
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageOriginal;
 @property (weak, nonatomic) IBOutlet UICollectionView *photoStickerCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTopImageOriginal;
 
 @end
 
@@ -96,8 +97,8 @@
 }
 
 - (void)applyFrameImage {
-    [Photo share].imgPhotoBlend = [UIImage imageWithImage:[Utilities captureView:self.view withRect:self.imageOriginal.frame]
-                                             scaledToSize:[Photo share].imgPhoto.size];
+    CGRect realRectImage = [Utilities caculateFrameImage:kPhotoBlend andImageView:self.imageOriginal andTopConstant:self.constraintTopImageOriginal.constant];
+    [Photo share].imgPhotoBlend = [Utilities captureView:self.view withRect:realRectImage];
 
 }
 

@@ -60,7 +60,6 @@
     // Show image
     [Photo share].imgPhoto = kPhotoBlend;
     self.imageView.image = kPhotoBlend;
-    self.imageView.frame = [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:self.imageView];
     
 }
 

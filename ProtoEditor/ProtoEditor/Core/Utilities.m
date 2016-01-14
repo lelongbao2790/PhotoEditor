@@ -312,6 +312,8 @@
         rectImageConvert.origin.y = (rectImageView.size.height - rectImageConvert.size.height)/2 + 64 + topConstant;
     } else if (rectImageView.size.height < rectImageConvert.size.height) {
         rectImageConvert.origin.y = (rectImageConvert.size.height - rectImageView.size.height)/2 + 64 + topConstant;
+    } else {
+        rectImageConvert.origin.y = rectImageView.origin.y;
     }
     
     return rectImageConvert;

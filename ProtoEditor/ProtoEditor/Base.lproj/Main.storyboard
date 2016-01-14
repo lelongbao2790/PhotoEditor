@@ -75,9 +75,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eqo-AW-5mG">
                                 <rect key="frame" x="20" y="25" width="560" height="424"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="image" base64-UTF8="YES">
-bm8QX2ltYWdlLnBuZw
-</string>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neH-BF-6qG">
                                 <rect key="frame" x="0.0" y="474" width="600" height="62"/>
@@ -592,6 +589,7 @@ bm8QX2ltYWdlLnBuZw
                     </view>
                     <navigationItem key="navigationItem" id="705-DW-Io5"/>
                     <connections>
+                        <outlet property="constraintTopImageOriginal" destination="g4T-i2-3lM" id="13G-2F-OOD"/>
                         <outlet property="imageOriginal" destination="rHZ-vj-ss5" id="uly-eI-ufe"/>
                         <outlet property="photoStickerCollectionView" destination="fAh-hA-TK1" id="NnK-DA-2Dh"/>
                     </connections>
@@ -740,10 +738,5 @@ bm8QX2ltYWdlLnBuZw
     </scenes>
     <resources>
         <image name="girl_sample.png" width="109" height="94"/>
-        <image width="500" height="500">
-            <string key="name" base64-UTF8="YES">
-bm8QX2ltYWdlLnBuZw
-</string>
-        </image>
     </resources>
 </document>
