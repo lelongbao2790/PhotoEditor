@@ -113,21 +113,27 @@ typedef enum : NSUInteger {
 
 - (void)cancel:(id)sender
 {
-    if( self.cropAction )
-    {
-        self.cropAction(CropperActionCancel, nil);
-        [self finishCropper];
-    }
+//    if( self.cropAction )
+//    {
+//        [self finishCropper];
+//        self.cropAction(CropperActionCancel, nil);
+//        
+//    }
+    [self finishCropper];
+    self.cropAction(CropperActionCancel, nil);
 }
 
 - (IBAction)crop:(id)sender
 {
-    if( self.cropAction )
-    {
-        UIImage *image = [self generateCroppedImage];
-        self.cropAction(CropperActionDidCrop, image);
-        [self finishCropper];
-    }
+//    if( self.cropAction )
+//    {
+//        UIImage *image = [self generateCroppedImage];
+//        [self finishCropper];
+//        self.cropAction(CropperActionDidCrop, image);
+//    }
+    UIImage *image = [self generateCroppedImage];
+    [self finishCropper];
+    self.cropAction(CropperActionDidCrop, image);
 }
 
 - (void)finishCropper
@@ -137,62 +143,90 @@ typedef enum : NSUInteger {
 
 - (void)addButtonsBar
 {
-    UIView *bar = [[UIView alloc] initWithFrame:CGRectZero];
-    // set instance
-    self.bar = bar;
-    // set to manage via autolayout
-    [bar setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
-    [bar setBackgroundColor:[UIColor blackColor]];
-    [self addSubview:bar];
-    id views = @{@"bar":bar};
-    id metrics = @{@"buttonHeight":@40};
-    // add constraints
-    //
-    // Vertical
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[bar(buttonHeight)]"
-                                                                 options:0
-                                                                 metrics:metrics
-                                                                   views:views]];
-    // Horizontal
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bar]|"
-                                                                 options:0
-                                                                 metrics:metrics
-                                                                   views:views]];
-    
-    // create crop & cancel buttons
-    UIButton *crop = [UIButton buttonWithType:UIButtonTypeSystem];
-    [crop addTarget:self action:@selector(crop:) forControlEvents:UIControlEventTouchUpInside];
-    [crop setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [crop setTitle:@"Crop" forState:UIControlStateNormal];
-    // add
-    [bar addSubview:crop];
-    UIButton *cancel = [UIButton buttonWithType:UIButtonTypeSystem];
-    [cancel addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
-    [cancel setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [cancel setTitle:@"Cancel" forState:UIControlStateNormal];
-    // add
-    [bar addSubview:cancel];
-    // set constraints
-    
-    id array = @[ crop, cancel, bar ];
-    // force buttons calculate their width & height
-    [array makeObjectsPerformSelector:@selector(setNeedsLayout)];
-    [array makeObjectsPerformSelector:@selector(layoutIfNeeded)];
-    
-    
-    CGFloat separationBetweenButtons = 9;
-    // center constant
-    CGFloat firstButtonCenterXConstant = cancel.frame.size.width/2 + separationBetweenButtons/2;
-    
-    // add bar & buttons constraints
-    [bar addConstraint:[NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:crop attribute:NSLayoutAttributeCenterX multiplier:1 constant:firstButtonCenterXConstant]];
-    // bar & crop center y
-    [bar addConstraint:[NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:crop attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    // bar & cancel center y
-    [bar addConstraint:[NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:cancel attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    // separation cancel & crop
-    [bar addConstraint:[NSLayoutConstraint constraintWithItem:crop attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:cancel attribute:NSLayoutAttributeLeft multiplier:1 constant:-1*separationBetweenButtons]];
+//    // create crop & cancel buttons
+//    UIButton *crop = [UIButton buttonWithType:UIButtonTypeSystem];
+//    crop.imageView.image = kApplyImage;
+//    [crop addTarget:self action:@selector(crop:) forControlEvents:UIControlEventTouchUpInside];
+//    [crop setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    //    [crop setTitle:@"Crop" forState:UIControlStateNormal];
+//    
+//    UIBarButtonItem *cropBarButton = [[UIBarButtonItem alloc ] initWithCustomView:crop];
+//    [AppDelegate share].photoController.navigationItem.rightBarButtonItem = cropBarButton;
+//    
+//    // add
+//    UIButton *cancel = [UIButton buttonWithType:UIButtonTypeSystem];
+//    cancel.imageView.image = kDeleteImage;
+//    [cancel addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+//    [cancel setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    //    [cancel setTitle:@"Cancel" forState:UIControlStateNormal];
+//    
+//    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc ] initWithCustomView:cancel];
+//    [AppDelegate share].photoController.navigationItem.leftBarButtonItem = cancelBarButton;
+
+//    UIView *bar = [[UIView alloc] initWithFrame:CGRectZero];
+//    // set instance
+//    self.bar = bar;
+//    // set to manage via autolayout
+//    [bar setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    
+//    [bar setBackgroundColor:[UIColor blackColor]];
+//    [self addSubview:bar];
+//    id views = @{@"bar":bar};
+//    id metrics = @{@"buttonHeight":@40};
+//    // add constraints
+//    //
+//    // Vertical
+//    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[bar(buttonHeight)]"
+//                                                                 options:0
+//                                                                 metrics:metrics
+//                                                                   views:views]];
+//    // Horizontal
+//    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bar]|"
+//                                                                 options:0
+//                                                                 metrics:metrics
+//                                                                   views:views]];
+//    
+//    // create crop & cancel buttons
+//    UIButton *crop = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [crop addTarget:self action:@selector(crop:) forControlEvents:UIControlEventTouchUpInside];
+//    [crop setTranslatesAutoresizingMaskIntoConstraints:NO];
+////    [crop setTitle:@"Crop" forState:UIControlStateNormal];
+//    
+//    UIBarButtonItem *cropBarButton = [[UIBarButtonItem alloc ] initWithCustomView:crop];
+//    getController.navigationItem.rightBarButtonItem = cropBarButton;
+//    
+//    // add
+//    [bar addSubview:crop];
+//    UIButton *cancel = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [cancel addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+//    [cancel setTranslatesAutoresizingMaskIntoConstraints:NO];
+////    [cancel setTitle:@"Cancel" forState:UIControlStateNormal];
+//    
+//    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc ] initWithCustomView:cancel];
+//    getController.navigationItem.leftBarButtonItem = cancelBarButton;
+//    
+//    // add
+//    [bar addSubview:cancel];
+//    // set constraints
+//    
+//    id array = @[ crop, cancel, bar ];
+//    // force buttons calculate their width & height
+//    [array makeObjectsPerformSelector:@selector(setNeedsLayout)];
+//    [array makeObjectsPerformSelector:@selector(layoutIfNeeded)];
+//    
+//    
+//    CGFloat separationBetweenButtons = 9;
+//    // center constant
+//    CGFloat firstButtonCenterXConstant = cancel.frame.size.width/2 + separationBetweenButtons/2;
+//    
+//    // add bar & buttons constraints
+//    [bar addConstraint:[NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:crop attribute:NSLayoutAttributeCenterX multiplier:1 constant:firstButtonCenterXConstant]];
+//    // bar & crop center y
+//    [bar addConstraint:[NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:crop attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+//    // bar & cancel center y
+//    [bar addConstraint:[NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:cancel attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+//    // separation cancel & crop
+//    [bar addConstraint:[NSLayoutConstraint constraintWithItem:crop attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:cancel attribute:NSLayoutAttributeLeft multiplier:1 constant:-1*separationBetweenButtons]];
     
 }
 

@@ -539,7 +539,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="13"/>
                                                     <color key="textColor" red="0.0046953914141414366" green="0.0046953914141414366" blue="0.0046953914141414366" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="0.84705882349999995" green="0.53333333329999999" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lwz-4g-kbC">
                                                     <rect key="frame" x="33" y="37" width="20" height="20"/>

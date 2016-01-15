@@ -327,7 +327,7 @@
 }
 
 + (void)changeSelectedColorOfView:(nonnull UICollectionViewCell *)cell {
-    cell.backgroundColor = kColor2161364; // highlight selection
+    cell.backgroundColor = [UIColor whiteColor]; // highlight selection
     cell.layer.cornerRadius = 4;
     cell.layer.masksToBounds = YES;
 }

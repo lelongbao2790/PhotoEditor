@@ -24,4 +24,8 @@ typedef enum {
 - (instancetype)initWithImageView:(UIImageView*)imageView;
 - (UIImage*)generateCroppedImage;
 
+- (void)cancel:(id)sender;
+- (IBAction)crop:(id)sender;
+- (void)finishCropper;
+
 @end

@@ -65,5 +65,6 @@
 #define kBackgroundImage [UIImage imageNamed:@"background"]
 #define kBackImage [UIImage imageNamed:@"back_icon"]
 #define kApplyImage [UIImage imageNamed:@"apply"]
-
+#define kDeleteImage [UIImage imageNamed:@"delete"]
+#define kSaveImage [UIImage imageNamed:@"save"]
 #endif /* CommonString_h */
