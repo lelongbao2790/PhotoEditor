@@ -207,6 +207,7 @@
  */
 + (nonnull UIViewController*) getChildRootViewController {
     NSArray *s_viewController = @[kMainController,
+                                  kHomeController,
                                   kPhotoEditorController,
                                   kPhotoFrameController,
                                   kStickerController,

@@ -43,6 +43,7 @@
  * Method config view
  */
 - (void)config {
+    self.title = kFrameTitle;
     [Utilities turnOnBarButton:self];
     
     // Set delegate for multiple device

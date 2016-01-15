@@ -48,6 +48,7 @@
  * Method config view
  */
 - (void)config {
+    self.title = kStickerTitle;
     [AppDelegate share].stickerController = self;
     [Utilities turnOnBarButton:self];
     

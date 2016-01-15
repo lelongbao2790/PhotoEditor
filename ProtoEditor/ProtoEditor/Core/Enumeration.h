@@ -11,7 +11,7 @@
 
 // Constant for main controller
 typedef NS_ENUM(NSInteger, ConstantMainController) {
-    kConstantWidthButtonIp6 = 142,
+    kConstantWidthButtonIp6 = 104,
     kConstantWidthButtonIpad = 150,
 };
 
@@ -28,10 +28,22 @@ typedef NS_ENUM(NSInteger, BlendTag) {
     kTagBlendController = 1,
 };
 
+typedef NS_ENUM(NSInteger, OrientationNumber) {
+    kTopButtonOnMainPortrait = 90,
+    kTopButtonOnMainLandscape = 25,
+    kLeadingButtonPortrait = 18,
+    kLeadingButtonLandscape = 50,
+    kLeadingButtonEditPortrait = 15,
+    kLeadingButtonEditLandscape = 50,
+};
+
 typedef NS_ENUM(NSInteger, MultipleDevicePhotoEdit) {
     kConstantWidthButtonPhotoEditIp5 = 70,
     kConstantWidthButtonPhotoEditIp6 = 88,
     kConstantWidthButtonPhotoEditIpad = 160,
+    kConstantWidthButtonPhotoEditLandScapeIp5 = 110,
+    kConstantWidthButtonPhotoEditLandScapeIp6 = 128,
+    kConstantWidthButtonPhotoEditLandScapeIpad = 200,
     kConstantBottomImageNormal = 25,
     kConstantLeftImageNormal = 0,
     kConstantRightImageNormal = 0,

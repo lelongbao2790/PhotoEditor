@@ -22,6 +22,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) HomeController *homeController;
+@property (strong, nonatomic) MainController *mainController;
 @property (strong, nonatomic) PhotoEditorController *photoController;
 @property (strong, nonatomic) PhotoFrameController *photoFrameController;
 @property (strong, nonatomic) StickerController *stickerController;

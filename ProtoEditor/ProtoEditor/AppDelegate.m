@@ -24,9 +24,22 @@
     return shareInstance;
 }
 
+- (void)setCustomNavigationBackButton
+{
+//    UIImage *backBtn = kBackImage;
+//    backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    [UINavigationBar appearance].backIndicatorImage = backBtn;
+//    [UINavigationBar appearance].backIndicatorTransitionMaskImage = backBtn;
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:kTitleColorNavigationBar}];
+    [[UINavigationBar appearance] setTintColor:kTitleColorNavigationBar];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.homeController = nil;
+    [[UINavigationBar appearance] setBackgroundImage:kNavigationBarBackground forBarMetrics:UIBarMetricsDefault];
+    [self setCustomNavigationBackButton];
     return YES;
 }
 

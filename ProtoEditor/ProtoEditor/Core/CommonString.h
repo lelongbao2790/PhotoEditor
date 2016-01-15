@@ -53,6 +53,17 @@
 #define kStringBlend @"Blend"
 #define kEmptyString @""
 #define kCropString @"Crop"
+#define kPhotoEditorTitle @"Photo Editor"
+#define kEditorTitle @"Edit"
+#define kFrameTitle @"Frame"
+#define kStickerTitle @"Sticker"
 #define kSaveImageSuccess @"Photo saved to album"
+
+
+// Image
+#define kNavigationBarBackground [UIImage imageNamed:@"navigation_bar"]
+#define kBackgroundImage [UIImage imageNamed:@"background"]
+#define kBackImage [UIImage imageNamed:@"back_icon"]
+#define kApplyImage [UIImage imageNamed:@"apply"]
 
 #endif /* CommonString_h */

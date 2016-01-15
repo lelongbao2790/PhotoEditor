@@ -44,6 +44,7 @@
  * Method config view
  */
 - (void)config {
+    self.title = kStringBlend;
     [Utilities turnOnBarButton:self];
     
     // Set delegate for multiple device

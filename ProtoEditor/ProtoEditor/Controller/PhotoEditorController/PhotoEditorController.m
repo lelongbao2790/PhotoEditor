@@ -17,7 +17,6 @@
 
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantWidthButton;
 @property (weak, nonatomic) IBOutlet UIView *viewEdit;
 @property (strong, nonatomic) IBOutlet UIView *viewSaturation;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollEdit;
@@ -27,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantTopImage;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintWidthCenterImage;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintHeightCenterImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantWidthButton;
 @property (strong, nonatomic) IBOutlet UIView *viewChangeEdit;
 @property (weak, nonatomic) IBOutlet NYSliderPopover *sliderChange;
 @property (weak, nonatomic) IBOutlet UIView *viewChangePhotoEdit;
@@ -67,7 +67,7 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    [self.scrollEdit setContentSize:CGSizeMake(self.viewEdit.frame.size.width + 100, self.viewEdit.frame.size.height)];
+    [self.scrollEdit setContentSize:CGSizeMake(self.viewEdit.frame.size.width + 50, self.viewEdit.frame.size.height)];
 }
 
 //*****************************************************************************
@@ -96,7 +96,7 @@
 
 - (void)initSaveBarButton {
     if ([Photo share].imgPhotoBlend) {
-        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveImage)];
+        UIBarButtonItem *barButton = [[UIBarButtonItem alloc ] initWithImage:kApplyImage style:UIBarButtonItemStylePlain target:self action:@selector(saveImage)];
         self.navigationItem.rightBarButtonItem = barButton;
     }
 }
@@ -105,7 +105,7 @@
  * Method config view
  */
 - (void)config {
-    
+    self.title = kPhotoEditorTitle;
     [AppDelegate share].photoController = self;
     
     // Set delegate for multiple device
@@ -314,6 +314,7 @@
     self.centerImageBlur.image = kPhotoBlend;
     self.centerImageBlur.hidden = NO;
     self.centerImageBlur.layer.cornerRadius = 5.0;
+    self.centerImageBlur.layer.masksToBounds = YES;
     self.centerImageBlur.layer.borderColor = [UIColor whiteColor].CGColor;
     self.centerImageBlur.layer.borderWidth = 1.0f;
     self.constraintWidthCenterImage.constant = frameForImageWithAspectFit(self.centerImageBlur).size.width;

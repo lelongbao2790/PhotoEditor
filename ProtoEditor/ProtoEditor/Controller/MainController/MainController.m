@@ -47,6 +47,8 @@
 - (void)config {
     // Set delegate for multiple device
     [Utilities fixAutolayoutWithDelegate:self];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:kBackgroundImage];
+    [AppDelegate share].mainController = self;
 }
 
 //*****************************************************************************

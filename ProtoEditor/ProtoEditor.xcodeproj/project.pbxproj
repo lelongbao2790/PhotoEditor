@@ -11,6 +11,7 @@
 		D30C9B841C45F26A001B161C /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = D30C9B831C45F26A001B161C /* no_image.png */; };
 		D30C9B871C45FC34001B161C /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D30C9B861C45FC34001B161C /* iToast.m */; };
 		D30C9B8C1C474727001B161C /* Cropper.m in Sources */ = {isa = PBXBuildFile; fileRef = D30C9B8B1C474727001B161C /* Cropper.m */; };
+		D30C9B931C488E31001B161C /* CenterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D30C9B921C488E31001B161C /* CenterButton.m */; };
 		D3110BAA1C3B5CC9009DF6C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BA91C3B5CC9009DF6C4 /* main.m */; };
 		D3110BAD1C3B5CC9009DF6C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110BAC1C3B5CC9009DF6C4 /* AppDelegate.m */; };
 		D3110BB31C3B5CC9009DF6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3110BB11C3B5CC9009DF6C4 /* Main.storyboard */; };
@@ -264,6 +265,8 @@
 		D30C9B861C45FC34001B161C /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 		D30C9B8A1C474727001B161C /* Cropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cropper.h; sourceTree = "<group>"; };
 		D30C9B8B1C474727001B161C /* Cropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cropper.m; sourceTree = "<group>"; };
+		D30C9B911C488E31001B161C /* CenterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterButton.h; sourceTree = "<group>"; };
+		D30C9B921C488E31001B161C /* CenterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterButton.m; sourceTree = "<group>"; };
 		D3110BA51C3B5CC9009DF6C4 /* ProtoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3110BA91C3B5CC9009DF6C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3110BAB1C3B5CC9009DF6C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1367,6 +1370,8 @@
 				D3110C171C3B874C009DF6C4 /* UIImage+AutoScaleResize.m */,
 				D3D7CCAF1C3CB0F600953610 /* UIImage+Filter.h */,
 				D3D7CCB01C3CB0F600953610 /* UIImage+Filter.m */,
+				D30C9B911C488E31001B161C /* CenterButton.h */,
+				D30C9B921C488E31001B161C /* CenterButton.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -1607,6 +1612,7 @@
 				D3D7CC301C3CAA5C00953610 /* GPUImageOpacityFilter.m in Sources */,
 				D3D7CC6E1C3CAA5D00953610 /* GPUImageDarkenBlendFilter.m in Sources */,
 				D3D7CC5D1C3CAA5D00953610 /* GPUImageLocalBinaryPatternFilter.m in Sources */,
+				D30C9B931C488E31001B161C /* CenterButton.m in Sources */,
 				D3D7CC2A1C3CAA5C00953610 /* GPUImageToneCurveFilter.m in Sources */,
 				D3D7CCA91C3CAA7E00953610 /* GPUImageTextureOutput.m in Sources */,
 				D3D7CC821C3CAA5D00953610 /* GPUImageLinearBurnBlendFilter.m in Sources */,

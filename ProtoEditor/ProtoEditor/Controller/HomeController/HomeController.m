@@ -19,11 +19,19 @@
     // Do any additional setup after loading the view.
     [AppDelegate share].homeController = self;
     [Utilities turnOffBarButton:self];
+    self.title = kPhotoEditorTitle;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:kBackgroundImage];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+//    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)    name:UIDeviceOrientationDidChangeNotification  object:nil];
 }
 
 /*
@@ -59,5 +67,55 @@
         [getController.navigationController popViewControllerAnimated:YES];
     }
 }
+
+////*****************************************************************************
+//#pragma mark -
+//#pragma mark - ** Detect Rotate View **
+//
+//- (void)orientationChanged:(NSNotification *)notification{
+//    [self adjustViewsForOrientation:[[UIDevice currentDevice] orientation]];
+//}
+//
+//- (void) adjustViewsForOrientation:(UIDeviceOrientation) orientation {
+//    if (UIDeviceOrientationIsValidInterfaceOrientation(orientation) && UIDeviceOrientationIsLandscape(orientation) ) {
+//        // handle landscape
+//        [self changeConstantForLandScape];
+//        
+//    } else if (UIDeviceOrientationIsValidInterfaceOrientation(orientation) && UIDeviceOrientationIsPortrait(orientation)) {
+//        // handle portrait
+//        [self changeConstantForPortrait];
+//    } else {
+//        // handle landscape
+//        [self changeConstantForLandScape];
+//    }
+//}
+//
+///*
+// * Change constant for land scape
+// */
+//- (void)changeConstantForLandScape {
+//    if ([getController isKindOfClass:[HomeController class]] || [getController isKindOfClass:[MainController class]] ) {
+//        [AppDelegate share].mainController.constraintTopButton.constant = kTopButtonOnMainLandscape;
+//        [AppDelegate share].mainController.constraintLeadingButton.constant = kLeadingButtonLandscape;
+//        [AppDelegate share].mainController.constraintTrailingButton.constant = kLeadingButtonLandscape;
+//    }
+//    else if ([getController isKindOfClass:[PhotoEditorController class]]){
+//        [AppDelegate share].photoController.constantLeadingButton.constant = kLeadingButtonLandscape;
+//    }
+//}
+//
+///*
+// * Change constant for portrait
+// */
+//- (void)changeConstantForPortrait {
+//    if ([getController isKindOfClass:[HomeController class]] || [getController isKindOfClass:[MainController class]]) {
+//        [AppDelegate share].mainController.constraintTopButton.constant = kTopButtonOnMainPortrait;
+//        [AppDelegate share].mainController.constraintLeadingButton.constant = kLeadingButtonPortrait;
+//        [AppDelegate share].mainController.constraintTrailingButton.constant = kLeadingButtonPortrait;
+//    }
+//    else if ([getController isKindOfClass:[PhotoEditorController class]]){
+//        [AppDelegate share].photoController.constantLeadingButton.constant = kLeadingButtonPortrait;
+//    }
+//}
 
 @end
