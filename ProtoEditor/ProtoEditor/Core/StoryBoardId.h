@@ -11,7 +11,13 @@
 
 #define kPhotoEditorController @"PhotoEditorController"
 #define kBlendController @"BlendViewController"
+#define kHomeController @"HomeController"
+#define kMainController @"MainController"
 #define kFilterCell @"FilterCell"
 #define kFilterCellIdentifier @"FilterCellIdentifier"
+#define kPhotoFrameCellIdentifier @"PhotoFrameCellIdentifier"
+#define kPhotoFrameController @"PhotoFrameController"
+#define kPhotoFrameCell @"PhotoFrameCell"
+#define kStickerController @"StickerController"
 
 #endif /* StoryBoardId_h */

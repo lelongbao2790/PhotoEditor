@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MainController : UIViewController
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTopButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLeadingButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTrailingButton;
 
 @end

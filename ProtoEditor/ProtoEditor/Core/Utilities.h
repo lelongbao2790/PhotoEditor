@@ -42,4 +42,38 @@ typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
  */
 + (void)filterImageWithImage:(nonnull UIImage *)originalImage andType:(NSInteger )typeFilter withCompletion:(nonnull LoadImageCompleted)callBack;
 
+/*
+ * Get child root view controller
+ */
++ (nonnull UIViewController*) getChildRootViewController;
+
+/*
+ * Turn off left and right bar button
+ */
++ (void)turnOffBarButton:(nonnull  UIViewController *)controller;
+
+/*
+ * Turn on left and right bar button
+ */
++ (void)turnOnBarButton:(nonnull  UIViewController *)controller;
+
+/*
+ * Capture screen
+ */
++ (nonnull UIImage*)captureView:(nonnull UIView *)yourView withRect:(CGRect)frameCapture;
+
+/**
+ * Show iToast message for informing.
+ * @param message
+ */
++ (void)showiToastMessage:(nonnull NSString *)message;
+
++ (CGRect)frameForImage:(nonnull UIImage*)image inImageViewAspectFit:(nonnull UIImageView*)imageView;
+
++ (CGRect)caculateFrameImage:(nonnull UIImage *)imageComplete andImageView:(nonnull UIImageView *)imageView andTopConstant:(CGFloat)topConstant;
+
++ (void)changeSelectedColorOfView:(nonnull UICollectionViewCell *)cell;
+
++ (void)changeDeselectedColorOfView:(nonnull UICollectionViewCell *)cell;
+
 @end

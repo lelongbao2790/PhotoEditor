@@ -16,8 +16,6 @@
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UICollectionView *filterCollectionView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantBottomImage;
-@property (weak, nonatomic) IBOutlet UIView *viewLoading;
 
 @end
 
@@ -46,11 +44,13 @@
  * Method config view
  */
 - (void)config {
+    self.title = kStringBlend;
+    [Utilities turnOnBarButton:self];
+    
     // Set delegate for multiple device
     [Utilities fixAutolayoutWithDelegate:self];
     
     // Init
-    self.filterCollectionView.delegate = self;
     self.dictFilter = kDictListFilter;
     
     // Register custom cell
@@ -59,8 +59,8 @@
     [self.filterCollectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
     
     // Show image
-    self.imageView.image = [Photo share].imgPhoto;
-    [Utilities caculateImageSizeToPresent:self.imageView];
+    [Photo share].imgPhoto = kPhotoBlend;
+    self.imageView.image = kPhotoBlend;
     
 }
 
@@ -80,35 +80,45 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FilterCell *cell = (FilterCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kFilterCellIdentifier forIndexPath:indexPath];
+    
+    if (cell.selected) {
+        [Utilities changeSelectedColorOfView:cell];
+    } else {
+        [Utilities changeDeselectedColorOfView:cell];
+    }
+    
     NSInteger numberType = [self.dictFilter.allValues[indexPath.row] integerValue];
     [cell loadImageWithType:numberType andText:self.dictFilter.allKeys[indexPath.row]];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self.viewLoading setHidden:NO];
+    
+    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+    [Utilities changeSelectedColorOfView:datasetCell];
+    
+    ProgressBarShowLoading(kStringLoading);
     NSInteger numberType = [self.dictFilter.allValues[indexPath.row] integerValue];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
         [Utilities filterImageWithImage:[Photo share].imgPhoto andType:numberType withCompletion:^(UIImage * _Nonnull imageComplete) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                ProgressBarDismissLoading(kStringDone);
                 self.imageView.image = imageComplete;
-                [self.viewLoading setHidden:YES];
+                [Photo share].imgPhotoBlend = imageComplete;
+                
             });
         }];
     });
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+    [Utilities changeDeselectedColorOfView:datasetCell];
+}
+
 //*****************************************************************************
 #pragma mark -
 #pragma mark - ** IBAction **
-
-- (IBAction)btnDelete:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)btnDone:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [Photo share].imgPhotoBlend = self.imageView.image;
-}
 
 @end

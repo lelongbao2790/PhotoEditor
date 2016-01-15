@@ -10,4 +10,16 @@
 
 @interface PhotoEditorController : UIViewController
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantLeadingButton;
+
+/*
+ * Delete action
+ */
+- (void)deleteAction;
+
+/*
+ * Apply image
+ */
+- (void)applyImageWithSlideValue;
+
 @end

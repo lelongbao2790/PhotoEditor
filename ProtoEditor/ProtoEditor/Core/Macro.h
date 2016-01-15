@@ -22,5 +22,21 @@
 #define kHeighImagePhoto [Photo share].imgPhoto.size.height
 #define kWindow [UIApplication sharedApplication].keyWindow
 
+#define kPhotoBlend ([Photo share].imgPhotoBlend) ?  [Photo share].imgPhotoBlend : [Photo share].imgPhoto
+#define kValueString(value) [NSString stringWithFormat:@"%.2f", value]
+
+// Progress Bar
+#define ProgressBarShowLoading(_Title_) [SNLoading showWithTitle:_Title_]
+#define ProgressBarDismissLoading(_Title_) [SNLoading hideWithTitle:_Title_]
+#define ProgressBarUpdateLoading(_Title_, _DetailsText_) [SNLoading updateWithTitle:_Title_ detailsText:_DetailsText_]
+#define getController [Utilities getChildRootViewController]
+
+// Frame
+#define frameForImageWithAspectFit(imageView) [Utilities frameForImage:kPhotoBlend inImageViewAspectFit:imageView]
+#define realFrameForImage(image, imageview, topConstant) [Utilities caculateFrameImage:image andImageView:imageview andTopConstant:topConstant]
+#define takeScreenShot(view, rect) [Utilities captureView:view withRect:rect]
+#define frameForSticker(view, imgSticker) CGRectMake(view.frame.size.width / 2 - imgSticker.size.width /2 ,\
+view.frame.size.height / 2 - imgSticker.size.height /2\
+, imgSticker.size.width, imgSticker.size.height)
 
 #endif /* Macro_h */
