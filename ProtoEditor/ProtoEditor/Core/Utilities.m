@@ -326,4 +326,16 @@
     return rectImageConvert;
 }
 
++ (void)changeSelectedColorOfView:(nonnull UICollectionViewCell *)cell {
+    cell.backgroundColor = kColor2161364; // highlight selection
+    cell.layer.cornerRadius = 4;
+    cell.layer.masksToBounds = YES;
+}
+
++ (void)changeDeselectedColorOfView:(nonnull UICollectionViewCell *)cell {
+    cell.backgroundColor = [UIColor clearColor]; // Default color
+    cell.layer.cornerRadius = 0;
+    cell.layer.masksToBounds = NO;
+}
+
 @end

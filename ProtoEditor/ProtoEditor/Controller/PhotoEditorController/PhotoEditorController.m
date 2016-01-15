@@ -77,6 +77,7 @@
  * Open library photo
  */
 - (void)openLibraryPhoto {
+    [self hideEditView];
     self.imagePicker = [[UIImagePickerController alloc] init];
     self.imagePicker.delegate = self;
     self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;

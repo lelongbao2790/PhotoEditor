@@ -72,4 +72,8 @@ typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
 
 + (CGRect)caculateFrameImage:(nonnull UIImage *)imageComplete andImageView:(nonnull UIImageView *)imageView andTopConstant:(CGFloat)topConstant;
 
++ (void)changeSelectedColorOfView:(nonnull UICollectionViewCell *)cell;
+
++ (void)changeDeselectedColorOfView:(nonnull UICollectionViewCell *)cell;
+
 @end

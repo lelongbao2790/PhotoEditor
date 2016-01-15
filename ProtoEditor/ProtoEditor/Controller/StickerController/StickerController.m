@@ -80,6 +80,13 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoStickerCellIdentifier" forIndexPath:indexPath];
+    
+    if (cell.selected) {
+        [Utilities changeSelectedColorOfView:cell];
+    } else {
+        [Utilities changeDeselectedColorOfView:cell];
+    }
+    
     UIImageView *imgStickerCell = (UIImageView *)[cell viewWithTag:105];
     imgStickerCell.image = self.listPhotoSticker[indexPath.row];
     
@@ -87,12 +94,21 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+    [Utilities changeSelectedColorOfView:datasetCell];
+    
     UIImage *imgSticker = self.listPhotoSticker[indexPath.row];
     DragView *imageStickerTmp = [[DragView alloc] initWithFrame:frameForSticker(self.view, imgSticker)];
     imageStickerTmp.viewDrag = self.imageOriginal;
     imageStickerTmp.userInteractionEnabled = YES;
     imageStickerTmp.image = imgSticker;
     [self.view addSubview:imageStickerTmp];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+    [Utilities changeDeselectedColorOfView:datasetCell];
 }
 
 - (void)applyFrameImage {

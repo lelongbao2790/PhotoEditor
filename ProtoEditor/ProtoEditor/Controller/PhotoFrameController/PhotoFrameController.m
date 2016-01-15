@@ -75,15 +75,32 @@
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
     PhotoFrameCell *cell = (PhotoFrameCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kPhotoFrameCellIdentifier forIndexPath:indexPath];
+    
+    if (cell.selected) {
+        [Utilities changeSelectedColorOfView:cell];
+    } else {
+        [Utilities changeDeselectedColorOfView:cell];
+    }
+    
     cell.imgFrameFromDict = self.dictPhotoFrame.allValues[indexPath.row];
     [cell loadImage];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+    [Utilities changeSelectedColorOfView:datasetCell];
+    
     UIImage *frameImg = self.dictPhotoFrame.allValues[indexPath.row];
     self.imageView.image = frameImg;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+    [Utilities changeDeselectedColorOfView:datasetCell];
 }
 
 - (void)applyFrameImage {

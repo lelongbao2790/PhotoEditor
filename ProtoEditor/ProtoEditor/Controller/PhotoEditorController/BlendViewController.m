@@ -80,12 +80,23 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FilterCell *cell = (FilterCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kFilterCellIdentifier forIndexPath:indexPath];
+    
+    if (cell.selected) {
+        [Utilities changeSelectedColorOfView:cell];
+    } else {
+        [Utilities changeDeselectedColorOfView:cell];
+    }
+    
     NSInteger numberType = [self.dictFilter.allValues[indexPath.row] integerValue];
     [cell loadImageWithType:numberType andText:self.dictFilter.allKeys[indexPath.row]];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+    [Utilities changeSelectedColorOfView:datasetCell];
+    
     ProgressBarShowLoading(kStringLoading);
     NSInteger numberType = [self.dictFilter.allValues[indexPath.row] integerValue];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
@@ -98,6 +109,12 @@
             });
         }];
     });
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+    [Utilities changeDeselectedColorOfView:datasetCell];
 }
 
 //*****************************************************************************
