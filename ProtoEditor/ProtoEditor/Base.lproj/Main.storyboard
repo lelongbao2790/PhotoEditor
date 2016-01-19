@@ -416,6 +416,102 @@
             </objects>
             <point key="canvasLocation" x="2674" y="409"/>
         </scene>
+        <!--Guide Controller-->
+        <scene sceneID="0Fn-Ew-Gge">
+            <objects>
+                <viewController storyboardIdentifier="GuideController" definesPresentationContext="YES" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pl3-fi-Tsa" customClass="GuideController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q1m-zx-1Rp"/>
+                        <viewControllerLayoutGuide type="bottom" id="gDM-XX-QIL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uqt-je-hZ1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Select left bar button to pick image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-v0-cNr">
+                                <rect key="frame" x="40" y="92" width="520" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dri-QE-2C7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Tap out side to dismiss this view" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ny-qp-YL2">
+                                <rect key="frame" x="40" y="147" width="520" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="jXm-5o-tX1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Ny-qp-YL2" firstAttribute="trailing" secondItem="iLD-v0-cNr" secondAttribute="trailing" id="4ST-3Y-t2l"/>
+                            <constraint firstItem="6Ny-qp-YL2" firstAttribute="leading" secondItem="iLD-v0-cNr" secondAttribute="leading" id="HMi-jy-9bC"/>
+                            <constraint firstItem="6Ny-qp-YL2" firstAttribute="top" secondItem="iLD-v0-cNr" secondAttribute="bottom" constant="10" id="KH8-1i-z80"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iLD-v0-cNr" secondAttribute="trailing" constant="20" id="Yhf-Ts-R9I"/>
+                            <constraint firstItem="iLD-v0-cNr" firstAttribute="leading" secondItem="Uqt-je-hZ1" secondAttribute="leadingMargin" constant="20" id="oun-Yj-2gq"/>
+                            <constraint firstItem="iLD-v0-cNr" firstAttribute="top" secondItem="q1m-zx-1Rp" secondAttribute="bottom" constant="72" id="q1B-4O-wrF"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jC-uQ-A4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118" y="-360"/>
+        </scene>
+        <!--Collage Photo Controller-->
+        <scene sceneID="34J-LK-xMu">
+            <objects>
+                <viewController storyboardIdentifier="CollagePhotoController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d75-vc-Mbk" customClass="CollagePhotoController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mBa-TK-Si2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xm7-jt-hVK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dAb-ab-BPZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j88-vC-LxP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="djV-kD-kRd" customClass="RACollectionViewReorderableTripletLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collagePhotoCellIdentifier" id="kj9-jJ-ks5" customClass="CollagePhotoCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="customSize" width="100" height="100"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j88-vC-LxP" firstAttribute="top" secondItem="mBa-TK-Si2" secondAttribute="bottom" id="45a-03-rI3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j88-vC-LxP" secondAttribute="trailing" constant="-20" id="51h-IT-Q8q"/>
+                            <constraint firstItem="Xm7-jt-hVK" firstAttribute="top" secondItem="j88-vC-LxP" secondAttribute="bottom" id="dyp-hT-wb4"/>
+                            <constraint firstItem="j88-vC-LxP" firstAttribute="leading" secondItem="dAb-ab-BPZ" secondAttribute="leadingMargin" constant="-20" id="rd3-3o-r4g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dfg-Gp-v57"/>
+                    <connections>
+                        <outlet property="collagePhotoCollectionView" destination="j88-vC-LxP" id="kgX-uK-eNK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91c-Gi-1jS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="-223"/>
+        </scene>
         <!--Main Controller-->
         <scene sceneID="nn1-w2-sSx">
             <objects>
@@ -439,6 +535,7 @@
                                 <connections>
                                     <action selector="btnCollage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYL-aF-7RH"/>
                                     <action selector="btnCollage:" destination="ikg-6h-UQM" eventType="touchUpInside" id="uec-nn-Wbl"/>
+                                    <segue destination="d75-vc-Mbk" kind="push" id="gaK-nQ-Cty"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qM4-wM-ykt">

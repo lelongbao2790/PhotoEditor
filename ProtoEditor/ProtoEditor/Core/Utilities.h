@@ -76,4 +76,6 @@ typedef void (^LoadImageCompleted)( UIImage * _Nonnull imageComplete);
 
 + (void)changeDeselectedColorOfView:(nonnull UICollectionViewCell *)cell;
 
++ (void)drawShape:(CGRect)rect andImageView:(UIImageView *)imgView;
+
 @end

@@ -25,6 +25,23 @@
 		D3110C121C3B7635009DF6C4 /* PhotoEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C111C3B7635009DF6C4 /* PhotoEditorController.m */; };
 		D3110C151C3B765F009DF6C4 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C141C3B765F009DF6C4 /* Photo.m */; };
 		D3110C181C3B874C009DF6C4 /* UIImage+AutoScaleResize.m in Sources */ = {isa = PBXBuildFile; fileRef = D3110C171C3B874C009DF6C4 /* UIImage+AutoScaleResize.m */; };
+		D34427CE1C4C849D00B4CE7C /* RACollectionViewReorderableTripletLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427CB1C4C849D00B4CE7C /* RACollectionViewReorderableTripletLayout.m */; };
+		D34427CF1C4C849D00B4CE7C /* RACollectionViewTripletLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427CD1C4C849D00B4CE7C /* RACollectionViewTripletLayout.m */; };
+		D34427D31C4C870C00B4CE7C /* CollagePhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427D21C4C870C00B4CE7C /* CollagePhotoCell.m */; };
+		D34427D61C4C872700B4CE7C /* CollagePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427D51C4C872700B4CE7C /* CollagePhotoController.m */; };
+		D34427E81C4C880B00B4CE7C /* WSAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427D91C4C880B00B4CE7C /* WSAlbumTableViewController.m */; };
+		D34427E91C4C880B00B4CE7C /* WSAssetPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427DD1C4C880B00B4CE7C /* WSAssetPickerController.m */; };
+		D34427EA1C4C880B00B4CE7C /* WSAssetPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427DF1C4C880B00B4CE7C /* WSAssetPickerState.m */; };
+		D34427EB1C4C880B00B4CE7C /* WSAssetsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427E11C4C880B00B4CE7C /* WSAssetsTableViewCell.m */; };
+		D34427EC1C4C880B00B4CE7C /* WSAssetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427E31C4C880B00B4CE7C /* WSAssetTableViewController.m */; };
+		D34427ED1C4C880B00B4CE7C /* WSAssetViewColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427E51C4C880B00B4CE7C /* WSAssetViewColumn.m */; };
+		D34427EE1C4C880B00B4CE7C /* WSAssetWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427E71C4C880B00B4CE7C /* WSAssetWrapper.m */; };
+		D34427F01C4C883B00B4CE7C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34427EF1C4C883B00B4CE7C /* AssetsLibrary.framework */; };
+		D34427F31C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = D34427F11C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator.png */; };
+		D34427F41C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D34427F21C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator@2x.png */; };
+		D34427F71C4CB84200B4CE7C /* UIBezierPath+BasicShape.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427F61C4CB84200B4CE7C /* UIBezierPath+BasicShape.m */; };
+		D34427FD1C4CBE0100B4CE7C /* BasicShape.m in Sources */ = {isa = PBXBuildFile; fileRef = D34427FC1C4CBE0100B4CE7C /* BasicShape.m */; };
+		D34428041C4DD2D100B4CE7C /* GuideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34428031C4DD2D100B4CE7C /* GuideController.m */; };
 		D34A38C81C434A1B0018A030 /* PhotoFrameController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34A38C71C434A1B0018A030 /* PhotoFrameController.m */; };
 		D34A38CB1C434BEF0018A030 /* PhotoFrameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34A38CA1C434BEF0018A030 /* PhotoFrameCell.m */; };
 		D34A38D31C4360BA0018A030 /* frame_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D34A38CC1C4360BA0018A030 /* frame_1.png */; };
@@ -300,6 +317,39 @@
 		D3110C141C3B765F009DF6C4 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = Modal/Photo.m; sourceTree = "<group>"; };
 		D3110C161C3B874C009DF6C4 /* UIImage+AutoScaleResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AutoScaleResize.h"; path = "Core/UIImage+AutoScaleResize.h"; sourceTree = "<group>"; };
 		D3110C171C3B874C009DF6C4 /* UIImage+AutoScaleResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AutoScaleResize.m"; path = "Core/UIImage+AutoScaleResize.m"; sourceTree = "<group>"; };
+		D34427CA1C4C849D00B4CE7C /* RACollectionViewReorderableTripletLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACollectionViewReorderableTripletLayout.h; sourceTree = "<group>"; };
+		D34427CB1C4C849D00B4CE7C /* RACollectionViewReorderableTripletLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACollectionViewReorderableTripletLayout.m; sourceTree = "<group>"; };
+		D34427CC1C4C849D00B4CE7C /* RACollectionViewTripletLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACollectionViewTripletLayout.h; sourceTree = "<group>"; };
+		D34427CD1C4C849D00B4CE7C /* RACollectionViewTripletLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACollectionViewTripletLayout.m; sourceTree = "<group>"; };
+		D34427D11C4C870C00B4CE7C /* CollagePhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollagePhotoCell.h; path = Controller/CollagePhotoController/CollagePhotoCell.h; sourceTree = "<group>"; };
+		D34427D21C4C870C00B4CE7C /* CollagePhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollagePhotoCell.m; path = Controller/CollagePhotoController/CollagePhotoCell.m; sourceTree = "<group>"; };
+		D34427D41C4C872700B4CE7C /* CollagePhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollagePhotoController.h; path = Controller/CollagePhotoController/CollagePhotoController.h; sourceTree = "<group>"; };
+		D34427D51C4C872700B4CE7C /* CollagePhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollagePhotoController.m; path = Controller/CollagePhotoController/CollagePhotoController.m; sourceTree = "<group>"; };
+		D34427D81C4C880B00B4CE7C /* WSAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAlbumTableViewController.h; sourceTree = "<group>"; };
+		D34427D91C4C880B00B4CE7C /* WSAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAlbumTableViewController.m; sourceTree = "<group>"; };
+		D34427DA1C4C880B00B4CE7C /* WSAssetPicker-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSAssetPicker-Prefix.pch"; sourceTree = "<group>"; };
+		D34427DB1C4C880B00B4CE7C /* WSAssetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetPicker.h; sourceTree = "<group>"; };
+		D34427DC1C4C880B00B4CE7C /* WSAssetPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetPickerController.h; sourceTree = "<group>"; };
+		D34427DD1C4C880B00B4CE7C /* WSAssetPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetPickerController.m; sourceTree = "<group>"; };
+		D34427DE1C4C880B00B4CE7C /* WSAssetPickerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetPickerState.h; sourceTree = "<group>"; };
+		D34427DF1C4C880B00B4CE7C /* WSAssetPickerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetPickerState.m; sourceTree = "<group>"; };
+		D34427E01C4C880B00B4CE7C /* WSAssetsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetsTableViewCell.h; sourceTree = "<group>"; };
+		D34427E11C4C880B00B4CE7C /* WSAssetsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetsTableViewCell.m; sourceTree = "<group>"; };
+		D34427E21C4C880B00B4CE7C /* WSAssetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetTableViewController.h; sourceTree = "<group>"; };
+		D34427E31C4C880B00B4CE7C /* WSAssetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetTableViewController.m; sourceTree = "<group>"; };
+		D34427E41C4C880B00B4CE7C /* WSAssetViewColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetViewColumn.h; sourceTree = "<group>"; };
+		D34427E51C4C880B00B4CE7C /* WSAssetViewColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetViewColumn.m; sourceTree = "<group>"; };
+		D34427E61C4C880B00B4CE7C /* WSAssetWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetWrapper.h; sourceTree = "<group>"; };
+		D34427E71C4C880B00B4CE7C /* WSAssetWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetWrapper.m; sourceTree = "<group>"; };
+		D34427EF1C4C883B00B4CE7C /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D34427F11C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WSAssetViewSelectionIndicator.png; path = "../../../../../DOWNLOAD/WSAssetPickerController-master/demo/WSAssetViewSelectionIndicator.png"; sourceTree = "<group>"; };
+		D34427F21C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WSAssetViewSelectionIndicator@2x.png"; path = "../../../../../DOWNLOAD/WSAssetPickerController-master/demo/WSAssetViewSelectionIndicator@2x.png"; sourceTree = "<group>"; };
+		D34427F51C4CB84200B4CE7C /* UIBezierPath+BasicShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBezierPath+BasicShape.h"; path = "Core/UIBezierPath+BasicShape.h"; sourceTree = "<group>"; };
+		D34427F61C4CB84200B4CE7C /* UIBezierPath+BasicShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBezierPath+BasicShape.m"; path = "Core/UIBezierPath+BasicShape.m"; sourceTree = "<group>"; };
+		D34427FB1C4CBE0100B4CE7C /* BasicShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicShape.h; sourceTree = "<group>"; };
+		D34427FC1C4CBE0100B4CE7C /* BasicShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicShape.m; sourceTree = "<group>"; };
+		D34428021C4DD2D100B4CE7C /* GuideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuideController.h; path = Controller/CollagePhotoController/GuideController.h; sourceTree = "<group>"; };
+		D34428031C4DD2D100B4CE7C /* GuideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuideController.m; path = Controller/CollagePhotoController/GuideController.m; sourceTree = "<group>"; };
 		D34A38C61C434A1B0018A030 /* PhotoFrameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoFrameController.h; path = Controller/PhotoFrameController/PhotoFrameController.h; sourceTree = "<group>"; };
 		D34A38C71C434A1B0018A030 /* PhotoFrameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoFrameController.m; path = Controller/PhotoFrameController/PhotoFrameController.m; sourceTree = "<group>"; };
 		D34A38C91C434BEF0018A030 /* PhotoFrameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoFrameCell.h; path = Controller/PhotoFrameController/PhotoFrameCell.h; sourceTree = "<group>"; };
@@ -703,6 +753,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34427F01C4C883B00B4CE7C /* AssetsLibrary.framework in Frameworks */,
 				D3D7CAAC1C3CA8A500953610 /* QuartzCore.framework in Frameworks */,
 				D3D7CAAE1C3CA9F100953610 /* UIKit.framework in Frameworks */,
 				D3D7CAAA1C3CA89F00953610 /* AVFoundation.framework in Frameworks */,
@@ -869,6 +920,7 @@
 		D3110BEE1C3B5ED4009DF6C4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D34427D01C4C86C700B4CE7C /* CollagePhotoController */,
 				D34A38E71C43983C0018A030 /* StickerController */,
 				D34A38C51C4349F10018A030 /* PhotoFrameController */,
 				D3110C0F1C3B7611009DF6C4 /* PhotoEditor */,
@@ -945,6 +997,54 @@
 			name = PhotoEditor;
 			sourceTree = "<group>";
 		};
+		D34427C91C4C849D00B4CE7C /* RACollectionViewReorderableTripletLayout */ = {
+			isa = PBXGroup;
+			children = (
+				D34427CA1C4C849D00B4CE7C /* RACollectionViewReorderableTripletLayout.h */,
+				D34427CB1C4C849D00B4CE7C /* RACollectionViewReorderableTripletLayout.m */,
+				D34427CC1C4C849D00B4CE7C /* RACollectionViewTripletLayout.h */,
+				D34427CD1C4C849D00B4CE7C /* RACollectionViewTripletLayout.m */,
+			);
+			path = RACollectionViewReorderableTripletLayout;
+			sourceTree = "<group>";
+		};
+		D34427D01C4C86C700B4CE7C /* CollagePhotoController */ = {
+			isa = PBXGroup;
+			children = (
+				D34427D11C4C870C00B4CE7C /* CollagePhotoCell.h */,
+				D34427D21C4C870C00B4CE7C /* CollagePhotoCell.m */,
+				D34427D41C4C872700B4CE7C /* CollagePhotoController.h */,
+				D34427D51C4C872700B4CE7C /* CollagePhotoController.m */,
+				D34428021C4DD2D100B4CE7C /* GuideController.h */,
+				D34428031C4DD2D100B4CE7C /* GuideController.m */,
+			);
+			name = CollagePhotoController;
+			sourceTree = "<group>";
+		};
+		D34427D71C4C880B00B4CE7C /* WSAssetPickerController */ = {
+			isa = PBXGroup;
+			children = (
+				D34427D81C4C880B00B4CE7C /* WSAlbumTableViewController.h */,
+				D34427D91C4C880B00B4CE7C /* WSAlbumTableViewController.m */,
+				D34427DA1C4C880B00B4CE7C /* WSAssetPicker-Prefix.pch */,
+				D34427DB1C4C880B00B4CE7C /* WSAssetPicker.h */,
+				D34427DC1C4C880B00B4CE7C /* WSAssetPickerController.h */,
+				D34427DD1C4C880B00B4CE7C /* WSAssetPickerController.m */,
+				D34427DE1C4C880B00B4CE7C /* WSAssetPickerState.h */,
+				D34427DF1C4C880B00B4CE7C /* WSAssetPickerState.m */,
+				D34427E01C4C880B00B4CE7C /* WSAssetsTableViewCell.h */,
+				D34427E11C4C880B00B4CE7C /* WSAssetsTableViewCell.m */,
+				D34427E21C4C880B00B4CE7C /* WSAssetTableViewController.h */,
+				D34427E31C4C880B00B4CE7C /* WSAssetTableViewController.m */,
+				D34427E41C4C880B00B4CE7C /* WSAssetViewColumn.h */,
+				D34427E51C4C880B00B4CE7C /* WSAssetViewColumn.m */,
+				D34427E61C4C880B00B4CE7C /* WSAssetWrapper.h */,
+				D34427E71C4C880B00B4CE7C /* WSAssetWrapper.m */,
+			);
+			name = WSAssetPickerController;
+			path = src;
+			sourceTree = "<group>";
+		};
 		D34A38C41C4348460018A030 /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,6 +1070,8 @@
 			children = (
 				D34A38E41C4381430018A030 /* DragView.h */,
 				D34A38E51C4381430018A030 /* DragView.m */,
+				D34427FB1C4CBE0100B4CE7C /* BasicShape.h */,
+				D34427FC1C4CBE0100B4CE7C /* BasicShape.m */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -986,6 +1088,8 @@
 		D3D7C87D1C3CA7A600953610 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				D34427D71C4C880B00B4CE7C /* WSAssetPickerController */,
+				D34427C91C4C849D00B4CE7C /* RACollectionViewReorderableTripletLayout */,
 				D30C9B891C474717001B161C /* CropImage */,
 				D30C9B881C45FC38001B161C /* iToast */,
 				D30C9B821C45E82E001B161C /* SPUserResizableView */,
@@ -1344,6 +1448,7 @@
 		D3D7CAA21C3CA86E00953610 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				D34427EF1C4C883B00B4CE7C /* AssetsLibrary.framework */,
 				D3D7CAAD1C3CA9F100953610 /* UIKit.framework */,
 				D3D7CAAB1C3CA8A500953610 /* QuartzCore.framework */,
 				D3D7CAA91C3CA89F00953610 /* AVFoundation.framework */,
@@ -1372,6 +1477,8 @@
 				D3D7CCB01C3CB0F600953610 /* UIImage+Filter.m */,
 				D30C9B911C488E31001B161C /* CenterButton.h */,
 				D30C9B921C488E31001B161C /* CenterButton.m */,
+				D34427F51C4CB84200B4CE7C /* UIBezierPath+BasicShape.h */,
+				D34427F61C4CB84200B4CE7C /* UIBezierPath+BasicShape.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -1392,6 +1499,8 @@
 		D3D7CCB51C3CBA0B00953610 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				D34427F11C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator.png */,
+				D34427F21C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator@2x.png */,
 				D30C9B831C45F26A001B161C /* no_image.png */,
 				D34A38F31C43AA4D0018A030 /* sticker5.png */,
 				D34A38F41C43AA4D0018A030 /* sticker6.png */,
@@ -1567,12 +1676,14 @@
 				D34A38EF1C43998F0018A030 /* sticker1.png in Resources */,
 				D3D7CCCD1C3E4A6500953610 /* apply.png in Resources */,
 				D34A38D31C4360BA0018A030 /* frame_1.png in Resources */,
+				D34427F31C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator.png in Resources */,
 				D3110BB31C3B5CC9009DF6C4 /* Main.storyboard in Resources */,
 				D34A38DF1C4360ED0018A030 /* frame_7.png in Resources */,
 				D3D7CCC31C3CD62B00953610 /* lookup.png in Resources */,
 				D3D7CCC21C3CD62B00953610 /* lookup_soft_elegance_2.png in Resources */,
 				D34A38F21C43998F0018A030 /* sticker4.png in Resources */,
 				D34A38D61C4360BA0018A030 /* frame_4.png in Resources */,
+				D34427F41C4C8ED100B4CE7C /* WSAssetViewSelectionIndicator@2x.png in Resources */,
 				D3D7CCCA1C3E49DA00953610 /* delete.png in Resources */,
 				D3D7CCC01C3CD62B00953610 /* lookup_miss_etikate.png in Resources */,
 				D34A38FB1C43AA4D0018A030 /* sticker7.png in Resources */,
@@ -1608,9 +1719,11 @@
 				D3D7CC431C3CAA5D00953610 /* GPUImage3x3ConvolutionFilter.m in Sources */,
 				D3D7CC4B1C3CAA5D00953610 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
 				D3D7CC461C3CAA5D00953610 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
+				D34427FD1C4CBE0100B4CE7C /* BasicShape.m in Sources */,
 				D3D7CC901C3CAA5D00953610 /* GPUImageSmoothToonFilter.m in Sources */,
 				D3D7CC301C3CAA5C00953610 /* GPUImageOpacityFilter.m in Sources */,
 				D3D7CC6E1C3CAA5D00953610 /* GPUImageDarkenBlendFilter.m in Sources */,
+				D34427CF1C4C849D00B4CE7C /* RACollectionViewTripletLayout.m in Sources */,
 				D3D7CC5D1C3CAA5D00953610 /* GPUImageLocalBinaryPatternFilter.m in Sources */,
 				D30C9B931C488E31001B161C /* CenterButton.m in Sources */,
 				D3D7CC2A1C3CAA5C00953610 /* GPUImageToneCurveFilter.m in Sources */,
@@ -1629,6 +1742,7 @@
 				D3D7CC341C3CAA5C00953610 /* GPUImageChromaKeyFilter.m in Sources */,
 				D3D7CC981C3CAA5D00953610 /* GPUImageGlassSphereFilter.m in Sources */,
 				D3D7CC421C3CAA5D00953610 /* GPUImageTiltShiftFilter.m in Sources */,
+				D34427E81C4C880B00B4CE7C /* WSAlbumTableViewController.m in Sources */,
 				D3D7CC271C3CAA5C00953610 /* GPUImageHistogramFilter.m in Sources */,
 				D3D7CBFC1C3CAA5C00953610 /* GPUImageFramebuffer.m in Sources */,
 				D3110C151C3B765F009DF6C4 /* Photo.m in Sources */,
@@ -1675,6 +1789,7 @@
 				D30C9B871C45FC34001B161C /* iToast.m in Sources */,
 				D3D7CC971C3CAA5D00953610 /* GPUImageSphereRefractionFilter.m in Sources */,
 				D3D7CC561C3CAA5D00953610 /* GPUImageErosionFilter.m in Sources */,
+				D34427CE1C4C849D00B4CE7C /* RACollectionViewReorderableTripletLayout.m in Sources */,
 				D3D7CC041C3CAA5C00953610 /* GPUImageMovieComposition.m in Sources */,
 				D34A38EA1C43985C0018A030 /* StickerController.m in Sources */,
 				D3D7CC641C3CAA5D00953610 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
@@ -1691,6 +1806,7 @@
 				D3D7CC2D1C3CAA5C00953610 /* GPUImageAmatorkaFilter.m in Sources */,
 				D3D7CBFE1C3CAA5C00953610 /* GPUImageOutput.m in Sources */,
 				D3D7CC0D1C3CAA5C00953610 /* GPUImageFourInputFilter.m in Sources */,
+				D34427E91C4C880B00B4CE7C /* WSAssetPickerController.m in Sources */,
 				D3D7CC7A1C3CAA5D00953610 /* GPUImageScreenBlendFilter.m in Sources */,
 				D3D7CC511C3CAA5D00953610 /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
 				D3D7CC231C3CAA5C00953610 /* GPUImageGrayscaleFilter.m in Sources */,
@@ -1718,7 +1834,9 @@
 				D3D7CC5A1C3CAA5D00953610 /* GPUImageClosingFilter.m in Sources */,
 				D3D7CC531C3CAA5D00953610 /* GPUImageCrosshairGenerator.m in Sources */,
 				D3D7CBFF1C3CAA5C00953610 /* GPUImageVideoCamera.m in Sources */,
+				D34427F71C4CB84200B4CE7C /* UIBezierPath+BasicShape.m in Sources */,
 				D34A38CB1C434BEF0018A030 /* PhotoFrameCell.m in Sources */,
+				D34427EA1C4C880B00B4CE7C /* WSAssetPickerState.m in Sources */,
 				D3D7CCA71C3CAA7E00953610 /* GPUImageView.m in Sources */,
 				D3D7CC8E1C3CAA5D00953610 /* GPUImageEmbossFilter.m in Sources */,
 				D30C9B811C45E829001B161C /* SPUserResizableView.m in Sources */,
@@ -1742,6 +1860,8 @@
 				D3D7CC931C3CAA5D00953610 /* GPUImageSwirlFilter.m in Sources */,
 				D3D7CCA81C3CAA7E00953610 /* GPUImageMovieWriter.m in Sources */,
 				D3F9DC191C3F6C3C00B624DD /* MBProgressHUD.m in Sources */,
+				D34427EC1C4C880B00B4CE7C /* WSAssetTableViewController.m in Sources */,
+				D34427EB1C4C880B00B4CE7C /* WSAssetsTableViewCell.m in Sources */,
 				D3D7CC211C3CAA5C00953610 /* GPUImageSepiaFilter.m in Sources */,
 				D3D7CC331C3CAA5C00953610 /* GPUImageSolidColorGenerator.m in Sources */,
 				D3F9DC1A1C3F6C3C00B624DD /* SNLoading.m in Sources */,
@@ -1758,6 +1878,8 @@
 				D3D7CC171C3CAA5C00953610 /* GPUImageContrastFilter.m in Sources */,
 				D3D7CC391C3CAA5C00953610 /* GPUImageSharpenFilter.m in Sources */,
 				D3D7CCB11C3CB0F600953610 /* UIImage+Filter.m in Sources */,
+				D34427EE1C4C880B00B4CE7C /* WSAssetWrapper.m in Sources */,
+				D34427ED1C4C880B00B4CE7C /* WSAssetViewColumn.m in Sources */,
 				D3D7CC291C3CAA5C00953610 /* GPUImageHistogramEqualizationFilter.m in Sources */,
 				D3D7CC6B1C3CAA5D00953610 /* GPUImageSourceOverBlendFilter.m in Sources */,
 				D3D7CC4D1C3CAA5D00953610 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,
@@ -1769,6 +1891,7 @@
 				D3D7CC991C3CAA5D00953610 /* GPUImageKuwaharaFilter.m in Sources */,
 				D3D7CCAA1C3CAA7E00953610 /* GPUImageRawDataOutput.m in Sources */,
 				D3D7CC0E1C3CAA5C00953610 /* GPUImageTwoPassFilter.m in Sources */,
+				D34428041C4DD2D100B4CE7C /* GuideController.m in Sources */,
 				D3D7CC351C3CAA5C00953610 /* GPUImageWhiteBalanceFilter.m in Sources */,
 				D3D7CC501C3CAA5D00953610 /* GPUImageFASTCornerDetectionFilter.m in Sources */,
 				D3D7CC3B1C3CAA5C00953610 /* GPUImageBoxBlurFilter.m in Sources */,
@@ -1787,10 +1910,12 @@
 				D3D7CC241C3CAA5C00953610 /* GPUImageLuminanceThresholdFilter.m in Sources */,
 				D3D7CC2F1C3CAA5C00953610 /* GPUImageSoftEleganceFilter.m in Sources */,
 				D3110C121C3B7635009DF6C4 /* PhotoEditorController.m in Sources */,
+				D34427D31C4C870C00B4CE7C /* CollagePhotoCell.m in Sources */,
 				D3D7CC221C3CAA5C00953610 /* GPUImageColorInvertFilter.m in Sources */,
 				D3D7CC751C3CAA5D00953610 /* GPUImageAddBlendFilter.m in Sources */,
 				D3D7CC891C3CAA5D00953610 /* GPUImageHalftoneFilter.m in Sources */,
 				D3D7CC7F1C3CAA5D00953610 /* GPUImageHueBlendFilter.m in Sources */,
+				D34427D61C4C872700B4CE7C /* CollagePhotoController.m in Sources */,
 				D3D7CC741C3CAA5D00953610 /* GPUImageLightenBlendFilter.m in Sources */,
 				D3D7CC611C3CAA5D00953610 /* GPUImageHighPassFilter.m in Sources */,
 				D3D7CC0B1C3CAA5C00953610 /* GPUImageTwoInputFilter.m in Sources */,

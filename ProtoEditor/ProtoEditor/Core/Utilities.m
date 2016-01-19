@@ -338,4 +338,18 @@
     cell.layer.masksToBounds = NO;
 }
 
++ (void)drawShape:(CGRect)rect andImageView:(UIImageView *)imgView {
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = rect ;
+    UIBezierPath *roundedPath = [UIBezierPath starShape:maskLayer.frame];
+    maskLayer.strokeColor = [UIColor whiteColor].CGColor;
+    maskLayer.fillColor = [UIColor clearColor].CGColor;
+    maskLayer.backgroundColor = [[UIColor clearColor] CGColor];
+    maskLayer.lineWidth = 2.0f;
+    maskLayer.path = [roundedPath CGPath];
+    
+    // Add mask
+    [imgView.layer addSublayer:maskLayer];
+}
+
 @end

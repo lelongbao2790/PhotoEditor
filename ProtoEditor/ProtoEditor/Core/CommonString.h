@@ -58,6 +58,7 @@
 #define kFrameTitle @"Frame"
 #define kStickerTitle @"Sticker"
 #define kSaveImageSuccess @"Photo saved to album"
+#define kPhotoCollageCellIdentifier @"collagePhotoCellIdentifier"
 
 
 // Image
@@ -67,4 +68,5 @@
 #define kApplyImage [UIImage imageNamed:@"apply"]
 #define kDeleteImage [UIImage imageNamed:@"delete"]
 #define kSaveImage [UIImage imageNamed:@"save"]
+#define kRefreshImage [UIImage imageNamed:@"refresh_icon"]
 #endif /* CommonString_h */

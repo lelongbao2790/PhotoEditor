@@ -23,6 +23,15 @@ typedef NS_ENUM(NSInteger, TagFace) {
     kTagMouthView = 4,
 };
 
+// Shape type
+typedef NS_ENUM(NSInteger, ShapeType) {
+    kTypeHeartShape = 1,
+    kTypeUserShape = 2,
+    kTypeMartiniShape = 3,
+    kTypeBeakerShape = 4,
+    kTypeStartShape = 5,
+};
+
 typedef NS_ENUM(NSInteger, BlendTag) {
     kTagCollectionViewFilter = 100,
     kTagBlendController = 1,

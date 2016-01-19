@@ -333,6 +333,10 @@
      [Photo share].imgPhotoBlend = [UIImage scaleTo2xImage:takeScreenShot(self.view, realRectImage)];
     self.imageView.image = [Photo share].imgPhotoBlend;
     self.centerImageBlur.hidden = YES;
+    
+//    // Draw shape
+//    [Photo share].imgPhotoBlend = [UIImage imageWithImage:kPhotoBlend scaledToSize:frameForImageWithAspectFit(self.centerImageBlur).size];
+//    [Utilities drawShape:frameForImageWithAspectFit(self.centerImageBlur) andImageView:self.centerImageBlur];
 }
 
 - (IBAction)btnCropImage:(id)sender {

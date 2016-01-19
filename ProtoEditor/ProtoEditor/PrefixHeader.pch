@@ -29,6 +29,8 @@
 #import "iToast.h"
 #import "MBProgressHUD.h"
 #import "Cropper.h"
+#import "UIBezierPath+BasicShape.h"
+#import "BasicShape.h"
 
 // Storyboard
 #import "PhotoEditorController.h"
@@ -42,5 +44,9 @@
 #import "StickerController.h"
 #import "DragView.h"
 #import "SPUserResizableView.h"
+#import "RACollectionViewReorderableTripletLayout.h"
+#import "WSAssetPicker.h"
+#import "CollagePhotoCell.h"
+#import "GuideController.h"
 
 #endif /* PrefixHeader_pch */

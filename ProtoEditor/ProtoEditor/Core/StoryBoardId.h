@@ -19,5 +19,6 @@
 #define kPhotoFrameController @"PhotoFrameController"
 #define kPhotoFrameCell @"PhotoFrameCell"
 #define kStickerController @"StickerController"
+#define kGuideController @"GuideController"
 
 #endif /* StoryBoardId_h */
