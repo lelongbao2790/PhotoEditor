@@ -59,6 +59,15 @@
     self.navigationItem.rightBarButtonItem = rightBarButton;
 }
 
+- (void)initDeleteBarButton {
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc ] initWithImage:kDeleteImage style:UIBarButtonItemStylePlain target:self action:@selector(deleteController)];
+    self.navigationItem.leftBarButtonItem = barButton;
+}
+
+- (void)deleteController {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 //*****************************************************************************
 #pragma mark -
 #pragma mark - ** IBAction **
@@ -104,6 +113,7 @@
             index++;
         }
         [self.collagePhotoCollectionView reloadData];
+        [self initDeleteBarButton];
         
     }];
     
