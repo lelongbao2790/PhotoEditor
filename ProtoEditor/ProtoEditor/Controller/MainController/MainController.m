@@ -8,7 +8,7 @@
 
 #import "MainController.h"
 
-@interface MainController () 
+@interface MainController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 #pragma mark - Properties
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
@@ -62,9 +62,31 @@
 }
 
 - (IBAction)btnFilterCamera:(id)sender {
+    [self openCamera];
 }
 
 - (IBAction)btnSetting:(id)sender {
+}
+
+#pragma mark - Filter Camera
+/*
+ * Open library photo
+ */
+- (void)openCamera {
+    
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.delegate = self;
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [Photo share].imgPhoto = [info objectForKey:kUIImagePickerOriginalImage];
+    [Photo share].imgPhotoBlend = nil;
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    PhotoEditorController *photoEditorController = InitStoryBoardWithIdentifier(kPhotoEditorController);
+    [self.navigationController pushViewController:photoEditorController animated:YES];
 }
 
 //*****************************************************************************

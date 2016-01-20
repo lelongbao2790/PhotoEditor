@@ -45,6 +45,13 @@
 [UIImage imageNamed:@"sticker9.png"], \
 [UIImage imageNamed:@"sticker10.png"], nil]
 
+#define kListSetting [NSArray arrayWithObjects:@"Receive notification", \
+@"Use camera", \
+@"Feedback", \
+@"Sign in", \
+@"Save to cloud", nil]
+
+
 
 #define kImageSample [UIImage imageNamed:@"girl_sample.png"]
 #define kStringLoading @"Loading"
@@ -59,6 +66,7 @@
 #define kStickerTitle @"Sticker"
 #define kSaveImageSuccess @"Photo saved to album"
 #define kPhotoCollageCellIdentifier @"collagePhotoCellIdentifier"
+#define kSettingIdentifier @"settingIdentifier"
 
 
 // Image

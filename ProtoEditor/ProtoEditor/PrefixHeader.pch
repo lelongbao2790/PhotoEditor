@@ -48,5 +48,7 @@
 #import "WSAssetPicker.h"
 #import "CollagePhotoCell.h"
 #import "GuideController.h"
+#import "SettingCell.h"
+#import "SettingController.h"
 
 #endif /* PrefixHeader_pch */

@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, OrientationNumber) {
 
 typedef NS_ENUM(NSInteger, MultipleDevicePhotoEdit) {
     kConstantWidthButtonPhotoEditIp5 = 70,
-    kConstantWidthButtonPhotoEditIp6 = 88,
+    kConstantWidthButtonPhotoEditIp6 = 85,
     kConstantWidthButtonPhotoEditIpad = 160,
     kConstantWidthButtonPhotoEditLandScapeIp5 = 110,
     kConstantWidthButtonPhotoEditLandScapeIp6 = 128,
@@ -62,6 +62,7 @@ typedef NS_ENUM(NSInteger, MultipleDevicePhotoEdit) {
     kConstantTopImageNormal = 25,
     kConstantTopImageEdit = 2,
     kSpaceCrop = 40,
+    kNumberOfSectionDefault = 1,
 };
 
 typedef NS_ENUM(NSInteger, FilterNumber) {
